@@ -17,11 +17,27 @@ export default function Categories() {
            id: 3,
            category: 'vegetables',
            pic: '../images/vegetables.png'
+       },
+       {
+           id: 4,
+           category: 'vegetables',
+           pic: '../images/vegetables.png'
+       },
+       {
+           id: 5,
+           category: 'vegetables',
+           pic: '../images/vegetables.png'
+       },
+       {
+           id: 6,
+           category: 'vegetables',
+           pic: '../images/vegetables.png'
        }
    ]
-   console.log(categories[1].pic);
+   
    const content = categories.map((category=>(
-       <div key={category.id} style={{width:'80%',display:'flex',margin:'auto',height:'100px',marginTop:'5%',justifyContent:'space-between'}} >
+    
+       <Link to='/items' key={category.id} style={{textDecoration:'none',width:'80%',display:'flex',margin:'auto',height:'100px',marginTop:'5%',justifyContent:'space-between'}} className='categories'>
            <div className='cat-img'><img src={category.pic} alt='' style={{width:'100%',height:'100%'}} /></div>
            <div style={{ 
                         fontFamily: 'Poppins',
@@ -33,16 +49,20 @@ export default function Categories() {
                         alignItems: 'center',
                         textAlign: 'center',
                         color: '#000000',
+                        marginRight:'5px'
                          }}>{category.category}</div>
-           </div>
+           </Link>
+    
    )))
+   
      
 
     return (
         <div className='category' >
             <div style={{display:'flex',width:'50%',justifyContent:'space-between',alignItems:'baseline'}}>
-                <Link to='/' style={{  width: '15%', height: '50px', margin: '20px 0px 0px 10px' }} className='back'>back</Link>
-                <p>Categories</p>
+                <Link to='/' style={{
+                    width: '15%', height: '50px', margin: '15 % 0px 0px 5%' }} className='back'><i class="fas fa-arrow-left" style={{ width: '50px',marginLeft:'15px'}}></i></Link>
+                <p style={{fontSize:'1.5em',fontWeight:'bold',marginLeft:'5px'}}>Categories</p>
             </div>
             {content}
         </div>

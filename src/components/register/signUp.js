@@ -6,10 +6,10 @@ export default function SignUp() {
 
     return (
         <div className='page' style={{ backgroundColor: ' #E5E5E5;' }}>
+            <div style={{ zIndex: '400', position: 'absolute', width: '100%' }}>
 
-            <div className='cover'>
-            </div>
-            <Link to='/signIn' style={{ position: 'absolute', width: '15%', height: '50px', margin: '20px 0px 0px 10px' }} className='back'>back</Link>
+            
+            <Link to='/signIn' style={{ position: 'absolute', width: '15%', height: '50px',margin: '15% 0px 0px 5%' }} className='back'><i class="fas fa-arrow-left" style={{width:'50px'}}></i></Link>
 
             <div className='intro' style={{ width: '80%', textAlign: 'center'}}>
                 <h1 className='name' style={{ width: '20%', fontSize: '50px', textAlign: 'center', marginBottom: '0px',marginLeft:'20%' }}>
@@ -49,6 +49,10 @@ export default function SignUp() {
                 }}>Sign in</Link></p>
                 <p>Forgot password? <Link to='/forgotPassword' style={{ color: '#A5060A', textDecoration: 'none' }}> Reset</Link></p>
             </div>
+            </div>
+             <div className='cover'>
+             </div>
         </div>
+
     )
 }

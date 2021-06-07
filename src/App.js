@@ -7,7 +7,7 @@ import SignUp from './components/register/signUp'
 import Forgot from './components/register/forgot'
 import Market from './components/market/market'
 import Categories from './components/market/categories'
-
+import Cards from './components/market/card'
 
 
 
@@ -16,11 +16,12 @@ function App() {
 
 
   const categories =<Categories />
-
+  const cards=<Cards />
+  
 
   return(
     <Router>
-       <div>
+       <div style={{height:'800px'}}>
        <Switch>
             <Route exact path="/" >
                   <Front />
@@ -37,8 +38,8 @@ function App() {
           <Route path='/market'>
             <Market content={categories} />
           </Route>
-          <Route path='/categories'>
-             <Market  />
+          <Route path='/items'>
+             <Market content={cards} />
           </Route>
 
       </Switch>
