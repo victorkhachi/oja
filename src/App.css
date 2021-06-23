@@ -176,8 +176,31 @@ header{
   height:100%;
   /* margin-top: 30%; */
   
-  
-  
+}
+.background{
+   background-color:#E5E5E5;
+}
+.reg-body{
+  z-index: '400';
+   position: 'absolute';
+  width: '100%'
+}
+.reg-link{
+  position:relative;
+  top:80px; 
+  width:15%;
+   height:50px;
+   margin: 15% 0px 0px 5%
+}
+.reg-button{
+  color:white;
+  font-weight:bold;
+  font-size:20px;
+  padding:10px;
+  background:#A5060A;
+  border-radius:10px;
+  width:100%;
+  margin-top:15%;
 }
 .cat-img{
   width:120px;

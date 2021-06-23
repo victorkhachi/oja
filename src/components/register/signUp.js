@@ -1,25 +1,29 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
-
+import axios from 'axios'
 export default function SignUp() {
-
+     const url ='http://localhost:6000'
+     const user={
+         
+     }
+     const click=()=>{console.log()}
+     
     return (
-        <div className='page' style={{ backgroundColor: ' #E5E5E5;' }}>
-            <div style={{ zIndex: '400', position: 'absolute', width: '100%' }}>
+        <div className='page background'>
+            <div className='reg-body'>
 
             
-            <Link to='/signIn' style={{ position: 'absolute', width: '15%', height: '50px',margin: '15% 0px 0px 5%' }} className='back'><i class="fas fa-arrow-left" style={{width:'50px'}}></i></Link>
+               <Link to='/signIn' className='back reg-link'><i class=" fa-2x fas fa-arrow-left" style={{width:'50px'}}></i></Link>
 
-            <div className='intro' style={{ width: '80%', textAlign: 'center'}}>
-                <h1 className='name' style={{ width: '20%', fontSize: '50px', textAlign: 'center', marginBottom: '0px',marginLeft:'20%' }}>
+               <div className='intro' style={{ width: '80%', textAlign: 'center'}}>
+                  <h1 className='name' style={{ width: '20%', fontSize: '50px', textAlign: 'center', marginBottom: '0px',marginLeft:'20%' }}>
                     ọjà.com
-                       </h1>
-                <p className='instruction'>
-                  Welcome! sign up and start shopping.
-                       </p>
+                  </h1>
+                  <p className='instruction'>
+                      Welcome! sign up and start shopping.
+                  </p>
             </div>
-            <form>
+            <form >
                 <div style={{width:'100%',display:'flex',margin:'auto',justifyContent:'space-between'}}>
                     <input name='firstName' type='text' placeholder='First Name' className='padding' style={{width:'47%'}}/>
                     <input name='lastName' type='text' placeholder='last Name' className='padding' style={{ width: '47%' }}/>
@@ -28,16 +32,7 @@ export default function SignUp() {
                 <input type='email' name='email' placeholder='E-mail' className='padding'/>
                 <input type='number' name='mobile' placeholder='mobile' className='padding' />
                 <input type='password' name='password' placeholder='password' className='padding' />
-                <button style={{
-                    color: 'white',
-                    fontWeight: 'bold',
-                    fontSize: '20px',
-                    padding: '10px',
-                    background: '#A5060A',
-                    borderRadius: '10px',
-                    width: '100%',
-                    marginTop: '15%'
-                }}>
+                <button className='reg-button' onClick={click}>
                     Sign up
                     </button>
 

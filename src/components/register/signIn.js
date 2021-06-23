@@ -5,11 +5,12 @@ import {Link} from 'react-router-dom'
 export default function SignIn() {
   
     return (
-        <div className='page' style={{ backgroundColor:' #E5E5E5;'}}>
+        <div className='page background' >
             
            
-            <div style={{zIndex:'400',position: 'absolute',width: '100%'}}>
-                <Link to='/' style={{ position: 'absolute', width: '15%', height: '50px', margin: '15% 0px 0px 5%' }} className='back'><i class="fas fa-arrow-left" style={{ width: '50px' }}></i></Link>
+            <div className='reg-body'>
+
+                <Link to='/' className='back reg-link'><i class=" fa-2x fas fa-arrow-left" style={{ width: '50px' }}></i></Link>
                 <div className='intro'>
                       <h1 className='name'style={{width:'20%',fontSize:'50px',textAlign:'center' , marginBottom:'0px'}}>
                           ọjà.com
