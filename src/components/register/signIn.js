@@ -18,34 +18,25 @@ export default function SignIn() {
                             Sign in and shop now!
                        </p>
                 </div>
-            <form>
-                  <input type='email' name='e-mail' placeholder='E-mail' className='padding'/>
+                <form>
+                    <input type='email' name='e-mail' placeholder='E-mail' className='padding'/>
                
-                  <input type='password' name='password' placeholder='password' className='padding' />
-                  <div>
-                    <input id='checkbox' type='checkbox' name='checkbox' className='checkbox' />
-                    <label for='checkbox' style={{marginLeft:'10px',fontWeight:'bold'}}>Remember me</label>
+                    <input type='password' name='password' placeholder='password' className='padding' />
+                    <div>
+                       <input id='checkbox' type='checkbox' name='checkbox' className='checkbox' />
+                       <label for='checkbox' style={{marginLeft:'10px',fontWeight:'bold'}}>Remember me</label>
 
-                </div>
-                <button  style={{
-                    color:'white',
-                    fontWeight:'bold',
-                    fontSize:'20px',
-                    padding:'10px',
-                    background: '#A5060A',
-                    borderRadius: '10px',
-                    width:'100%',
-                    marginTop:'15%'
-                    }}>
+                    </div>
+                   <button className='reset'>
                         Sign in
                     </button>
-            </form>
-            <div className='alt' style={{textAlign:'center', marginTop:'20%'}}>
-                <p>Don’t have an account? <Link to='/signUp' style={{
-                    color: ' #A5060A',
-                  textDecoration:'none',
+                </form>
+               <div className='alt' style={{textAlign:'center', marginTop:'20%'}}>
+                  <p>Don’t have an account? <Link to='/signUp' style={{
+                      color: ' #A5060A',
+                      textDecoration:'none',
                     zIndex: '500'}}>Sign Up</Link></p>
-                <p>Forgot password? <Link to='/forgotPassword' style={{ zIndex:'500',color: '#A5060A', textDecoration: 'none'}}> Reset</Link></p>
+                  <p>Forgot password? <Link to='/forgotPassword' style={{ zIndex:'500',color: '#A5060A', textDecoration: 'none'}}> Reset</Link></p>
             </div>
             </div>
          <div className='cover'>

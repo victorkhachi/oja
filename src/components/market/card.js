@@ -11,50 +11,54 @@ function Cards() {
     const cards  = [
         {
             id : 1,
+            unit:'unit',
             imgUrl : <img style={{width:'100%'}} src={Banana}></img>,
+            quantity:'' ,
             name : "Banana",
-            price : "$101/each",
+            Price : "101",
           
         },
         {
           id : 2,
+          unit: 'unit',
           imgUrl : <img style={{width:'100%'}} src={Strawberry}></img>,
+          quantity: '',
           name : "Strawberry",
-          price : "$100/each",
+          Price : "100",
         
       },
       {
           id : 3,
+          unit: 'unit',
           imgUrl : <img style={{width:'100%'}} src={Broccoli}></img>,
+          quantity: '',
           name : "Broccoli",
-          price : "$100/each",
+          Price : "100",
         
       },
       {
           id : 4,
+          unit: 'unit',
           imgUrl : <img style={{width:'100%'}} src={Spinach}></img>,
           name : "Spinach",
-          price : "$100/each",
+          quantity: '',
+          Price : "100",
         
       },
       
       
       ]
       
-      //have a sass for all this styling man... 
      
-     
-      //is that content below the array u want to map,?its the array i mapped , look up
-      //now first thing u have to do is convert all that to a component... so ur work looks nice,. ok... let me try working on it like this first so u get the gist 
     return(
         <div>
-         <div style={{ display: 'flex', width: '50%', justifyContent: 'space-between', alignItems: 'baseline' }}>
+           <div style={{ display: 'flex', width: '50%', justifyContent: 'space-between', alignItems: 'baseline' }}>
 
               <Link to='/market' style={{
-                    width: '15%', height: '50px', margin: '15 % 0px 0px 5%' }} className='back'><i class="fas fa-arrow-left" style={{ width: '50px',marginLeft:'15px'}}></i>
+                    width: '15%', height: '50px', margin: '15 % 0px 0px 5%' }} className='back'><i class="fa-2x fas fa-arrow-left" style={{ width: '50px',marginLeft:'15px'}}></i>
              </Link>
                 <p style={{fontSize:'1.5em',fontWeight:'bold',marginLeft:'5px'}}>Items</p>
-        </div>
+            </div>
            <div style={{display:'flex',width:'85%',justifyContent:'space-between',flexBasis:'45%',flexWrap:'wrap',margin:'auto'}}>
             { 
                 cards.map((card, idx)=>(
@@ -65,5 +69,5 @@ function Cards() {
         </div>
     )
 }
-//take back to our new comp
+
 export default Cards;

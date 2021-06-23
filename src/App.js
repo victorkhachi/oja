@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import './App.css';
 import Front from './components/front'
@@ -8,8 +8,9 @@ import Forgot from './components/register/forgot'
 import Market from './components/market/market'
 import Categories from './components/market/categories'
 import Cards from './components/market/card'
-
-
+import Cart from './components/cart'
+import Location from './components/market/location';
+import { Total, UserContext } from './components/market/extras/userContext';
 
 function App() {
 
@@ -17,37 +18,52 @@ function App() {
 
   const categories =<Categories />
   const cards=<Cards />
+  const [value,setValue]=useState([])
+  const [total,setTotal]=useState(Number('0'))
   
 
   return(
-    <Router>
-       <div style={{height:'800px'}}>
-       <Switch>
+
+    <UserContext.Provider value ={{value , setValue}}>
+      <Router>
+        <div style={{ height: '800px' }}>
+          <Switch>
             <Route exact path="/" >
-                  <Front />
+              <Front />
             </Route>
             <Route path='/signIn'>
-                  <SignIn />
+              <SignIn />
             </Route>
-          <Route path='/signUp'>
-                  <SignUp />
-          </Route>
-          <Route path='/forgotPassword'>
-                  <Forgot />
-          </Route>
-          <Route path='/market'>
-            <Market content={categories} />
-          </Route>
-          <Route path='/items'>
-             <Market content={cards} />
-          </Route>
-
-      </Switch>
-      </div>
-    </Router>
+            <Route path='/signUp'>
+              <SignUp />
+            </Route>
+            <Route path='/forgotPassword'>
+              <Forgot />
+            </Route>
+            <Route path='/market'>
+              <Market content={categories} />
+            </Route>
+            <Route path='/location'>
+              <Location />
+            </Route>
+            <Total.Provider value={{total,setTotal}}>
+             <Route path='/items'>
+               <Market content={cards} />
+             </Route>
+             <Route path='/cart'>
+              <Cart />
+             </Route>
+            </Total.Provider>
+          </Switch>
+        </div>
+      </Router>
+    </UserContext.Provider>
+    
    
   )
   // const page = () => { setContent(<Page />) }
+  // u did not, just a section, are u sure u are okay with this?oya wrap it na
+  
 
   //   const [content , setContent]=useState(
   //       <Front page={page} />

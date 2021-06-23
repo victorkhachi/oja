@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import Sandwich from './sandwich'
-import Cart from '../cart'
+import {Link} from 'react-router-dom'
 
 
 export default function Market(prop) {
@@ -11,10 +11,11 @@ export default function Market(prop) {
     const open =()=>{
         setLeft('0%')
     }
+    
     return (
         
         <div className='page'>
-            <Cart />
+            
             <Sandwich left={left} close={close}/>
             <div className='market-cover'></div>
                <header>
@@ -33,7 +34,7 @@ export default function Market(prop) {
                         />
                     <button style={{background:'orange',padding:'10px',border:'none'}}><i class="fas fa-search"></i></button>
                     </div>
-                <div style={{ marginRight: '30px' }} className='cart'><i class="fas fa-shopping-cart"></i></div>
+                <Link to='/cart' style={{ marginRight: '30px',color:'black' }} className='cart'><i class="fa-2x fas fa-shopping-cart" ></i></Link>
                 </header>
             
             <div style={{ margin:'auto', height: '80%', marginBottom: '0%',position: 'absolute',overflowY:'scroll'}} className='width'>

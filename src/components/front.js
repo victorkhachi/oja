@@ -25,7 +25,7 @@ export default function Front(props) {
                  <div className='ad'>
                     <h1>ọjà.com</h1>
                     <p>shop now and get a speedy delivery at your doorstep</p> 
-                    <Link to='/market' className='button'>send me!</Link>
+                    <Link to='/location' className='button'>send me!</Link>
 
                  </div>
               </div>
