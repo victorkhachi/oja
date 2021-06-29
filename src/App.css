@@ -4,6 +4,9 @@
   height: 810px;
   background-image: url('./components/images/oyingbo\ 1\ \(1\).png');
 }
+a{
+  text-decoration: none;
+}
 .ad{
   position: absolute;
   width:250px ;
@@ -38,7 +41,7 @@ justify-content: center;
   text-decoration: none;
 
   left: 109px; 
-   width: ;
+  
   margin-right: 0px;
 font-family: Poppins;
 font-style: normal;
@@ -181,9 +184,23 @@ header{
    background-color:#E5E5E5;
 }
 .reg-body{
-  z-index: '400';
-   position: 'absolute';
-  width: '100%'
+  z-index: 400;
+   position:absolute;
+  width:100%;
+}
+.welcome{
+  height:50%;
+  width:80%;
+  margin: auto;
+  box-shadow: 0px 0px 2px grey;
+  padding:5%;
+}
+.response{
+  color:#A5060A;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
 }
 .reg-link{
   position:relative;
@@ -209,6 +226,12 @@ header{
 }
 .categories{
   box-shadow:2px 2px  gray;
+}
+.name{
+  width:20%;
+  font-size:50px;
+  text-align:center;
+  margin-bottom:0px
 }
 /* bills */
 .bill{

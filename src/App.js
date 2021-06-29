@@ -10,7 +10,7 @@ import Categories from './components/market/categories'
 import Cards from './components/market/card'
 import Cart from './components/cart'
 import Location from './components/market/location';
-import { Total, UserContext } from './components/market/extras/userContext';
+import { Order, Total, UserContext } from './components/market/extras/userContext';
 
 function App() {
 
@@ -20,11 +20,14 @@ function App() {
   const cards=<Cards />
   const [value,setValue]=useState([])
   const [total,setTotal]=useState(Number('0'))
-  
+  const [order , setOrder]=useState({
+    name:'',number:'',zone:'',address:'',order:[]
+  })
 
   return(
 
     <UserContext.Provider value ={{value , setValue}}>
+    <Order.Provider value={{order,setOrder}}>
       <Router>
         <div style={{ height: '800px' }}>
           <Switch>
@@ -57,6 +60,7 @@ function App() {
           </Switch>
         </div>
       </Router>
+      </Order.Provider>
     </UserContext.Provider>
     
    
