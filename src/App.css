@@ -1,5 +1,141 @@
-
+.page{
+  display: none;
+}
 .front{
+  display: none;
+}
+.landing{
+width: 100%;
+height: fit-content;
+}
+.top{
+  display: flex;
+}
+.top-name{
+  width:20%;
+  font-size:50px;
+  text-align:center;
+  /* margin-bottom:0px; */
+  color:#A5060A ;
+  margin-left: 20%;
+}
+.top-option{
+  background: #E5E5E5;
+  border-radius: 20px;
+  padding:20%
+  
+}
+.middle{
+  width: 100%;
+  height: 300px;
+  background-image: url('./components/images/oyingbo\ 1\ \(1\).png');
+  
+}
+.middle-grad{
+  height: 100%;
+  width: 80%;
+  background: linear-gradient(95.01deg, #D4AF37 48.61%, rgba(237, 245, 228, 0) 91.9%);
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  font-size: 30px;
+
+
+}
+.login-box{
+  position: absolute;
+  width: 30%;
+  height: fit-content;
+  background-color: #FFFFFF;
+  top: 15%;
+  right: 10%;
+  padding: 3%;
+  padding-top:0%;
+  z-index: 100;
+}
+.height{
+  height: 1000px;
+  overflow: scroll;
+}
+.padding{
+  padding: 5px 2px 10px 2px;
+  margin: 4%;
+  width: 100%;
+  background: #EDF5E4;
+border: 2px solid #A5060A;
+box-sizing: border-box;
+border-radius: 10px;
+}
+form{
+  /* display: flex; */
+  flex-direction: column;
+  /* width: 85%; */
+  margin: auto;
+}
+.checkbox{
+  background: #EDF5E4;
+   border: 5px solid #000000;
+  box-sizing: border-box;
+  
+}
+.blur{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.5);
+  z-index:50;
+  top:0;
+}
+.direction{
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bolder;
+  box-shadow: 0 0 2px gray;
+  padding:4% 0;
+
+}
+.direction img{
+  width: 100%;
+  height: 100%;
+}
+.direction-cont{
+  display:flex;
+  width:100%;
+  flex-basis:30%;
+  justify-content:space-around;
+  height:80%;
+}
+.reset{
+ color:white;
+  font-weight:bold;
+  font-size:20px;
+  padding:10px;
+  background:#A5060A;
+  border-radius: 10px;
+  width:100%;
+  margin-top:15%
+}
+.option{
+  background-color: #A5060A;
+  font-weight: bold;
+  color: white;
+}
+
+@media (max-width:500px){
+  .height{
+    height:800px}
+  .landing{
+    display: none;
+  }
+.page{
+  display: inline-block;
+}
+
+  .front{
+  display:inline-block;
   width: 100%;
   height: 810px;
   background-image: url('./components/images/oyingbo\ 1\ \(1\).png');
@@ -15,6 +151,7 @@ a{
   text-align: center;
 
 }
+
 .gradient{
   width: 100%;
   height: 100%;
@@ -62,6 +199,13 @@ background: #A5060A;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 80px;
 }
+.padding{
+  padding: 10px 2px 10px 2px;
+  background: #EDF5E4;
+border: 2px solid #A5060A;
+box-sizing: border-box;
+border-radius: 10px;
+}
 h1{
 font-family: Rosarivo;
 font-style: normal;
@@ -79,6 +223,43 @@ margin-bottom: 0px;
   overflow-y: scroll;
   background-color: #E5E5E5
 
+}
+.location-head{
+   width:43%;
+   display:flex;
+   justify-content:space-between;
+}
+.location-input{
+  width:95%;
+  margin:auto;
+  margin-top:30%;
+}
+.location-input h2{
+  text-shadow:0px 4px 4px rgba(0, 0, 0, 0.25)
+}
+.location-input input{
+width:95%;
+margin:5px;
+padding:3% 0%;
+border:2px solid #55DB52;
+border-radius:10px
+}
+.location-input div{
+  position: absolute;
+  width:70px;
+  height: 70px;
+  border: 3px solid #A5060A;
+   border-radius: 100%;
+  display:flex;
+  justify-content:center;
+  align-items:center; 
+  bottom:47%;
+  right: 7%;
+  background:#E5E5E5
+}
+.location-back{
+  align-self:center;
+   margin:15% 0px 0px 8% ;
 }
 .intro{
   margin: auto;
@@ -131,13 +312,7 @@ form{
 input{
   margin-top: 20px;
 }
-.padding{
-  padding: 10px 2px 10px 2px;
-  background: #EDF5E4;
-border: 2px solid #A5060A;
-box-sizing: border-box;
-border-radius: 10px;
-}
+
 ::placeholder{
   margin-left: 10px;
   text-transform: capitalize;
@@ -271,6 +446,15 @@ header{
   align-items:center 
 
 }
+.cart{
+  height:100%;
+  width:100%;
+  background:white;
+  z-index:600;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
 .cart-list{
    width:100%;
    height:60px;
@@ -313,8 +497,8 @@ header{
     margin: 0px 3px; 
     font-weight: bolder
 }
-.reset{
-  color:white;
+ .reset{
+ color:white;
   font-weight:bold;
   font-size:20px;
   padding:10px;
@@ -322,4 +506,5 @@ header{
   border-radius: 10px;
   width:100%;
   margin-top:15%
+}
 }

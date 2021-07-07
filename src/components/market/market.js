@@ -34,7 +34,7 @@ export default function Market(prop) {
                         />
                     <button style={{background:'orange',padding:'10px',border:'none'}}><i class="fas fa-search"></i></button>
                     </div>
-                <Link to='/cart' style={{ marginRight: '30px',color:'black' }} className='cart'><i class="fa-2x fas fa-shopping-cart" ></i></Link>
+                <Link to='/cart' style={{ marginRight: '30px',color:'black' }} className=''><i class="fa-2x fas fa-shopping-cart" ></i></Link>
                 </header>
             
             <div style={{ margin:'auto', height: '80%', marginBottom: '0%',position: 'absolute',overflowY:'scroll'}} className='width'>

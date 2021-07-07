@@ -1,13 +1,14 @@
-import config from '../../config.js';
+import config from '../../../../config.js';
 import axios from 'axios';
 import {useState,useContext} from 'react'
-import { Order } from '../../components/market/extras/userContext.js';
+import { Order} from '../../../market/extras/userContext.js';
 
 
-const Login =()=>{
-    const [getLoginValues, setGetLoginValues] = useState({});
+export default function Login(){
+    const [getLoginValues, SetGetLoginValues] = useState({email:'',password:''});
     const { url } = config;
     const {order,setOrder}=useContext(Order)
+    
 
     const SignIn = async () => {
         
@@ -22,17 +23,19 @@ const Login =()=>{
             window.location.replace('/location')
             setOrder(order.name=`${data.first_name} ${data.last_name}`,order.tel=data.tel)
             console.log(order);
-        }else{
-            console.log('hi');
+            
+        }
+        else{
+            console.log(data.message , status);
         }
          
     }
 
     return{
-        SignIn,setGetLoginValues
+        SignIn,SetGetLoginValues
     }
 
 
 }
 //this is it
-export default Login
+

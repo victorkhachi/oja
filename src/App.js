@@ -11,6 +11,7 @@ import Cards from './components/market/card'
 import Cart from './components/cart'
 import Location from './components/market/location';
 import { Order, Total, UserContext } from './components/market/extras/userContext';
+import Landing from'./components/desktop/landing'
 
 function App() {
 
@@ -25,20 +26,21 @@ function App() {
   })
 
   return(
-
+    
     <UserContext.Provider value ={{value , setValue}}>
     <Order.Provider value={{order,setOrder}}>
       <Router>
-        <div style={{ height: '800px' }}>
+        <div className='height'>
           <Switch>
             <Route exact path="/" >
               <Front />
+              <Landing />
             </Route>
             <Route path='/signIn'>
-              <SignIn />
+                <SignIn  />
             </Route>
             <Route path='/signUp'>
-              <SignUp />
+                <SignUp  />
             </Route>
             <Route path='/forgotPassword'>
               <Forgot />
@@ -48,6 +50,7 @@ function App() {
             </Route>
             <Route path='/location'>
               <Location />
+              <Landing show='none' />
             </Route>
             <Total.Provider value={{total,setTotal}}>
              <Route path='/items'>
@@ -62,7 +65,7 @@ function App() {
       </Router>
       </Order.Provider>
     </UserContext.Provider>
-    
+  
    
   )
   // const page = () => { setContent(<Page />) }

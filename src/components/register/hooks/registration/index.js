@@ -1,4 +1,4 @@
-import config from '../../config.js';
+import config from '../../../../config';
 import {useState} from 'react';
 import axios from 'axios';
 const useRegistration = ()=> {

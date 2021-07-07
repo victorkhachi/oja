@@ -17,7 +17,7 @@ export default function Step1() {
                         {items} items
                     </div>
                 </div>
-                <div style={{ display: 'flex', width: '99%', justifyContent: 'space-between', flexBasis: '45%',        flexWrap:'wrap', margin: 'auto', position: 'relative', marginTop: '2%' }}>
+                <div style={{ display: 'flex', width: '99%', justifyContent: 'space-between', flexBasis: '45%',flexWrap:'wrap', margin: 'auto', position: 'relative', marginTop: '2%' }}>
                     {
                         pickedItems.map((pickedItems, idx) => (
                             <CartList key={idx} data={pickedItems} />

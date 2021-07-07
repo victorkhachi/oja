@@ -7,10 +7,12 @@ import {Link} from 'react-router-dom'
 export default function Cart(props) {
     const {value, setValue} = useContext(UserContext);
     return (
-        <div style={{height:'100%',width:'100%',background:'white',zIndex:'600',display:'flex',flexDirection:'column',alignItems:'center'}} >
-            <Link to='/items' style={{width:'100%',height:'8%',position:'fixed',background:'white',zIndex:'60'}}>
-                <i class=" fa-2x fas fa-arrow-left" style={{marginLeft:'5%',marginTop:'10px' }} onClick={props.closeCart}></i>
-            </Link>
+        <div className='cart' >
+            <div style={{ width: '100%', height: '8%', position: 'fixed', background: 'white', zIndex: '60' }}>
+                <Link to='/market' >
+                    <i class=" fa-2x fas fa-arrow-left" style={{marginLeft:'5%',marginTop:'10px' }} onClick={props.closeCart}></i>
+                </Link>
+            </div>
            
             <div style={{ display: 'flex', width: '100%', height: '10%', background:'#55DB52',justifyContent:'center',alignItems:'center',marginBottom:'5%',flexDirection:'column',position:'relative',marginTop:'15%'}}>
                 <div style={{ display: 'flex', width: '100%', height: '60%', justifyContent: 'center', alignItems: 'center'}}>
