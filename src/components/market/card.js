@@ -12,7 +12,7 @@ function Cards() {
         {
             id : 1,
             unit:'unit',
-            imgUrl : <img style={{width:'100%'}} src={Banana}></img>,
+            imgUrl : <img style={{width:'100%'}} src={Banana} alt=''></img>,
             quantity:'' ,
             name : "Banana",
             Price : "101",
@@ -21,7 +21,7 @@ function Cards() {
         {
           id : 2,
           unit: 'unit',
-          imgUrl : <img style={{width:'100%'}} src={Strawberry}></img>,
+          imgUrl : <img style={{width:'100%'}} src={Strawberry} alt=''></img>,
           quantity: '',
           name : "Strawberry",
           Price : "100",
@@ -30,7 +30,7 @@ function Cards() {
       {
           id : 3,
           unit: 'unit',
-          imgUrl : <img style={{width:'100%'}} src={Broccoli}></img>,
+          imgUrl : <img style={{width:'100%'}} src={Broccoli}alt=''></img>,
           quantity: '',
           name : "Broccoli",
           Price : "100",
@@ -39,7 +39,7 @@ function Cards() {
       {
           id : 4,
           unit: 'unit',
-          imgUrl : <img style={{width:'100%'}} src={Spinach}></img>,
+          imgUrl : <img style={{width:'100%'}} src={Spinach} alt=''></img>,
           name : "Spinach",
           quantity: '',
           Price : "100",
@@ -59,7 +59,7 @@ function Cards() {
              </Link>
                 <p style={{fontSize:'1.5em',fontWeight:'bold',marginLeft:'5px'}}>Items</p>
             </div>
-           <div style={{display:'flex',width:'85%',justifyContent:'space-between',flexBasis:'45%',flexWrap:'wrap',margin:'auto'}}>
+           <div style={{display:'flex',width:'85%',justifyContent:'space-between',flexBasis:'30%',flexWrap:'wrap',margin:'auto'}}>
             { 
                 cards.map((card, idx)=>(
                     <Component key={idx} data={card} />

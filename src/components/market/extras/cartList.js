@@ -4,7 +4,7 @@ import { Total, UserContext } from './userContext'
 const CartList =({data})=>{
     const {value ,setValue}=useContext(UserContext)
     const [number,setNumber]=useState(data.quantity)
-    const {total,setTotal}=useContext(Total)
+    const {total, setTotal}=useContext(Total)
     const plus = () => {
          
             setNumber(number+1)
@@ -63,7 +63,7 @@ const CartList =({data})=>{
                      N{cost}
                   </div>
                   <div style={{ marginRight: '4%' }}onClick={remove}>
-                         <i class="fa-2x fas fa-trash" ></i>
+                         <i class=" fas fa-trash" ></i>
                   </div>
         
             </div>

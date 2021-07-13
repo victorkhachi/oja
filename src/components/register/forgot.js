@@ -1,8 +1,21 @@
 import React from 'react'
 import { Link} from 'react-router-dom'
+import Reset from './hooks/registration/reset'
 
 
 export default function Forgot() {
+    const {PassReset,setGetEmail}=Reset()
+    const [email,setEmail]=React.useState({email:''})
+    const enterMail =(e)=>{
+        setEmail({email:e.target.value})
+        setGetEmail({email:email})
+
+    }
+    const reset=(e)=>{
+        e.preventDefault()
+      if(email.email.trim() !=='')
+      PassReset()
+    }
 
     return (
         <div className='page background'>
@@ -20,9 +33,9 @@ export default function Forgot() {
                           Forgot password? we'll send you a link to reset.
                   </p>
               </div>
-              <form style={{marginTop:'20%'}}>
+              <form  onSubmit={reset} style={{marginTop:'20%'}}>
                 
-                    <input type='email' name='email' placeholder='E-mail' className='padding' />
+                    <input type='email' name='email' placeholder='E-mail' className='padding' onChange={enterMail} />
                 
                      <button className='reset'>
                          Reset password

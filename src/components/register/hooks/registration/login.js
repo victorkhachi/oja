@@ -11,23 +11,25 @@ export default function Login(){
     
 
     const SignIn = async () => {
-        
-         const { status, data } = await axios.post(`${url}user/login`, JSON.stringify(getLoginValues), {
-            headers: {
-                "content-type": "application/json"
+        try {
+            const { status, data } = await axios.post(`${url}user/login`, JSON.stringify(getLoginValues), {
+                headers: {
+                    "content-type": "application/json"
+                }
+            });
+            console.log(status);
+            console.log(data)
+            if (status === 200) {
+                window.location.replace('/location')
+                setOrder({ name: `${data.first_name} ${data.last_name}`, tel: data.tel, status: status })
             }
-        });
-        console.log(status);
-        console.log(data)
-        if (status===200){
-            window.location.replace('/location')
-            setOrder(order.name=`${data.first_name} ${data.last_name}`,order.tel=data.tel)
-            console.log(order);
-            
+        } catch (error) {
+            console.log(error);
         }
-        else{
-            console.log(data.message , status);
-        }
+        
+         //where are you,lets just do later , here closes 6
+         
+       
          
     }
 

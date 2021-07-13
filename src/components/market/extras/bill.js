@@ -2,7 +2,8 @@ import React, { useContext } from 'react'
 import { Total } from './userContext'
 
 export default function Bill() {
-    const {total, setTotal}=useContext(Total)
+    const {total, setTotal}= useContext(Total)
+    
     return (
         <div className='bill'>
         <div className='order'>

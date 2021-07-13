@@ -12,6 +12,9 @@ import Cart from './components/cart'
 import Location from './components/market/location';
 import { Order, Total, UserContext } from './components/market/extras/userContext';
 import Landing from'./components/desktop/landing'
+import DesktopMarket from './components/desktop/Market/desktopMarket';
+import Cart2 from './components/desktop/Market/sub/cart'
+import Otp from './components/register/extra/otp';
 
 function App() {
 
@@ -22,8 +25,11 @@ function App() {
   const [value,setValue]=useState([])
   const [total,setTotal]=useState(Number('0'))
   const [order , setOrder]=useState({
-    name:'',number:'',zone:'',address:'',order:[]
+    name:'',number:'',zone:'',address:'',order:[],status:''
   })
+  
+  
+  
 
   return(
     
@@ -45,8 +51,12 @@ function App() {
             <Route path='/forgotPassword'>
               <Forgot />
             </Route>
+            <Route path='/OTP'>
+               <Otp />
+            </Route>
             <Route path='/market'>
               <Market content={categories} />
+              <DesktopMarket content={categories} />
             </Route>
             <Route path='/location'>
               <Location />
@@ -55,6 +65,7 @@ function App() {
             <Total.Provider value={{total,setTotal}}>
              <Route path='/items'>
                <Market content={cards} />
+               <DesktopMarket content={cards} content2={<Cart2 />} />
              </Route>
              <Route path='/cart'>
               <Cart />

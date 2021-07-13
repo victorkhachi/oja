@@ -4,27 +4,37 @@ import Body from './components/body'
 import {BrowserRouter as Router,
  Switch, Route} from 'react-router-dom'
  import Categories from './components/categories'
-import {Category} from './components/contexts/userContext'
+import AddCategories from './components/addCategories';
+import SignIn from './components/signIn';
 function App() {
-  const [cat, setCat] = React.useState([])
+  
+  
 
   return (
-    <Category.Provider value={{cat, setCat}}>
+    
     <Router>
     <Switch>
          <div className="App">
-          <Route exact path='/'>
-             <Body />
+           <Route exact path='/'>
+             <SignIn />
+            </Route>
+          <Route exact path='/dashboard'>
+            
+            <Body>
+                <Categories />
+            </Body>
           </Route>
-          <Route exact path='/categories'>
-            <Body content={<Categories />}/>
-          </Route>
-
+            <Route exact path='/addcategories'>
+              <Body>
+                <AddCategories />
+              </Body>
+            </Route>
+            
          </div>
 
     </Switch>
     </Router>
-    </Category.Provider>
+    
   );
 }
 
