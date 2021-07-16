@@ -10,8 +10,14 @@ export default function AddCategories() {
     }
     
     function create(cat) {
-        setAddCategory(cat)
-        addCat()
+        if (cat!=='') {
+            setAddCategory(cat)
+            addCat()
+        }
+        else{
+            alert("fields can't be empty")
+        }
+        
     }
         
          

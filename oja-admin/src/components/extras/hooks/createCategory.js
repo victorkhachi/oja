@@ -6,6 +6,8 @@ export default function useCategory() {
        const {url}=config
        const [addCategory, setAddCategory]= React.useState({name:''})
        const[message,setMessage]=React.useState('')
+    const [categories, setCategories] = React.useState([{}]);
+    const [catID, setCatID]=React.useState()
     const addCat = async () => {
         try {
             const { status, data } = await axios.post(`${url}products/createCategory`, JSON.stringify(addCategory), {
@@ -22,12 +24,30 @@ export default function useCategory() {
             console.log(error.response.data.error)
         }
 }
-   const getCategory =()=>{
-       axios.get(`${url}categories`).then(response=>console.log(response))
-   }
+    
+      React.useEffect(() =>{
+        axios.get(`${url}products/categories`).then(response=>setCategories(response.data.categories))
+        console.log(categories)
+       } , [url]) 
+
+       const removeCat= async ()=>{
+           try {
+               const { status, data } = await axios.post(`${url}products/removeCategory`, JSON.stringify(catID), {
+                   headers: {
+                       "content-type": "application/json"
+                   }
+               });
+               console.log(status);
+               console.log(data)
+               
+
+
+           } catch (error) {
+               console.log(error.response)
+           }
+       }
     return {
 
-       setAddCategory, addCat,message,getCategory
+       setAddCategory, addCat,message,categories,setCatID,removeCat
     }
-}
-// will take a look later..., push  ur own code to git.. let me use it for test, cos post man has no issues at all showing messages,ok ill do that look at the reset for me too
+} 
