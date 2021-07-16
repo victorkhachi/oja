@@ -3,7 +3,7 @@ import useCategory from './extras/hooks/createCategory'
 import {Link} from 'react-router-dom'
 export default function AddCategories() {
     const [cat , setCat]=React.useState({name:''})
-    const {addCat,setAddCategory}=useCategory()
+    const {addCat,setAddCategory,message}=useCategory()
     const change=(e)=>{
         setCat({name:e.target.value})
         
@@ -15,7 +15,6 @@ export default function AddCategories() {
     }
         
          
-            //  for (let index = 0; index < categories.length; index++) {
             //  }
         
          
@@ -32,6 +31,8 @@ export default function AddCategories() {
                     color:'white',fontWeight:'bold',
                     padding:'3%',borderRadius:'2em'}}>Add Category</button>
             </form>
+                <div style={{ fontSize: '1.5rem', color:'#A5060A'}}>{message}</div>
+
             <Link to='/dashboard'> Back to categories</Link>
         </div>
     )

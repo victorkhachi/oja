@@ -1,10 +1,11 @@
-import { getByPlaceholderText } from '@testing-library/react';
+
 import React from 'react'
 import useCategory from './hooks/createCategory';
 
 
 export default function SelectCat() {
-    
+    const {getCategory}=useCategory()
+    getCategory()
     const [categories, setCategories]=React.useState([]);
     
     
