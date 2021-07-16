@@ -8,7 +8,7 @@ export default function Login(){
     const [getLoginValues, SetGetLoginValues] = useState({email:'',password:''});
     const { url } = config;
     const {order,setOrder}=useContext(Order)
-    
+    const [error,setError]=useState('')
 
     const SignIn = async () => {
         try {
@@ -24,7 +24,8 @@ export default function Login(){
                 setOrder({ name: `${data.first_name} ${data.last_name}`, tel: data.tel, status: status })
             }
         } catch (error) {
-            console.log(error);
+            console.log(error.response.data);
+            setError(error.response.data.error)
         }
         
          //where are you,lets just do later , here closes 6
@@ -34,10 +35,10 @@ export default function Login(){
     }
 
     return{
-        SignIn,SetGetLoginValues
+        SignIn,SetGetLoginValues,error
     }
 
 
 }
-//this is it
+
 

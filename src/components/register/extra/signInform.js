@@ -2,7 +2,7 @@ import React from 'react'
 import Login from '../hooks/registration/login'
 
 export default function SignInForm() {
-    const {SignIn, SetGetLoginValues}=Login()
+    const {SignIn, SetGetLoginValues,error}=Login()
 
 
     const [user, setUser] = React.useState({ email: '', password: '' })
@@ -32,6 +32,7 @@ export default function SignInForm() {
         <div>       
              <form onSubmit={login}>
                <input type='email' name='email' placeholder='E-mail' className='padding' onChange={handleFormChange} />
+                <div style={{ fontSize: '0.8rem', textAlign: 'center', color:'#A5060A'}}>{error}</div>
 
                <input type='password' name='password' placeholder='password' className='padding' onChange={handleFormChange} />
                <div>

@@ -5,7 +5,7 @@ import { useState } from "react";
 export default function Reset(){
      const {url}=config
      const [getEmail, setGetEmail]=useState({email:''})
-
+     const [message,setMessage]=useState('')
      const PassReset= async ()=>{
          
         try {
@@ -17,7 +17,7 @@ export default function Reset(){
             console.log(data, status);
             window.location.replace('/OTP')
         } catch (error) {
-            console.log(error);
+            console.log(error.response);
         }
          
         }
@@ -26,7 +26,7 @@ export default function Reset(){
       
      
      return{
-         PassReset,setGetEmail
+         PassReset,setGetEmail,message
      }
 
 
