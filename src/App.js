@@ -10,11 +10,13 @@ import Categories from './components/market/categories'
 import Cards from './components/market/card'
 import Cart from './components/cart'
 import Location from './components/market/location';
-import { Order, Total, UserContext } from './components/market/extras/userContext';
+import { StoreOtp,Order, Total, UserContext } from './components/market/extras/userContext';
 import Landing from'./components/desktop/landing'
 import DesktopMarket from './components/desktop/Market/desktopMarket';
 import Cart2 from './components/desktop/Market/sub/cart'
 import Otp from './components/register/extra/otp';
+import Note from './components/market/extras/note';
+import NewPassword from './components/register/newPassword';
 
 function App() {
 
@@ -22,17 +24,18 @@ function App() {
 
   const categories =<Categories />
   const cards=<Cards />
+  const [otp,setOtp]=useState()
   const [value,setValue]=useState([])
   const [total,setTotal]=useState(Number('0'))
   const [order , setOrder]=useState({
-    name:'',number:'',zone:'',address:'',order:[],status:''
+    name:'',number:'',zone:'',address:'',order:[],notes:'',status:''
   })
   
   
   
 
   return(
-    
+    <StoreOtp.Provider value={{otp,setOtp}}>
     <UserContext.Provider value ={{value , setValue}}>
     <Order.Provider value={{order,setOrder}}>
       <Router>
@@ -70,12 +73,19 @@ function App() {
              <Route path='/cart'>
               <Cart />
              </Route>
+              <Route path='/note'>
+                <Note />
+              </Route>
+             <Route path='/password'>
+                <NewPassword />
+              </Route>
             </Total.Provider>
           </Switch>
         </div>
       </Router>
       </Order.Provider>
     </UserContext.Provider>
+    </StoreOtp.Provider>
   
    
   )

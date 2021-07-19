@@ -1,45 +1,18 @@
-import React from 'react'
+import React, { useEffect,useState } from 'react'
 import { Link } from 'react-router-dom'
-import Vegetables from '../images/vegetables.png'
+import axios from 'axios'
+import config from '../../config'
+
 
 export default function Categories() {
-   const categories=[
-       { 
-         id:1,
-         category:'vegetables',
-         pic:Vegetables
-       },
-       {
-           id: 2,
-           category: 'vegetables',
-           pic: Vegetables
-       },
-       {
-           id: 3,
-           category: 'vegetables',
-           pic:Vegetables
-       },
-       {
-           id: 4,
-           category: 'vegetables',
-           pic:Vegetables
-       },
-       {
-           id: 5,
-           category: 'vegetables',
-           pic: Vegetables
-       },
-       {
-           id: 6,
-           category: 'vegetables',
-           pic:Vegetables
-       }
-   ]
+    const {url}=config;
+    const [categories, setCategories]=useState([{}])
+    useEffect(()=>{axios.get(`${url}products/categories`).then(response=>setCategories(response.data.categories))},[url])
    
+   console.log(categories);
    const content = categories.map((category=>(
     
        <Link to='/items' key={category.id} className='categories'>
-           <div className='cat-img'><img src={category.pic} alt='' style={{width:'100%',height:'100%'}} /></div>
            <div className='cat-name'>{category.category}</div>
            </Link>
     

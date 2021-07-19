@@ -1,26 +1,12 @@
 import React from 'react'
-import reactDom from 'react-dom'
+
 import { Link} from 'react-router-dom'
-import Reset from './hooks/registration/reset'
+import ForgotForm from './extra/forgotForm'
+// import Reset from './hooks/registration/reset'
 
 
 export default function Forgot() {
-    const {PassReset,setGetEmail,message}=Reset()
-    const [email,setEmail]=React.useState({email:''})
-    const enterMail =(e)=>{
-        setEmail({email:e.target.value})
-        setGetEmail({ email: email.email })
-    
-
-    }
-    React.useEffect(() => setGetEmail({ email: email.email }),[email.email])
-    const reset= async()=>{
-        setGetEmail({ email: email.email })
-
-
-      if(email.email.trim() !=='')
-      PassReset()
-    }
+   
     
     return (
         <div className='page background'>
@@ -31,25 +17,14 @@ export default function Forgot() {
               <Link to='/signIn'  className='back reg-link'><i class=" fa-2x fas fa-arrow-left" style={{ width: '50px' }}></i></Link>
 
               <div className='intro' style={{ width: '80%', textAlign: 'center' }}>
-                  <h1 className='name' style={{ width: '20%', fontSize: '50px', textAlign: 'center', marginBottom: '0px', marginLeft: '20%' }}>
+                  <h1 className='name' >
                       ọjà.com
                   </h1>
                   <p className='instruction'>
                           Forgot password? we'll send you a link to reset.
                   </p>
               </div>
-              <form  onSubmit={(e)=>{
-                      e.preventDefault()
-                reset()}} style={{marginTop:'20%'}}>
-                    <div style={{ fontSize: '0.8rem', textAlign: 'center', color: '#A5060A' }}>{message}</div>
-
-                    <input type='email' name='email' placeholder='E-mail' className='padding' onChange={enterMail} />
-                
-                     <button className='reset'>
-                         Reset password
-                     </button>
-
-                </form>
+              <ForgotForm />
                 <div className='alt' style={{ textAlign: 'center', marginTop: '20%' }}>
                 
                     <p>Already have an account? <Link to='/SignIn' style={{color: ' #A5060A',textDecoration: 'none'}}>Sign in</Link></p>
