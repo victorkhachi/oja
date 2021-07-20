@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
+import { Redirect } from 'react-router-dom'
 import { Order } from './userContext'
 
 export default function Note(){
     const [note, setNote]=useState('')
+    const [redirect, setRedirect] = useState(false)
+
     const {order,setOrder}=React.useContext(Order)
     const typing=(e)=>{
          setNote(e.target.value)
@@ -12,7 +15,10 @@ export default function Note(){
     const save=()=>{
         setOrder({...order,note:note})
         console.log(order);
-        window.location.replace('/cart')
+        setRedirect(true)
+    }
+    if(redirect){
+        return <Redirect to='/cart'/>
     }
     return (
         <div className='page'>

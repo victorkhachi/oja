@@ -1,8 +1,9 @@
 import React from 'react'
+import { Redirect } from 'react-router-dom'
 import Login from '../hooks/registration/login'
 
 export default function SignInForm() {
-    const {SignIn, SetGetLoginValues,error}=Login()
+    const {SignIn, SetGetLoginValues,error,redirect,order}=Login()
 
 
     const [user, setUser] = React.useState({ email: '', password: '' })
@@ -22,11 +23,12 @@ export default function SignInForm() {
             e.preventDefault()
             SignIn()
 
-
-            
-
         }
+    }
 
+    if(redirect){
+        console.log(order);
+        return <Redirect to='/location' />
     }
     return (
         <div>       

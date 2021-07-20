@@ -1,8 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import Reset from '../hooks/registration/reset' 
 export default function ForgotForm(){
-    const { PassReset, setGetEmail, message,display } = Reset()
+    const { PassReset, setGetEmail, message,redirect } = Reset()
     const [email, setEmail] = React.useState({ email: '' })
     const enterMail = (e) => {
         setEmail({ email: e.target.value })
@@ -18,6 +18,9 @@ export default function ForgotForm(){
         if (email.email.trim() !== '')
             PassReset()
     }
+    if (redirect) {
+        return <Redirect to='/OTP' />
+    }
     
 
     return(
@@ -30,7 +33,6 @@ export default function ForgotForm(){
                      <button className='reset'>
                          Reset password
                      </button>
-            <Link style={{ color:'#A5060A',fontWeight:'bold',width:'100%',textAlign:'center',marginTop:'2%',display:`${display}`}} to='/OTP'>Click to enter OTP</Link>
 
              </form>
     )

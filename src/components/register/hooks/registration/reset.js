@@ -10,6 +10,7 @@ export default function Reset(){
      const [message,setMessage]=useState('')
      const {otp, setOtp} =useContext(StoreOtp)
     const [display,setDisplay]=useState('none')
+    const [redirect, setRedirect] = useState(false)
 
     const PassReset= async ()=>{
 
@@ -21,15 +22,18 @@ export default function Reset(){
             });
             console.log(data,status);
             setOtp(data.otp)
+            setRedirect(true)
+
             setDisplay('inline-block')
         } 
         
         catch (error) {
-            console.log(error.response);
+            setMessage(error.response.data.message);
         }
             
         }
-        console.log(otp);
+        
+        useEffect(() => setRedirect(), [])
         useEffect(()=>setOtp(),[])
         useEffect(()=>setDisplay(),[])
        
@@ -38,7 +42,7 @@ export default function Reset(){
       
 
       return{
-         PassReset, setGetEmail, message,display
+         PassReset, setGetEmail, message,display,redirect
      }
 
 

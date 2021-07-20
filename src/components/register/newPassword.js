@@ -1,23 +1,31 @@
-import userEvent from '@testing-library/user-event'
+
 import React,{useEffect, useState} from 'react'
+import { Redirect } from 'react-router-dom'
 import OtpEnter from './hooks/registration/otp'
 
 export default function NewPassword() {
-    const {newPassword,setUser,user}=OtpEnter()
+    const {newPassword,setUser,user,redirect}=OtpEnter()
     const [passwords,setPasswords]=useState({email:'',password1:'',password2:''})
     const enterPassword=(e)=>{
         setPasswords({...passwords,[e.target.name]:e.target.value})
+        setUser({email:passwords.email,password:passwords.password1})
+        
     }
+    useEffect(() => setUser(), [])
+
     const reset=(e)=>{
         e.preventDefault()
-        if(passwords.password1===passwords.password2){
+        if(passwords.password1===passwords.password2){ 
             if(passwords.password1.trim()!==''){
             setUser({...user,email:passwords.email,password:passwords.password1})
             newPassword()
             }
         }
     }
-    useEffect(()=>setUser(),[])
+    if(redirect){
+        
+       return <Redirect to='/signIn' />
+    }
 
 
 
@@ -29,6 +37,7 @@ export default function NewPassword() {
                 <input className='padding' type='password' name='password2' placeholder='confirm new password' onChange={enterPassword}/>
                 <button className='reset'>Reset</button>
             </form>
+            
         </div>
     )
 }
