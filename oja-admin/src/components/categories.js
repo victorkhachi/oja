@@ -1,11 +1,8 @@
 import React from 'react'
 import SelectCat from './extras/category'
-import {Link} from 'react-router-dom' 
+import {Link} from 'react-router-dom';
+
 export default function Categories() {
-    
-   
-    
-    
     return (
         <div style={{width:'100%',display:'flex',flexDirection:'column'}}>
              <div className='cat-head'>
@@ -16,7 +13,9 @@ export default function Categories() {
             <div style={{ width: '100%',display:'flex',flexDirection:'column' }}>
                 <input type='text' placeholder=' &#xf002; Search categories' style={{ padding: '1% 3%', background:'#FFFEF2',width:'40%'}}/>
 
-                <div style={{width:'40%',height:'300px',display:'flex',overflowY:'scroll',flexDirection:'column'}}><SelectCat /></div>
+                <div style={{width:'40%',height:'300px',display:'flex',overflowY:'scroll',flexDirection:'column'}}>
+                    <SelectCat />
+                </div>
             </div>
         </div>
     )
