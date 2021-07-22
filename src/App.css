@@ -260,14 +260,17 @@ justify-content: center;
 .cat-name{
   font-family:Poppins;
   font-style:normal;
-   font-weight:normal;
-  font-size:20px;
+   font-weight:bold;
+  font-size:25px;
  line-height:30px;
  display:flex;
  align-items:center;
+ text-transform: uppercase;
  text-align:center;
  color:#000000;
-margin-right:5px;                                                                   
+margin-right:5px; 
+width: 100%; 
+                                                                 
 }
 
   .front{
@@ -564,15 +567,17 @@ header{
   flex-direction: row;
 
   margin:auto;
-  height:100px;
-  margin-top:5%;
+  height:fit-content;
+  margin-top:10%;
   justify-content:space-between;
+  padding: 2%;
 }
 .name{
   width:20%;
   font-size:50px;
   text-align:center;
-  margin-bottom:0px
+  margin-bottom:0px;
+  margin-left:20%;
 }
 /* bills */
 .bill{
@@ -580,6 +585,19 @@ header{
   height:100%;
   display:flex;
   flex-direction:column;
+}
+.noteLink{
+  width: 15%;
+   height:fit-content; text-align:center; 
+   font-weight:bold; 
+   position:absolute; right:3%;
+   top:55%;
+   background:#D5EDBB;
+    color:black;
+    z-index:500;
+    border:2px solid black;
+    border-radius:100%;
+    padding:2%
 }
 .order{
   height:60%;

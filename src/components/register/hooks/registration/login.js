@@ -1,3 +1,4 @@
+import {useEffect} from 'react'
 import config from '../../../../config.js';
 import axios from 'axios';
 import {useState,useContext} from 'react'
@@ -8,7 +9,9 @@ export default function Login(){
     const [getLoginValues, SetGetLoginValues] = useState({email:'',password:''});
     const { url } = config;
     const {order,setOrder}=useContext(Order)
-    
+    const [error,setError]=useState('')
+    const [redirect, setRedirect] = useState(false)
+
 
     const SignIn = async () => {
         try {
@@ -17,27 +20,24 @@ export default function Login(){
                     "content-type": "application/json"
                 }
             });
-            console.log(status);
-            console.log(data)
-            if (status === 200) {
-                window.location.replace('/location')
-                setOrder({ name: `${data.first_name} ${data.last_name}`, tel: data.tel, status: status })
-            }
-        } catch (error) {
-            console.log(error);
-        }
-        
-         //where are you,lets just do later , here closes 6
-         
-       
-         
-    }
+            
+                setOrder({...order, name: `${data.first_name} ${data.last_name}`, tel: data.tel, status: status })
+                setRedirect(true)
 
+        } catch (error) {
+            
+            setError(error.response.data.error)
+        }     
+    }
+    useEffect(() => setRedirect(), [])
+    
+
+    
     return{
-        SignIn,SetGetLoginValues
+        SignIn,SetGetLoginValues,error,redirect,order
     }
 
 
 }
-//this is it
+
 

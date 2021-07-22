@@ -4,25 +4,29 @@ import axios from 'axios';
 const useRegistration = ()=> {
     const [getFormValues, setGetFormValues] = useState({});
     const {url} = config;
-    
+    const [error,setError]=useState('')
 
     const register = async () => {
-        
-        const { status, data } = await axios.post(`${url}user/register`, JSON.stringify(getFormValues), {
-            headers: {
-                "content-type": "application/json"
-            }
-        });
-        console.log(data,status);
-        
-        if (status === 200) {
+        try {
+            const { status, data } = await axios.post(`${url}user/register`, JSON.stringify(getFormValues), {
+                headers: {
+                    "content-type": "application/json"
+                }
+            });
+            console.log(data, status);
 
-            window.location.replace('/signIn')
+            if (status === 200) {
+
+                window.location.replace('/signIn')
+            }
+        } catch (error) {
+            setError(error.response.data.error)
         }
+        
         
     }
     return {
-        register, setGetFormValues
+        register, setGetFormValues,error
     }
 }
 export default useRegistration;

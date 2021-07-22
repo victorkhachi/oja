@@ -1,9 +1,11 @@
-import React,{useState} from 'react'
+import React,{useState,useContext} from 'react'
 import Sandwich from './sandwich'
 import {Link} from 'react-router-dom'
+import { Order } from './extras/userContext'
 
 
 export default function Market(prop) {
+    const {order,setOrder}=useContext(Order)
     const [left, setLeft] = useState('-100%')
     const close=()=>{
         setLeft('-100%')
@@ -11,7 +13,7 @@ export default function Market(prop) {
     const open =()=>{
         setLeft('0%')
     }
-    
+    console.log(order);
     return (
         
         <div className='page'>

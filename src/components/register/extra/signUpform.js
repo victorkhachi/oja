@@ -4,7 +4,7 @@ import useRegistration from '../hooks/registration'
 
 export default function SignUpForm() {
     const [formValues, setFormValues] = React.useState({ first_name: '', last_name: '', email: '', tel: '', password: '' })
-    const { register, setGetFormValues } = useRegistration();
+    const { register, setGetFormValues,error } = useRegistration();
 
     const click = () => { console.log() }
 
@@ -34,6 +34,8 @@ export default function SignUpForm() {
 
     return (
         <form onSubmit={validate}>
+            <div style={{ fontSize: '0.8rem', textAlign: 'center', color: '#A5060A' }}>{error}</div>
+            
             <div style={{ width: '100%', display: 'flex', margin: 'auto', justifyContent: 'space-between' }}>
                 <input name='first_name' type='text' onChange={handleFormChange} value={formValues.first_name} placeholder='First Name' className='padding' style={{ width: '47%' }} />
                 <input name='last_name' type='text' placeholder='last Name' onChange={handleFormChange} value={formValues.last_name} className='padding' style={{ width: '47%' }} />
