@@ -1,17 +1,14 @@
-import { Fragment, useEffect  } from "react"
+import { Fragment, useEffect } from "react"
 import Remove from "./remove";
 
 const Component = ({data})=> {
-    const { setCatID, removeCat, catID } = Remove()
+    const {  removeCat } = Remove()
 
     const remove=()=>{
-    
-            console.log(data.id);
-            setCatID(data.id)
-            console.log(catID);
-            removeCat()
+        removeCat(data.id)
     }
-    useEffect(()=>setCatID(data.id))
+    
+    
         
     
     
