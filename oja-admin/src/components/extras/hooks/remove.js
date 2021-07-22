@@ -3,11 +3,18 @@ import config from '../../config';
 import axios from 'axios'
 export default function Remove() {
     
+<<<<<<< HEAD
     const { url } = config
     
 
     const removeCat = async (catID) => {
         console.log(catID)
+=======
+    const {url}=config
+    
+
+    const removeCat = async (catID) => {
+>>>>>>> kachi
         try {
             const { status, data } = await axios({
                 url: `${url}products/removeCategories`,
@@ -22,7 +29,9 @@ export default function Remove() {
 
 
         } catch (error) {
+            
             console.log(error.response)
+            console.log(catID);
         }
     }
 
@@ -32,7 +41,11 @@ export default function Remove() {
 
     return {
         
+<<<<<<< HEAD
            removeCat
+=======
+           removeCat,
+>>>>>>> kachi
         
 }
 }

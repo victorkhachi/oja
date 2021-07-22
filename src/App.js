@@ -17,6 +17,8 @@ import Cart2 from './components/desktop/Market/sub/cart'
 import Otp from './components/register/extra/otp';
 import Note from './components/market/extras/note';
 import NewPassword from './components/register/newPassword';
+import DesktopNote from './components/desktop/Market/sub/desktopNote';
+import SearchCategories from './components/market/extras/searchCategories';
 
 function App() {
 
@@ -47,6 +49,7 @@ function App() {
             </Route>
             <Route path='/signIn'>
                 <SignIn  />
+                <Landing  show='inline-block' />
             </Route>
             <Route path='/signUp'>
                 <SignUp  />
@@ -61,9 +64,13 @@ function App() {
               <Market content={categories} />
               <DesktopMarket content={categories} />
             </Route>
+            <Route path='/searchCategory'>
+              <Market content={<SearchCategories />} />
+              <DesktopMarket content={<SearchCategories />} />
+            </Route>
             <Route path='/location'>
               <Location />
-              <Landing show='none' />
+              <Landing show='none'/>
             </Route>
             <Total.Provider value={{total,setTotal}}>
              <Route path='/items'>
@@ -72,9 +79,13 @@ function App() {
              </Route>
              <Route path='/cart'>
               <Cart />
+              <DesktopMarket content={cards} content2={<Cart2 />} />
+
              </Route>
               <Route path='/note'>
                 <Note />
+                <DesktopMarket content={cards} content2={<DesktopNote />} />
+
               </Route>
              <Route path='/password'>
                 <NewPassword />
@@ -89,23 +100,7 @@ function App() {
   
    
   )
-  // const page = () => { setContent(<Page />) }
-  // u did not, just a section, are u sure u are okay with this?oya wrap it na
-  
-
-  //   const [content , setContent]=useState(
-  //       <Front page={page} />
-  //   )
-  // return (
-    
-  //   <div className="App">
-  //     <Router>
-  //       {content}
-  //     </Router>
-  //   </div>
-  // );
-  //none of this makes any sense man
-  //how this thing works is u wrap ur entire app in a browser router then have all your pages in side te router, so u have everything covered
+ 
 }
 
 export default App;

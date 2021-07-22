@@ -1,15 +1,11 @@
-import React, { useEffect,useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
-import config from '../../config'
+import Search from './extras/search'
 
 
 export default function Categories() {
-    const {url}=config;
-    const [categories, setCategories]=useState([{}])
-    useEffect(()=>{axios.get(`${url}products/categories`).then(response=>setCategories(response.data.categories))},[url])
-   
-   console.log(categories);
+    const {categories}=Search()
+    
    const content = categories.map((category=>(
     
        <Link to='/items' key={category.id} className='categories'>

@@ -1,12 +1,17 @@
-import React,{useState,useContext} from 'react'
+import React,{useState,useContext, useEffect} from 'react'
 import Sandwich from './sandwich'
-import {Link} from 'react-router-dom'
+import {Link,Redirect} from 'react-router-dom'
 import { Order } from './extras/userContext'
+import Search from './extras/search'
 
 
 export default function Market(prop) {
+    
     const {order,setOrder}=useContext(Order)
     const [left, setLeft] = useState('-100%')
+    const [searcher, setSearcher]=useState('')
+    const {search}=Search()
+    
     const close=()=>{
         setLeft('-100%')
     }
@@ -14,6 +19,27 @@ export default function Market(prop) {
         setLeft('0%')
     }
     console.log(order);
+    
+    const searching =(e)=>{
+     setSearcher(e.target.value)
+      
+    }
+    
+   
+   
+   useEffect(()=>search(searcher))
+    
+    
+
+    
+  
+     
+   
+   
+   
+
+
+
     return (
         
         <div className='page'>
@@ -28,13 +54,8 @@ export default function Market(prop) {
 
                     </div>
                     <div className='input' style={{width:'60%'}}>
-                        <input type='text' name style={{
-                            border: '1px solid #D4AF37',
-                            boxSizing: 'border-box',
-                            borderRadius: '10px',
-                            padding:'4% 0 4% 0'}}
-                        />
-                    <button style={{background:'orange',padding:'10px',border:'none'}}><i class="fas fa-search"></i></button>
+                        <input type='text' name='search' className='search-bar' onChange={searching}/>
+                    <Link to='/searchCategory'><button  style={{ background: 'orange', padding: '10px', border: 'none' }}><i class="fas fa-search"></i></button></Link>
                     </div>
                 <Link to='/cart' style={{ marginRight: '30px',color:'black' }} className=''><i class="fa-2x fas fa-shopping-cart" ></i></Link>
                 </header>

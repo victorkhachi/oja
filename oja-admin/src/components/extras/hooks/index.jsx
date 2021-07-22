@@ -8,7 +8,10 @@ const Component = ({data})=> {
         removeCat(data.id)
     }
     
+<<<<<<< HEAD
     
+=======
+>>>>>>> kachi
         
     
     
