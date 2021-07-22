@@ -42,7 +42,7 @@ export default function SignUpForm() {
             <input type='email' name='email' placeholder='E-mail' className='padding' onChange={handleFormChange} value={formValues.email} />
             <input type='number' name='tel' placeholder='mobile' className='padding' onChange={handleFormChange} value={formValues.tel} />
             <input type='password' name='password' placeholder='password' className='padding' onChange={handleFormChange} value={formValues.password} pattern='(?=.*[a-z])(?=.*[A-Z]).{6,}' title='password must contain a capital letter and must be at least 6 letters ' />
-            <button className='reg-button reset' onClick={click}>
+            <button className='reg-button ' onClick={click}>
                 Sign up
                     </button>
 
