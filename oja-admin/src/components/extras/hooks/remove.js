@@ -4,9 +4,9 @@ import axios from 'axios'
 export default function Remove() {
     
     const {url}=config
-    const [catID, setCatID] = React.useState()
+    
 
-    const removeCat = async () => {
+    const removeCat = async (catID) => {
         try {
             const { status, data } = await axios.post(`${url}products/removeCategories`, JSON.stringify(catID), {
                 headers: {
@@ -19,7 +19,9 @@ export default function Remove() {
 
 
         } catch (error) {
+            
             console.log(error.response)
+            console.log(catID);
         }
     }
 
@@ -29,7 +31,7 @@ export default function Remove() {
 
     return {
         
-           removeCat,setCatID,catID
+           removeCat,
         
 }
 }

@@ -9,7 +9,7 @@ export default function Note(){
     const {order,setOrder}=React.useContext(Order)
     const typing=(e)=>{
          setNote(e.target.value)
-         console.log(note);
+         
     }  
     React.useEffect(()=>setOrder({...order,note:note}),[note])
     const save=()=>{

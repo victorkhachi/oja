@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Top from './sub/top'
 import Middle from './sub/middle' 
 import Login from './sub/login'
 import Bottom from './sub/bottom'
 import Help from './sub/help'
+
 
 export default function Landing(props) {
   const [display,setDisplay]= React.useState('none')
@@ -27,6 +28,7 @@ export default function Landing(props) {
     setHelp('inline-block')
     setBlurDisplay('inline-block')
   }
+  
     return (
         <div className='landing'>
           <Top help={click} login={close} show={props.show}/>

@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { Link } from 'react-router-dom'
 import CartList from '../../../market/extras/cartList'
 import { Total, UserContext } from '../../../market/extras/userContext'
 
@@ -17,10 +18,10 @@ export default function Cart2() {
                 }
 
             </div>
-            <div style={{
-                width: '20%', padding: '2%', fontWeight: 'bold', background:'#A5060A',borderRadius:'5px',boxShadow:'inherit',margin:'auto',marginBottom:'2%;'}}>
+            <Link to='/note' style={{
+                left:'30%',textDecoration:'none' ,width: '20%', padding: '2%',position:'relative',top:'20%', fontWeight: 'bold', background:'#A5060A',borderRadius:'5px',boxShadow:'inherit',margin:'auto',marginBottom:'2%;'}}>
                 Notes
-            </div>
+            </Link>
             <div style={{marginLeft:'30%',fontWeight:'bolder'}}>
                 Total:{`N${total}`}
             </div>
