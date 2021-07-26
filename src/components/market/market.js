@@ -1,16 +1,15 @@
 import React,{useState,useContext, useEffect} from 'react'
 import Sandwich from './sandwich'
 import {Link,Redirect} from 'react-router-dom'
-import { Order } from './extras/userContext'
-import Search from './extras/search'
+import { Order, Searcher } from './extras/userContext'
+
 
 
 export default function Market(prop) {
     
-    const {order,setOrder}=useContext(Order)
+    
     const [left, setLeft] = useState('-100%')
-    const [searcher, setSearcher]=useState('')
-    const {search}=Search()
+    const {setSearcher,searcher}=useContext(Searcher)
     
     const close=()=>{
         setLeft('-100%')
@@ -18,28 +17,14 @@ export default function Market(prop) {
     const open =()=>{
         setLeft('0%')
     }
-    console.log(order);
     
     const searching =(e)=>{
      setSearcher(e.target.value)
-      
+     console.log(searcher); 
     }
     
    
    
-   useEffect(()=>search(searcher))
-    
-    
-
-    
-  
-     
-   
-   
-   
-
-
-
     return (
         
         <div className='page'>

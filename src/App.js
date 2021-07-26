@@ -10,7 +10,7 @@ import Categories from './components/market/categories'
 import Cards from './components/market/card'
 import Cart from './components/cart'
 import Location from './components/market/location';
-import { StoreOtp,Order, Total, UserContext } from './components/market/extras/userContext';
+import { StoreOtp,Order, Total, UserContext, Searcher } from './components/market/extras/userContext';
 import Landing from'./components/desktop/landing'
 import DesktopMarket from './components/desktop/Market/desktopMarket';
 import Cart2 from './components/desktop/Market/sub/cart'
@@ -28,15 +28,18 @@ function App() {
   const cards=<Cards />
   const [otp,setOtp]=useState()
   const [value,setValue]=useState([])
+  const [searcher, setSearcher] = useState()
   const [total,setTotal]=useState(Number('0'))
   const [order , setOrder]=useState({
-    name:'',number:'',zone:'',address:'',order:[],notes:'',status:''
+    name:'',number:'',zone:'',address:'',list:[],notes:'',status:''
   })
   
   
   
 
   return(
+    <Total.Provider value={{ total, setTotal }}>
+    <Searcher.Provider value={{searcher,setSearcher}}>
     <StoreOtp.Provider value={{otp,setOtp}}>
     <UserContext.Provider value ={{value , setValue}}>
     <Order.Provider value={{order,setOrder}}>
@@ -62,17 +65,16 @@ function App() {
             </Route>
             <Route path='/market'>
               <Market content={categories} />
-              <DesktopMarket content={categories} />
+              <DesktopMarket content={categories} content2={<Cart2 />} />
             </Route>
             <Route path='/searchCategory'>
               <Market content={<SearchCategories />} />
-              <DesktopMarket content={<SearchCategories />} />
+              <DesktopMarket content={<SearchCategories />} content2={<Cart2 />} />
             </Route>
             <Route path='/location'>
               <Location />
               <Landing show='none'/>
             </Route>
-            <Total.Provider value={{total,setTotal}}>
              <Route path='/items'>
                <Market content={cards} />
                <DesktopMarket content={cards} content2={<Cart2 />} />
@@ -90,14 +92,16 @@ function App() {
              <Route path='/password'>
                 <NewPassword />
               </Route>
-            </Total.Provider>
           </Switch>
         </div>
       </Router>
       </Order.Provider>
     </UserContext.Provider>
     </StoreOtp.Provider>
-  
+    </Searcher.Provider>
+    </Total.Provider>
+
+
    
   )
  

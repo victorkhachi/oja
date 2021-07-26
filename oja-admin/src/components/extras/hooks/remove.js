@@ -3,21 +3,15 @@ import config from '../../config';
 import axios from 'axios'
 export default function Remove() {
     
-<<<<<<< HEAD
-    const { url } = config
-    
-
-    const removeCat = async (catID) => {
-        console.log(catID)
-=======
     const {url}=config
     
 
     const removeCat = async (catID) => {
->>>>>>> kachi
+        console.log(catID);
         try {
             const { status, data } = await axios({
-                url: `${url}products/removeCategories`,
+                method:'post',
+                url: `${url}products/removeCategory`,
                 headers: {
                     "content-type": "application/json"
                 },
@@ -41,11 +35,7 @@ export default function Remove() {
 
     return {
         
-<<<<<<< HEAD
            removeCat
-=======
-           removeCat,
->>>>>>> kachi
         
 }
 }

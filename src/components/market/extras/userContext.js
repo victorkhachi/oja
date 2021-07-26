@@ -5,5 +5,6 @@
  export const Total = createContext()
  export const Order = createContext()
  export const StoreOtp = createContext()
+ export const Searcher=createContext()
  
  

@@ -1,17 +1,14 @@
-import { Fragment, useEffect } from "react"
+import { Fragment } from "react"
 import Remove from "./remove";
 
 const Component = ({data})=> {
     const {  removeCat } = Remove()
 
-    const remove=()=>{
-        removeCat(data.id)
+    const remove=async()=>{
+       await removeCat(data.id)
+       document.location.reload()
     }
     
-<<<<<<< HEAD
-    
-=======
->>>>>>> kachi
         
     
     

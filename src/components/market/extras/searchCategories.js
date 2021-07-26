@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import Search from './search'
+import { Searcher } from './userContext'
 
 export default function SearchCategories() {
-    const {key,newArray } = Search()
-    
-    console.log(key);
-   
+    const {search } = Search()
+    const {searcher,setSearcher}=useContext(Searcher)
+    const newArray = search(searcher)
     console.log(newArray);
     const content = newArray.map((category => (
 
@@ -15,12 +15,12 @@ export default function SearchCategories() {
         </Link>
     )))
 
-    console.log(key);
+    
     
     return (
         <div className='category' >
             <div style={{ display: 'flex', width: '50%', justifyContent: 'space-between', alignItems: 'baseline' }}>
-                <Link to='/' style={{
+                <Link to='/market' style={{
                     width: '15%', height: '50px', margin: '15 % 0px 0px 5%'
                 }} className='back'><i class=" fa-2x fas fa-arrow-left" style={{ width: '50px', marginLeft: '15px' }}></i></Link>
                 <p style={{ fontSize: '1.5em', fontWeight: 'bold', marginLeft: '5px' }}>Categories</p>

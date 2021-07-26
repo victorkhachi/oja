@@ -4,8 +4,9 @@ import config from "../../../config"
 
 
 export default function Search() {
-    const [key ,setKey]=useState('')
+    
     const {url}=config
+    
     
 
     const [categories, setCategories] = useState([{}])
@@ -16,17 +17,18 @@ export default function Search() {
     
     const search=(key)=>{
         console.log(key);
-         setKey(key)
+        //  
+        return  (
+            
+            categories.filter(match  => {
+                return match.category === key
+            })
+        )
     }
-    useEffect(()=>setKey(key),[])
-   console.log(key); 
-    const newArray = categories.filter(match => {
-        return match.category === key
-    })
-    console.log(newArray);
+    
     
     return {
-       setKey,key,categories,search,newArray
+       search,categories,
     }
         
             
