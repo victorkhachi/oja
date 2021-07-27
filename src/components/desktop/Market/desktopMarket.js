@@ -11,7 +11,7 @@ export default function DesktopMarket(props) {
                 <div style={{width:'80%',height:'90%',marginLeft:'5%'}}>
                     {props.content}
                </div>
-                <div style={{ width: '25%', height: 'fit-content',boxShadow:'0 0 3px grey',display:`${props.display}`}}>
+                <div style={{ width: '40%', height: 'fit-content',boxShadow:'0 0 3px grey',display:`${props.display}`}}>
                  {props.content2}
                 </div>
             </div>

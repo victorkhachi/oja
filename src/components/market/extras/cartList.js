@@ -41,7 +41,7 @@ const CartList =({data})=>{
     setTotal(sum)
     
     return(
-<Fragment>
+        <Fragment>
             <div className='cart-list'>
                   <div className='name-unit'>
                             {`${data.name}/${data.unit}`}
@@ -68,7 +68,7 @@ const CartList =({data})=>{
         
             </div>
 
-</Fragment>
+          </Fragment>
     )
 }
 

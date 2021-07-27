@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import Bill from '../../../market/extras/bill'
 import CartList from '../../../market/extras/cartList'
-import { Total, UserContext } from '../../../market/extras/userContext'
+import {  UserContext } from '../../../market/extras/userContext'
 
 export default function Cart2() {
       const {value , setValue}=useContext(UserContext)

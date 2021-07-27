@@ -31,8 +31,7 @@ function App() {
   const [searcher, setSearcher] = useState()
   const [total,setTotal]=useState(Number('0'))
   const [order , setOrder]=useState({
-    name:'',number:'',zone:'',address:'',list:[],notes:'',status:''
-  })
+    name:'',number:'',zone:'',address:'',list:[],notes:'',amount:'',time:''})
   
   
   

@@ -13,7 +13,7 @@ export default function Bill(props) {
         
     })
     const done=()=>{
-        setOrder({...order,list:items})
+        setOrder({...order,list:items,amount:total})
     }
     console.log(order);
     
@@ -32,7 +32,7 @@ export default function Bill(props) {
                 <div style={{
                     background: '#D4AF37', marginLeft: '3%', display:`${props.display}` }} className='order-nav'>
                     Continue shopping</div>
-                <Link to='/payment' onClick={done} style={{ background: '#A5060A', marginRight: '3%' }} className='order-nav'>
+                <Link  onClick={done} style={{ background: '#A5060A', marginRight: '3%' }} className='order-nav'>
                     Checkout
                         </Link>
 
