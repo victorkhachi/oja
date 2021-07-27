@@ -45,7 +45,37 @@ margin-left: 3%;
 }
 .content{
   width: 70%;
+  overflow-y: scroll;
+  height:500px
   
+}
+.person-detail{
+    width: 100%;
+    font-weight: bold;
+    height: 12%;
+
+}
+.orderd-items{
+  width:100;
+  height:40%;
+  box-shadow: 0px 0px 2px black;
+  overflow-y: scroll;
+}
+.order-note{
+ height: 24%;
+ width:60%;
+ background: #FFFABA;
+ margin-top: 2%;
+}
+
+.orders{
+  width: 80%;
+  height: 40px;
+  padding: 2%;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  box-shadow:0px  2px black;
 }
 .cat-head{
   display: flex;
@@ -69,4 +99,8 @@ a{
   color: black;
   font-weight: bold;
 }
-
+.invoice{
+  width: 80%;
+  height:100%;
+  box-shadow: 0px 0px 5px black;
+}

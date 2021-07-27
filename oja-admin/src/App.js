@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './App.css';
 import Body from './components/body'
 import {BrowserRouter as Router,
@@ -6,12 +6,17 @@ import {BrowserRouter as Router,
  import Categories from './components/categories'
 import AddCategories from './components/addCategories';
 import SignIn from './components/signIn';
+import Invoice from './components/invoice';
+import OrderPage from './components/orderPage';
+import { Order } from './components/extras/contexts';
+
+
 function App() {
-  
+  const [value,setValue]=useState({name:'',address:'',tel:'',items:[],notes:''})
   
 
   return (
-    
+    <Order.Provider value={{value, setValue}}>
     <Router>
     <Switch>
          <div className="App">
@@ -24,6 +29,17 @@ function App() {
                 <Categories />
             </Body>
           </Route>
+          <Route exact path='/invoice'>
+
+            <Body>
+               <Invoice />
+            </Body>
+          </Route>
+          <Route exact path='/orders'>
+            <Body>
+              <OrderPage />
+            </Body>
+          </Route>
             <Route exact path='/addcategories'>
               <Body>
                 <AddCategories />
@@ -34,6 +50,7 @@ function App() {
 
     </Switch>
     </Router>
+    </Order.Provider>
     
   );
 }

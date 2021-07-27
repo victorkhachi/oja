@@ -24,7 +24,7 @@ export default function Body(props) {
                 <div className= 'dash'>
 
                     
-                    <Link to='/categories' className='option'>
+                    <Link to='/dashboard' className='option'>
                         <div>
                             <img src={DashBoard} alt='' />
                         </div>
