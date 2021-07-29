@@ -104,3 +104,15 @@ a{
   height:100%;
   box-shadow: 0px 0px 5px black;
 }
+.input input{
+  padding:4%;
+  background: #E5E5E5;
+  width:100%
+
+
+}
+::placeholder{
+  font-weight: bold;
+  text-transform: capitalize;
+  color:black
+}

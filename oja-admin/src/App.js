@@ -9,6 +9,9 @@ import SignIn from './components/signIn';
 import Invoice from './components/invoice';
 import OrderPage from './components/orderPage';
 import { Order } from './components/extras/contexts';
+import Product from './components/product';
+import AddProduct from './addProduct';
+import Mailer from './components/mailer';
 
 
 function App() {
@@ -21,7 +24,10 @@ function App() {
     <Switch>
          <div className="App">
            <Route exact path='/'>
-             <SignIn />
+             <Mailer />
+            </Route>
+            <Route exact path='/signIn'>
+              <SignIn />
             </Route>
           <Route exact path='/dashboard'>
             
@@ -43,6 +49,16 @@ function App() {
             <Route exact path='/addcategories'>
               <Body>
                 <AddCategories />
+              </Body>
+            </Route>
+            <Route exact path='/products'>
+              <Body>
+                <Product />
+              </Body>
+            </Route>
+            <Route exact path='/addProducts'>
+              <Body>
+                <AddProduct />
               </Body>
             </Route>
             
