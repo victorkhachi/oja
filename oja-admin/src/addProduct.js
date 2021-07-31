@@ -12,8 +12,8 @@ export default function AddProduct() {
    const enterProduct=(e)=>{
        formData.append(e.target.name,e.target.value)
    }
-   for(var values of formData.values()){
-   console.log(values)
+   for(var key of formData.keys()){
+   console.log(key)
 }
    const enterImg= async(e)=>{
        console.log(e.target.files[0].name);
@@ -25,7 +25,8 @@ export default function AddProduct() {
    
    const add= async (e)=>{
        e.preventDefault()
-      for(var value of formData.values()){console.log(value);}
+       for (var key of formData.keys()) {
+           console.log(key)}
        addProd(formData)
    }
    

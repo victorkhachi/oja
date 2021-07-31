@@ -9,6 +9,7 @@ const {url}= config
 
 
 const addProd= async(body)=>{
+    console.log(body)
 try {
     const { status, data } = await axios({
         method: 'post',
@@ -16,7 +17,7 @@ try {
         headers: {
             "content-type": "application/json"
         },
-        data: {body: body }
+        data:body
 
     })
     console.log(body);
