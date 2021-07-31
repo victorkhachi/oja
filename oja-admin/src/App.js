@@ -8,7 +8,7 @@ import AddCategories from './components/addCategories';
 import SignIn from './components/signIn';
 import Invoice from './components/invoice';
 import OrderPage from './components/orderPage';
-import { Order } from './components/extras/contexts';
+import { Order, Products } from './components/extras/contexts';
 import Product from './components/product';
 import AddProduct from './addProduct';
 import Mailer from './components/mailer';
@@ -16,9 +16,11 @@ import Mailer from './components/mailer';
 
 function App() {
   const [value,setValue]=useState({name:'',address:'',tel:'',items:[],notes:''})
-  
+  const [cat, setCat]=useState()
 
+  // formData.append('category','cow')
   return (
+    <Products.Provider value={{cat, setCat}}>
     <Order.Provider value={{value, setValue}}>
     <Router>
     <Switch>
@@ -67,6 +69,8 @@ function App() {
     </Switch>
     </Router>
     </Order.Provider>
+     </Products.Provider>
+
     
   );
 }
