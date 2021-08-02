@@ -1,28 +1,29 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext, useEffect, useState } from 'react'
+import { Link, Redirect } from 'react-router-dom'
+import axios from 'axios'
+import config from './config'
+import Prod from './extras/hooks/product'
+import { Products } from './extras/contexts'
+
+
+
 
 export default function Product() {
-   const products=[
-           {
-               name:'name',
-               unit:'unit',
-               price:'price'
-        
-       }, 
-       {
-           name: 'name',
-           unit: 'unit',
-           price: 'price'
+    const {url}=config
+    const [array, setArray] = useState([])
+    const {cat,setCat}=useContext(Products)
+    useEffect(()=>{axios.get(`${url}products/`).then(response=>{
+        setArray(response.data.product)
+    })},[url])
+    console.log(array);
+    const products= array.filter(product=>{
+        return product.category===cat
+    })
+    if(!cat){
+        return <Redirect to='/dashboard'/>
+    }
 
-       },
-       {
-           name: 'name',
-           unit: 'unit',
-           price: 'price'
 
-       }
-
-    ]
     
     return (
         
@@ -30,9 +31,7 @@ export default function Product() {
         <h1>Products</h1>
         <div style={{width:'100%',height:'40%',overflowY:'scroll'}}>
          {products.map(product=>(
-            <div style={{boxShadow:'0px 0px 2px black',height:'30px',display:'flex',width:'100%',justifyContent:'space-between'}}>
-                <div>{product.name}</div> <div>{product.price}/{product.unit}</div> <div>Remove</div>
-            </div>
+            <Prod data={product} />
     ))}
        </div>
        <Link to ='/addProducts' style={{boxShadow:'0px 0px 2px 2px black', padding:'2%'}}>Add products</Link>

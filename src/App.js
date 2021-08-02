@@ -10,7 +10,7 @@ import Categories from './components/market/categories'
 import Cards from './components/market/card'
 import Cart from './components/cart'
 import Location from './components/market/location';
-import { StoreOtp,Order, Total, UserContext, Searcher } from './components/market/extras/userContext';
+import { StoreOtp,Order, Total, UserContext, Searcher, Products } from './components/market/extras/userContext';
 import Landing from'./components/desktop/landing'
 import DesktopMarket from './components/desktop/Market/desktopMarket';
 import Cart2 from './components/desktop/Market/sub/cart'
@@ -33,10 +33,11 @@ function App() {
   const [order , setOrder]=useState({
     name:'',number:'',zone:'',address:'',list:[],notes:'',amount:'',time:''})
   
-  
+   const[cat,setCat]=useState()
   
 
   return(
+    <Products.Provider value={{cat,setCat}}>
     <Total.Provider value={{ total, setTotal }}>
     <Searcher.Provider value={{searcher,setSearcher}}>
     <StoreOtp.Provider value={{otp,setOtp}}>
@@ -99,6 +100,7 @@ function App() {
     </StoreOtp.Provider>
     </Searcher.Provider>
     </Total.Provider>
+    </Products.Provider>
 
 
    

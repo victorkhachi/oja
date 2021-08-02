@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import SelectCat from './extras/category'
 import {Link} from 'react-router-dom';
+import { Key } from './extras/contexts';
 
 export default function Categories() {
+    const {key,setKey}=useContext(Key)
+    const search=(e)=>{
+        setKey(e.target.value)
+        
+    }
+    
+    console.log(key);
     return (
         <div style={{width:'100%',display:'flex',flexDirection:'column'}}>
              <div className='cat-head'>
@@ -11,7 +19,7 @@ export default function Categories() {
              </div>
             
             <div style={{ width: '100%',display:'flex',flexDirection:'column' }}>
-                <input type='text' placeholder=' &#xf002; Search categories' style={{ padding: '1% 3%', background:'#FFFEF2',width:'40%'}}/>
+                <input type='text' placeholder=' &#xf002; Search categories' style={{ padding: '1% 3%', background:'#FFFEF2',width:'40%'}} onChange={search}/>
 
                 <div style={{width:'40%',height:'300px',display:'flex',overflowY:'scroll',flexDirection:'column'}}>
                     <SelectCat />

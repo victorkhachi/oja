@@ -1,17 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import Category from './extras/category'
 import Search from './extras/search'
+import { Products } from './extras/userContext'
 
 
 export default function Categories() {
     const {categories}=Search()
-    
    const content = categories.map((category=>(
-    
-       <Link to='/items' key={category.id} className='categories'>
-           <div className='cat-name'>{category.category}</div>
-           </Link>
-    
+      <Category data={category} />
    )))
    
      

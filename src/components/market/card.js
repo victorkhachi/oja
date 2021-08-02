@@ -1,54 +1,34 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React, { useContext, useEffect, useState } from 'react'
+import {Link, Redirect} from 'react-router-dom'
 import Banana from "../images/banana.jpg";
 import Strawberry from "../images/strawberry.jpg";
 import Broccoli from "../images/broccoli.jpg";
 import Spinach from "../images/spinach.jpg";
 import Component from './extras';
-
+import  config from '../../config'
+import axios from 'axios';
+import { Products } from './extras/userContext';
 
 function Cards() {
-    const cards  = [
-        {
-            id : 1,
-            unit:'unit',
-            imgUrl : <img style={{width:'100%'}} src={Banana} alt=''></img>,
-            quantity:'' ,
-            name : "Banana",
-            Price : "101",
-          
-        },
-        {
-          id : 2,
-          unit: 'unit',
-          imgUrl : <img style={{width:'100%'}} src={Strawberry} alt=''></img>,
-          quantity: '',
-          name : "Strawberry",
-          Price : "100",
-        
-      },
-      {
-          id : 3,
-          unit: 'unit',
-          imgUrl : <img style={{width:'100%'}} src={Broccoli}alt=''></img>,
-          quantity: '',
-          name : "Broccoli",
-          Price : "100",
-        
-      },
-      {
-          id : 4,
-          unit: 'unit',
-          imgUrl : <img style={{width:'100%'}} src={Spinach} alt=''></img>,
-          name : "Spinach",
-          quantity: '',
-          Price : "100",
-        
-      },
-      
-      
-      ]
-      
+    
+    const {url}=config
+    const [array, setArray] = useState([])
+    const {cat,setCat}=useContext(Products)
+
+    useEffect(()=>{axios.get(`${url}products/`).then(response=>{
+        console.log(response.data.product);
+        setArray(response.data.product)
+    })},[url])
+    console.log(array);
+    console.log(cat);
+    const cards= array.filter(product=>{
+        return product.category===cat
+    })
+    
+    console.log(cards); 
+    if(!cat){
+        return <Redirect to='/market'/>
+    } 
      
     return(
         <div>

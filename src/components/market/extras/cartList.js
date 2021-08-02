@@ -26,7 +26,7 @@ const CartList =({data})=>{
         }
         
     }
-    const cost = data.Price * number
+    const cost = data.price * number
 
     data.cost= cost
     
@@ -47,7 +47,7 @@ const CartList =({data})=>{
                             {`${data.name}/${data.unit}`}
                    </div>
                   <div className='cart-price'>
-                            {data.Price}
+                            {data.price}
                   </div>
                  <div style={{ fontWeight: 'bolder', display: 'flex', height: '50%', marginTop: '1%',width:'23%',alignContent:'center' }}>
                     <button onClick={minus} className='cart-button' >
