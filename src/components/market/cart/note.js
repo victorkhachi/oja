@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Redirect } from 'react-router-dom'
-import { Order } from './userContext'
+import { Order } from '../extras/userContext'
 
 export default function Note(){
     const [note, setNote]=useState('')

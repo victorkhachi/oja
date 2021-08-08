@@ -1,5 +1,8 @@
 import {Fragment,useState,useContext} from 'react'
-import { Total, UserContext } from './userContext'
+import Basket from '../../images/svg/Basket'
+import Increase from '../../images/svg/Increase'
+import Reduce from '../../images/svg/Reduce'
+import { Total, UserContext } from '../extras/userContext'
 
 const CartList =({data})=>{
     const {value ,setValue}=useContext(UserContext)
@@ -47,23 +50,23 @@ const CartList =({data})=>{
                             {`${data.name}/${data.unit}`}
                    </div>
                   <div className='cart-price'>
-                            {data.price}
+                            N{data.price}
                   </div>
                  <div style={{ fontWeight: 'bolder', display: 'flex', height: '50%', marginTop: '1%',width:'23%',alignContent:'center' }}>
-                    <button onClick={minus} className='cart-button' >
-                            -
-                    </button>
+                    <div onClick={minus} className='cart-button' >
+                        <Reduce />
+                    </div>
                     <input type='number' value={number} className='quant-input' />
-                    <button className='cart-button' onClick={plus}>
-                        +
-                    </button>
+                    <div className='cart-button' onClick={plus}>
+                        <Increase />
+                    </div>
 
                   </div>
                   <div style={{width:'15%'}}>
                      N{cost}
                   </div>
                   <div style={{ marginRight: '4%' }}onClick={remove}>
-                         <i class=" fas fa-trash" ></i>
+                         <Basket />
                   </div>
         
             </div>

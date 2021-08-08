@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { Order, Total, UserContext } from './userContext'
+import { Order, Total, UserContext } from '../../extras/userContext'
 
 export default function Bill(props) {
     const {total, setTotal}= useContext(Total)
@@ -15,7 +15,7 @@ export default function Bill(props) {
     const done=()=>{
         setOrder({...order,list:items,amount:total})
     }
-    console.log(order);
+    
     
     return (
         <div className='bill'>

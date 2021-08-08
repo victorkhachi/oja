@@ -1,26 +1,25 @@
 import React from 'react'
+import About from '../../images/svg/About'
+import Contact from '../../images/svg/Contact'
+import Support from '../../images/svg/Support'
 
 export default function SandwichCon() {
     const menuBar = [
         {
-            icon: <i class="far fa-address-book"></i>,
+            icon: <About />,
             name: 'about-us'
         },
         {
-            icon: <i class="fas fa-phone"></i>,
+            icon: <Contact />,
             name: 'contact-us'
         },
         {
-            icon: <i class="fas fa-comments"></i>,
+            icon: <Support />,
             name: 'feedbacks'
         }
     ]
     const content = menuBar.map((item => (
-        <div style={{
-            display: 'flex', background: '#D5EDBB',
-            width: '100%', height: '50px', justifyContent: 'space-between', alignItems: 'center',
-            marginBottom: '10%', boxShadow: '0px 2px gray', textTransform: 'capitalize'
-        }}>
+        <div className='sandwich'>
             <div style={{ marginLeft: '20%' }}>{item.icon}</div><div style={{ marginRight: '20%' }}>{item.name}</div>
         </div>
     )))

@@ -3,7 +3,7 @@ import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
 import config from './config'
 import Prod from './extras/hooks/product'
-import { Products } from './extras/contexts'
+import {Products} from './extras/contexts'
 
 
 
@@ -34,7 +34,7 @@ export default function Product() {
             <Prod data={product} />
     ))}
        </div>
-       <Link to ='/addProducts' style={{boxShadow:'0px 0px 2px 2px black', padding:'2%'}}>Add products</Link>
+       <Link to ='/addProducts' style={{position:'absolute',boxShadow:'0px 0px 2px 2px black', padding:'2%',top:'50%'}}>Add products</Link>
 
         </div>
     )

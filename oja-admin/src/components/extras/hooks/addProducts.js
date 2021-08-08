@@ -1,5 +1,6 @@
 import config from "../../config";
 import axios from 'axios'
+import { Redirect } from "react-router-dom";
 
 
 export default function AddProd() {
@@ -22,6 +23,9 @@ try {
     })
     console.log(body);
     console.log(status, data);
+    if(status===200){
+        <Redirect to='/products' />
+    }
 }
  catch (error) {
    console.log(error.response)

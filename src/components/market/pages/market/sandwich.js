@@ -1,5 +1,6 @@
 import React from 'react'
-import SandwichCon from './extras/sandwich'
+import Close from '../../../images/svg/Close';
+import SandwichCon from '../../extras/sandwich'
 
 export default function Sandwich(prop) {
     const { content} = SandwichCon()
@@ -13,19 +14,10 @@ export default function Sandwich(prop) {
             <div style={{ width: '70%', height: '100%', background:' #EDF5E4',position:'relative'}}>
                 <div style={{
                     width: '80%', margin: 'auto', background: '#EDF5E4',paddingTop:'5%'}}>
-                    <div style={{display:'flex',justifyContent:'space-between',margin:''}}><i class="far fa-window-close" onClick={prop.close}></i> <i class="far fa-sun"></i>
+                    <div style={{display:'flex',justifyContent:'space-between',margin:''}} onClick={prop.close}>
+                        <Close /> 
                     </div>
-                    <p style={{ fontFamily:'Rosarivo',
-                    fontStyle:'normal',
-                    fontWeight: 'normal',
-                    fontSize: '30px',
-                    lineHeight: '100px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    textAlign: 'center',
-                    marginLeft:'25%',
-                    color: '#000000',
-                    textShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'}}>ọjà.com</p>
+                    <p className='sandwich-name'>ọjà.com</p>
               </div>
                 <div style={{textAlign:'center'}}>
                     {content}

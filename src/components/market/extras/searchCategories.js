@@ -4,10 +4,9 @@ import Search from './search'
 import { Searcher } from './userContext'
 
 export default function SearchCategories() {
-    const {search } = Search()
+    const {search} = Search()
     const {searcher,setSearcher}=useContext(Searcher)
     const newArray = search(searcher)
-    console.log(newArray);
     const content = newArray.map((category => (
 
         <Link to='/items' key={category.id} className='categories'>

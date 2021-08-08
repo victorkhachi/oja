@@ -4,28 +4,33 @@ import AddProd from './components/extras/hooks/addProducts'
 
 export default function AddProduct() {
     const {addProd}=AddProd()
-    
+    const formData = new FormData()
+    const [product,setProduct]=useState({name:'',price:'',unit:''})
     const {cat,setCat}=useContext(Products)
-   const formData = new FormData()
    console.log(cat);
    useEffect(()=>formData.append('category',cat))
    const enterProduct=(e)=>{
-       formData.append(e.target.name,e.target.value)
+        setProduct({...product,[e.target.name]:e.target.value})
    }
-   for(var key of formData.keys()){
-   console.log(key)
-}
-   const enterImg= async(e)=>{
-       console.log(e.target.files[0].name);
+    
+        
+        
+
+    
+   const enterImg=  (e)=>{
        
-       formData.append('image', e.target.files[0])
+       return formData.append('image', e.target.files[0])
 
    }
    
    
+   
    const add= async (e)=>{
        e.preventDefault()
-       for (var key of formData.keys()) {
+       formData.append('name', product.name)
+       formData.append('price', product.price)
+       formData.append('unit', product.unit)
+       for (var key of formData.values()) {
            console.log(key)}
        addProd(formData)
    }

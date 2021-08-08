@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import {Link, Redirect} from 'react-router-dom'
-import { Order } from './extras/userContext'
+import { Order } from '../extras/userContext'
 
 export default function Location() {
     const {order,setOrder}=useContext(Order)
@@ -37,7 +37,7 @@ export default function Location() {
             <div className='market-cover'></div>
             <div className='location-head' >
                 <Link to='/' className='back location-back'><i class=" fa-2x fas fa-arrow-left" ></i></Link>
-                <h1 className='name' style={{ width: '20%', fontSize: '50px',  marginBottom: '0px', marginLeft: '20%' }}>
+                <h1 className='name' style={{ marginTop:'10%' }}>
                     ọjà.com
                 </h1>
                 

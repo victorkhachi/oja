@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import Bill from '../../../market/extras/bill'
-import CartList from '../../../market/extras/cartList'
+import Bill from '../../../market/cart/payment/bill'
+import CartList from '../../../market/cart/cartList'
 import {  UserContext } from '../../../market/extras/userContext'
 
 export default function Cart2() {

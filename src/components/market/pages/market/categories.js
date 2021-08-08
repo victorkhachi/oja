@@ -1,8 +1,8 @@
-import React, { useContext } from 'react'
+import React  from 'react'
 import { Link } from 'react-router-dom'
-import Category from './extras/category'
-import Search from './extras/search'
-import { Products } from './extras/userContext'
+import Category from '../../extras/category'
+import Search from '../../extras/search'
+
 
 
 export default function Categories() {

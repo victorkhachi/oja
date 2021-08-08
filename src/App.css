@@ -68,7 +68,7 @@ height: fit-content;
   overflow-y: scroll;
 }
 .order-heading{
-  height:40%;
+  height: 69px;
   width:100%;
   color:white;
   background:#D4AF37;
@@ -80,24 +80,40 @@ height: fit-content;
   
 }
 .bill-row{
-  width:100%;
-  height:40%;
-  padding:2% 0; 
+  width:100%; 
   border-bottom:1px solid black;
-  margin:2%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   font-weight: bold;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-transform: capitalize;
+
   
 }
 .order-nav{
-  width:43%;
   height:100%;
   color:white;
-  font-weight:bold;
+  /* font-weight:bold; */
   display:flex;
   justify-content:center;
   align-items:center ;
-  font-size:10px;
-  padding:2%
+  box-shadow: 0px 4px 4px 0px #00000040;
+  font-family: Poppins;
+font-size: 15px;
+font-style: normal;
+font-weight: 500;
+line-height: 23px;
+letter-spacing: 0em;
+text-align: center;
+
+
+  
 
 }
 .height{
@@ -114,9 +130,11 @@ box-sizing: border-box;
 border-radius: 10px;
 }
 form{
-  /* display: flex; */
+  display: flex;
   flex-direction: column;
-  /* width: 85%; */
+  width: 85%;
+  justify-content: center;
+  align-items: center;
   margin: auto;
 }
 .checkbox{
@@ -165,6 +183,17 @@ form{
   width:100%;
   margin-top:15%
 }
+.reg-button{
+  color:white;
+  font-weight:bold;
+  font-size:20px;
+  padding:10px;
+  background:#A5060A;
+  border-radius:10px;
+  width:100%;
+  margin-top:15%;
+}
+
 .option{
   background-color: #A5060A;
   font-weight: bold;
@@ -230,7 +259,7 @@ text-transform: capitalize;
 }
 .cards{
    width:25%;
-    height:200px;
+    height:220px;
     display:flex;
      flex-direction: column; 
      justify-content: space-between;
@@ -243,15 +272,57 @@ text-transform: capitalize;
    font-weight:bolder;
     margin:auto;
      width:60%;
-      height:40%;
-      margin-top:5% 
+      height:87px;
+      /* margin-top:5%  */
 }
 .card-input{
   font-weight:bolder;
    display:flex;
    width: 100%;
     height:8%;
-   margin-bottom:5% 
+   margin-bottom:3%;
+   justify-content: space-around;
+}
+.card-input input{
+    height: 20px;
+    width: 57px;
+    font-family: Poppins;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: center;
+    background: #D5EDBB;
+    border: none;
+
+
+border-radius: 0px;
+
+    margin:0px 3px;
+}
+.quant-changer{ 
+  display: flex;
+  justify-content: center;
+  background: #D5EDBB;
+  width: 15.1px;
+  border-radius: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.cart-head{color:white;
+   height:45px;
+    width:100%;
+     background:#55DB52;
+      z-index:50; 
+    font-family: Poppins;
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: 20px;
+letter-spacing: 0em;
+text-align: center;
 }
 .cart-list{
    width:100%;
@@ -262,7 +333,31 @@ text-transform: capitalize;
     text-transform:capitalize;
     font-weight:bolder;
     font-size: 10px;
+    font-family: Poppins;
+    font-size: 13px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: 20px;
+   letter-spacing: 0em;
+   text-align: center;
+
 }
+.sandwich{
+  
+            display: flex;
+            background: #FFFABA;
+            width: 100%;
+            height:30px;
+            justify-content:space-between;
+            align-items:center;
+            margin-bottom:10%;
+            box-shadow:0px 2px gray;
+             text-transform:capitalize;
+             border-radius: 5px;
+             align-items: center;
+        
+}
+
 .name-unit{
   display:flex;
    
@@ -284,7 +379,9 @@ text-transform: capitalize;
    border-radius:100%;
     text-align: center;
      height:70%; 
-     font-weight:bolder
+     font-weight:bolder;
+    background: #D5EDBB;
+
 }
 .quant-input{
    width:60%;
@@ -311,7 +408,7 @@ text-transform: capitalize;
 @media(max-width:700px){
   .cards{
    width:40%;
-    height:200px;
+    height: fit-content;
     display:flex;
      flex-direction: column; 
      justify-content: space-between;
@@ -326,7 +423,7 @@ text-transform: capitalize;
     display: none;
   }
   .height{
-    height:800px}
+    height:770px}
   .landing{
     display: none;
   }
@@ -337,14 +434,13 @@ text-transform: capitalize;
   font-family:Poppins;
   font-style:normal;
    font-weight:bold;
-  font-size:25px;
+  font-size:20px;
  line-height:30px;
  display:flex;
  align-items:center;
- text-transform: uppercase;
+ text-transform: capitalize;
  text-align:center;
- color:#000000;
-margin-right:5px; 
+ margin-right:5px; 
 width: 100%; 
                                                                  
 }
@@ -360,7 +456,7 @@ a{
 }
 .cards{
    width:47%;
-    height:250px;
+    
     display:flex;
      flex-direction: column; 
      justify-content: space-between;
@@ -371,14 +467,13 @@ a{
   font-weight:bolder;
    display:flex;
     height:8%;
-   margin:5% 
+   /* margin:5%  */
 }
 .card-img{
    font-weight:bolder;
     margin:auto;
      width:70%;
-      height:60%;
-      margin-top:10% 
+      /* margin-top:10%  */
 }
 .ad{
   position: absolute;
@@ -438,6 +533,7 @@ border-radius: 80px;
 }
 .padding{
   padding: 10px 2px 10px 2px;
+
   background: #EDF5E4;
 border: 2px solid #A5060A;
 box-sizing: border-box;
@@ -458,11 +554,12 @@ margin-bottom: 0px;
   height: 100%;
   width: 100%;
   overflow-y: scroll;
-  background-color: #E5E5E5
+  background-color: #E5E5E5;
+  position: relative;
 
 }
 .location-head{
-   width:43%;
+   width:100%;
    display:flex;
    justify-content:space-between;
 }
@@ -545,9 +642,10 @@ form{
   flex-direction: column;
   width: 85%;
   margin: auto;
+
 }
 input{
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
 
 ::placeholder{
@@ -572,12 +670,12 @@ header{
   
   margin-top: 50px;
   /* position: fixed; */
-  width: 95%;
+  width: 100%;
   height: 80px;
   z-index: 500;
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
 }.menu{
   display: flex;
     flex-direction: column;
@@ -621,39 +719,58 @@ header{
    height:50px;
    margin: 15% 0px 0px 5%
 }
-.reg-button{
-  color:white;
-  font-weight:bold;
-  font-size:20px;
-  padding:10px;
-  background:#A5060A;
-  border-radius:10px;
-  width:100%;
-  margin-top:15%;
-}
 .cat-img{
   width:120px;
   height:100px;
   margin-left: 20px;
 }
+.sandwich{
+  
+            display: flex;
+            background: #FFFABA;
+
+            width: 100%;
+            height:50px;
+            justify-content:space-between;
+            align-items:center;
+            margin-bottom:10%;
+            box-shadow:0px 2px gray;
+             text-transform:capitalize
+        
+}
+.sandwich-name{
+           font-family:Rosarivo;
+           font-style:normal;
+           font-weight:normal;
+           font-size:30px;
+           line-height:100px;
+           display: flex;
+           align-items:center;
+           text-align:center;
+           margin-left:25%;
+           color:#000000;
+           text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+}
+
 .categories{
-  box-shadow:2px 2px  gray;
+  box-shadow:0 0 2px  gray;
   text-decoration:none;
   width:80%;
   flex-direction: row;
-
+  color:#A5060A;
   margin:auto;
   height:fit-content;
   margin-top:10%;
   justify-content:space-between;
   padding: 2%;
+  border-radius: 5px;
 }
 .name{
-  width:20%;
+  width:fit-content;
   font-size:50px;
   text-align:center;
   margin-bottom:0px;
-  margin-left:20%;
+  margin:auto;
 }
 /* bills */
 .bill{
@@ -663,17 +780,13 @@ header{
   flex-direction:column;
 }
 .noteLink{
-  width: 15%;
+  
    height:fit-content; text-align:center; 
    font-weight:bold; 
-   position:absolute; right:3%;
-   top:55%;
-   background:#D5EDBB;
-    color:black;
+   position:absolute;
+    right:3%;
+   top:47%;
     z-index:500;
-    border:2px solid black;
-    border-radius:100%;
-    padding:2%
 }
 .order{
   height:60%;
@@ -681,7 +794,7 @@ header{
   margin-top:4%;
 }
 .order-heading{
-  height:40%;
+  height:50px;
   width:100%;
   color:white;
   background:#D4AF37;
@@ -697,10 +810,10 @@ header{
   border-bottom:1px solid black;
 }
 .order-nav{
-  width:43%;
-  height:100%;
+  height: 35px;
+width: 166px;
   color:white;
-  font-weight:bold;
+  /* font-weight:bold; */
   display:flex;
   justify-content:center;
   align-items:center 
@@ -728,7 +841,7 @@ padding:4% 0 4% 0;
     display:flex;
     justify-content:space-between;
     align-items:center;
-     background: #EDF5E4;
+     background: #FFFEF2;
     border:1px solid #55DB52;
     text-transform:capitalize;
     font-weight:bolder 

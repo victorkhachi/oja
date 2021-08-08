@@ -6,7 +6,7 @@ const Category =({data})=>{
     const { cat, setCat } = useContext(Products)
     const set=()=>{
         setCat(data.category)
-        console.log(cat);
+        
     }
     return(
         <Fragment>

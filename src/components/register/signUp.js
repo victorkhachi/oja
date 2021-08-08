@@ -15,7 +15,7 @@ export default function SignUp() {
                <Link to='/signIn' className='back reg-link'><i class=" fa-2x fas fa-arrow-left" style={{width:'50px'}}></i></Link>
 
                <div className='intro' style={{ width: '80%', textAlign: 'center'}}>
-                  <h1 className='name' style={{ width: '20%', fontSize: '50px', textAlign: 'center', marginBottom: '0px',marginLeft:'20%' }}>
+                  <h1 className='name' >
                     ọjà.com
                   </h1>
                   <p className='instruction'>
