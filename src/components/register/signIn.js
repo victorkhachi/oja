@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import Back from '../images/svg/Back'
 import SignInform from './extra/signInform'
 
 export default function SignIn() {
@@ -13,7 +14,7 @@ export default function SignIn() {
            
             <div className='reg-body'>
 
-                <Link to='/' className='back reg-link'><i class=" fa-2x fas fa-arrow-left" style={{ width: '50px' }}></i></Link>
+                <Link to='/' className='back reg-link'><Back /></Link>
                 <div className='intro'>
                       <h1 className='name'>
                           ọjà.com

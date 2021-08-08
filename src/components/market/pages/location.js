@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import {Link, Redirect} from 'react-router-dom'
+import Back from '../../images/svg/Back';
 import { Order } from '../extras/userContext'
 
 export default function Location() {
@@ -36,7 +37,7 @@ export default function Location() {
         <div className="page">
             <div className='market-cover'></div>
             <div className='location-head' >
-                <Link to='/' className='back location-back'><i class=" fa-2x fas fa-arrow-left" ></i></Link>
+                <Link to='/' className='back location-back'><Back /></Link>
                 <h1 className='name' style={{ marginTop:'10%' }}>
                     ọjà.com
                 </h1>

@@ -68,7 +68,7 @@ height: fit-content;
   overflow-y: scroll;
 }
 .order-heading{
-  height: 69px;
+  height: 45px;
   width:100%;
   color:white;
   background:#D4AF37;
@@ -76,10 +76,13 @@ height: fit-content;
   justify-content: space-between;
   align-items: center;
   font-weight: bolder;
-  padding: 2% 0;
+  /* padding: 2% 0; */
   
 }
 .bill-row{
+  
+  height:30%; 
+  padding: 3% 0;
   width:100%; 
   border-bottom:1px solid black;
   display: flex;
@@ -97,7 +100,8 @@ height: fit-content;
   
 }
 .order-nav{
-  height:100%;
+  height: 35px;
+width: 166px;
   color:white;
   /* font-weight:bold; */
   display:flex;
@@ -808,6 +812,7 @@ header{
   width:100%;
   height:30%; 
   border-bottom:1px solid black;
+  padding: 0;
 }
 .order-nav{
   height: 35px;

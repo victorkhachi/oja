@@ -1,16 +1,17 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import Step1 from './step1';
-import { UserContext } from '../extras/userContext'
+
 import {Link} from 'react-router-dom'
+import Back from '../../images/svg/Back';
 
 //get to this page on ur app
 export default function Cart(props) {
-    const {value, setValue} = useContext(UserContext);
+    
     return (
         <div className='cart' >
-            <div style={{ width: '100%', height: '5%', position: 'fixed', background: 'white', zIndex: '60' }}>
-                <Link to='/market' >
-                    <i class=" fa-2x fas fa-arrow-left" style={{marginLeft:'5%',marginTop:'10px' }} onClick={props.closeCart}></i>
+            <div style={{ padding:'2%',width:'100%', height: '5%', position: 'fixed', background: 'white', zIndex: '60', }}>
+                <Link  to='/market' >
+                    <Back />
                 </Link>
             </div>
            

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Back from '../images/svg/Back'
 import SignUpForm from './extra/signUpform'
 
 
@@ -12,7 +13,7 @@ export default function SignUp() {
             <div className='reg-body' >
 
             
-               <Link to='/signIn' className='back reg-link'><i class=" fa-2x fas fa-arrow-left" style={{width:'50px'}}></i></Link>
+               <Link to='/signIn' className='back reg-link'><Back /></Link>
 
                <div className='intro' style={{ width: '80%', textAlign: 'center'}}>
                   <h1 className='name' >

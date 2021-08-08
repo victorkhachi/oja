@@ -4,6 +4,7 @@ import Component from '../../extras';
 import  config from '../../../../config'
 import axios from 'axios';
 import { Products } from '../../extras/userContext';
+import Back from '../../../images/svg/Back';
 
 function Cards() {
     
@@ -31,7 +32,8 @@ function Cards() {
            <div style={{ display: 'flex', width: '50%', justifyContent: 'space-between', alignItems: 'baseline' }}>
 
               <Link to='/market' style={{
-                    width: '15%', height: '50px', margin: '15 % 0px 0px 5%' }} className='back'><i class="fa-2x fas fa-arrow-left" style={{ width: '50px',marginLeft:'15px'}}></i>
+                    width: '15%', height: '50px', margin: '15 % 0px 0px 5%' }} className='back'>
+                        <Back />
              </Link>
                 <p style={{fontSize:'1.5em',fontWeight:'bold',marginLeft:'5px'}}>{cat}</p>
             </div>
