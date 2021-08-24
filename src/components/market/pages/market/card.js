@@ -11,11 +11,39 @@ function Cards() {
     const {url}=config
     const [array, setArray] = useState([])
     const {cat,setCat}=useContext(Products)
+    
+    const token= localStorage.getItem('token')
+    console.log(token);
+    const items = async () => {
+        try {
+            const { status, data } = await axios({
+                method: 'get',
+                url: `${url}products/`,
+                headers: {
+                    "Authorization": `Bearer ${token}`,
+                    "content-type": "application/json"
+                },
+                data: cat
 
-    useEffect(()=>{axios.get(`${url}products/`).then(response=>{
-        
-        setArray(response.data.product)
-    })},[url])
+            })
+            console.log(status, data);
+            setArray(data.product)
+
+
+        }
+        catch (error) {
+            console.log(token)
+
+            console.log(error.response)
+
+        }
+        console.log(cat);
+    }
+    // {
+    //     axios.get(`${url}products/`).then(response => {
+
+    //         setArray(response.data.product)
+    useEffect(()=>items(),[url])
     
     
     const cards= array.filter(product=>{

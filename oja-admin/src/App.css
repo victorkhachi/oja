@@ -56,10 +56,13 @@ margin-left: 3%;
 
 }
 .orderd-items{
-  width:100;
+  width:100%;
   height:40%;
   box-shadow: 0px 0px 2px black;
   overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .order-note{
  height: 24%;
@@ -69,13 +72,14 @@ margin-left: 3%;
 }
 
 .orders{
-  width: 80%;
+  width: 90%;
   height: 40px;
-  padding: 2%;
+  padding: 1%;
   font-weight: bold;
   display: flex;
   align-items: center;
   box-shadow:0px  2px black;
+  justify-content: space-between;
 }
 .cat-head{
   display: flex;
@@ -103,6 +107,7 @@ a{
   width: 80%;
   height:100%;
   box-shadow: 0px 0px 5px black;
+  padding:16px;
 }
 .input{
   display:flex;
@@ -129,4 +134,41 @@ a{
    flex-direction:column;
    justify-content:space-between;
     height:100%;
+}
+.items{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+ background: #FFFABA;
+
+
+}
+.total{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+  font-weight: bold;
+
+}
+button{
+  color: #E5E5E5;
+  background-color: #A5060A;
+  font-weight: 400;
+}
+.invoice-head{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.status{
+  display: flex;
+  width: 40%;
+  justify-content: space-between;
+}
+.color{
+  color: #A5060A;
 }

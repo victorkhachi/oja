@@ -15,7 +15,7 @@ import Mailer from './components/mailer';
 
 
 function App() {
-  const [value,setValue]=useState({name:'',address:'',tel:'',items:[],notes:''})
+  const [value,setValue]=useState({name:'',address:'',tel:'',list:[],note:''})
   const [cat, setCat]=useState()
   const [key,setKey]=useState()
   

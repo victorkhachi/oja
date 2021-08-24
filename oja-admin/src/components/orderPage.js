@@ -15,11 +15,22 @@ export default function OrderPage() {
                 <div className='person-detail'>Tel:<span style={{ marginLeft: '5%', textTransform: 'uppercase' }}>{value.tel}</span></div>
                 <div className='orderd-items'>
                    <ul style={{fontWeight:'bold'}}>
-                       Items
+                       <span>Items</span>
+                        <li className='items'><span>Name</span> <span>Quantity</span> <span>Cost</span></li>
+
+                       <div>{value.list.map(item=>(
+
+                          <li className='items'><span>{item.name}</span> <span>{item.quantity}</span> <span>{item.cost}</span></li>
+                       ))}
+                       </div>
+                       
                    </ul>
+
+                   <div className='total'>Total : {value.total_price}</div>
                 </div>
                 <div className='order-note'>
                   <div style={{margin:'3px',fontWeight:'bold' }}>Notes</div>
+                  {value.note}
                 </div>
             </div>
         </div>

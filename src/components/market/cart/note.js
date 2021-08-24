@@ -11,7 +11,7 @@ export default function Note(){
          setNote(e.target.value)
          
     }  
-    React.useEffect(()=>setOrder({...order,note:note}),[note])
+    React.useEffect(()=>setOrder({...order,notes:note}),[note])
     const save=()=>{
         setOrder({...order,note:note})
         console.log(order);

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import Search from './search'
-import { Searcher } from './userContext'
+import Search from '../../extras/search'
+import { Searcher } from '../../extras/userContext'
 
 export default function SearchCategories() {
     const {search} = Search()

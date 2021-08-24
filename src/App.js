@@ -18,7 +18,7 @@ import Otp from './components/register/extra/otp';
 import Note from './components/market/cart/note'
 import NewPassword from './components/register/newPassword';
 import DesktopNote from './components/desktop/Market/sub/desktopNote';
-import SearchCategories from './components/market/extras/searchCategories';
+import SearchCategories from './components/market/pages/market/searchCategories';
 
 function App() {
 
@@ -31,7 +31,7 @@ function App() {
   const [searcher, setSearcher] = useState()
   const [total,setTotal]=useState(Number('0'))
   const [order , setOrder]=useState({
-    name:'',number:'',zone:'',address:'',list:[],notes:'',amount:'',time:''})
+    name:'',tel:'',zone:'',address:'',list:'',notes:'',total_price:''})
   
    const[cat,setCat]=useState()
   
