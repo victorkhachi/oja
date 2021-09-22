@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Order } from './extras/contexts'
+import { Order } from '../extras/contexts'
 
 export default function OrderPage() {
      const {value,setValue}=useContext(Order)

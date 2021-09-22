@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Products } from './components/extras/contexts'
-import AddProd from './components/extras/hooks/addProducts'
+import { Products } from '../extras/contexts'
+import AddProd from '../extras/hooks/addProducts'
 
 export default function AddProduct() {
     const {addProd}=AddProd()

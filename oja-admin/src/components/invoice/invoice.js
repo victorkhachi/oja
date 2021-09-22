@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import Orders from './extras/orders'
-import config from './config'
+import Orders from '../extras/orders'
+import config from '../config'
 import axios from 'axios'
 
 

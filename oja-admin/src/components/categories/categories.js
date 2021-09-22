@@ -1,7 +1,7 @@
-import React, { useContext, useEffect } from 'react'
-import SelectCat from './extras/category'
+import React, { useContext } from 'react'
+import SelectCat from '../extras/category'
 import {Link} from 'react-router-dom';
-import { Key } from './extras/contexts';
+import { Key } from '../extras/contexts';
 
 export default function Categories() {
     const {key,setKey}=useContext(Key)

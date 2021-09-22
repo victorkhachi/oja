@@ -21,7 +21,7 @@ export default function Login(){
                     "content-type": "application/json"
                 }
             });
-                console.log(data.token)
+                console.log(data.token,data)
                 localStorage.setItem('token',data.token)
                 setOrder({...order, name: `${data.first_name} ${data.last_name}`, tel: data.tel, status: status })
                 setRedirect(true)

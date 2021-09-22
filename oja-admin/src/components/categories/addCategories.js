@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import useCategory from './extras/hooks/createCategory'
+import useCategory from '../extras/hooks/createCategory'
 import {Link} from 'react-router-dom'
 export default function AddCategories() {
     const [cat , setCat]=React.useState({name:''})

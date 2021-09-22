@@ -3,15 +3,15 @@ import './App.css';
 import Body from './components/body'
 import {BrowserRouter as Router,
  Switch, Route} from 'react-router-dom'
- import Categories from './components/categories'
-import AddCategories from './components/addCategories';
-import SignIn from './components/signIn';
-import Invoice from './components/invoice';
-import OrderPage from './components/orderPage';
+ import Categories from './components/categories/categories'
+import AddCategories from './components/categories/addCategories';
+import SignIn from './components/auth/signIn';
+import Invoice from './components/invoice/invoice';
+import OrderPage from './components/orders/orderPage';
 import { Key, Order, Products } from './components/extras/contexts';
 import Product from './components/product';
-import AddProduct from './addProduct';
-import Mailer from './components/mailer';
+import AddProduct from './components/createItem/addProduct';
+
 
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
   const [cat, setCat]=useState()
   const [key,setKey]=useState()
   
-  // formData.append('category','cow')
+  
   return (
     <Key.Provider value={{key,setKey}}>
     <Products.Provider value={{cat, setCat}}>
@@ -27,10 +27,8 @@ function App() {
     <Router>
     <Switch>
          <div className="App">
-           <Route exact path='/'>
-             <Mailer />
-            </Route>
-            <Route exact path='/signIn'>
+           
+            <Route exact path='/'>
               <SignIn />
             </Route>
           <Route exact path='/dashboard'>
