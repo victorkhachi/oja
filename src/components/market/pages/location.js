@@ -47,7 +47,13 @@ export default function Location() {
                 <h2 >
                    Select Location
                </h2>
-               <input name='region' type='text' placeholder='pick region' onChange={location}  />
+               <select className='selection' name='region' type='text'  onChange={location}>
+                   <option value='lekki phase 2'>Island(lekki phase 1)</option>
+                    <option value='ikeja/magodo'>Ikeja/Magodo</option>
+                    <option value='Unilag'>Unilag</option>
+                    <option value='lekki phase 2'>Island (lekki phase 2)</option>
+
+               </select>
                 <p style={{ width: '100%', textAlign: 'center', color: '#A5060A'}}>{message}</p>
                
                 <input name='address' type='text' placeholder='Enter address' onChange={location}/>

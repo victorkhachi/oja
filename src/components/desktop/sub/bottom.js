@@ -1,7 +1,10 @@
 import React from 'react';
-import Location from '../../images/setLocation.png'
-import Shop from '../../images/addTocart.png'
+// import Location from '../../images/setLocation.png'
+// import Shop from '../../images/addTocart.png'
 import Delivery from '../../images/SpeedDelivery.jpg'
+import AddToCart from '../../images/svg/AddToCart';
+import Rider from '../../images/svg/Rider';
+import SetLocation from '../../images/svg/SetLocation';
 
 const Bottom = () => {
     return (
@@ -9,15 +12,15 @@ const Bottom = () => {
            <div style={{width:'100%',display:'flex',height:'10%',justifyContent:'center',alignContent:'center',padding:'2% 0',fontWeight:'bolder'}}>How it works</div> 
            <div className='direction-cont'>
                 <div className='direction'>
-                   <img src={Location} />
+                   <SetLocation />
                    <div>Set Location</div>
                </div>
                 <div className='direction'>
-                    <img src={Shop} />
+                    <AddToCart />
                     <div>Add Items to Cart</div>
                </div>
                 <div className='direction'>
-                    <img src={Delivery} />
+                    <Rider />
                     <div>Speed delivery</div>
                 </div>
 

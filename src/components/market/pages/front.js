@@ -1,29 +1,29 @@
 import React from 'react'
-import{
-Link,
- } from 'react-router-dom'
+import{Link } from 'react-router-dom'
+import Logo from './logo'
 
 
 
 
 export default function Front(props) {
     
-    
-   
-  
-  
+     
     return (
         
         
         <div className='front'>
             
               <div className='gradient'>
+                  <div className="sign-in-container">
                   <Link  to='/signIn' className='sign-in'  onClick={props.page}>
-                    <p style={{marginTop:'10px'}}>sign-in</p>
-                  </Link>
+                      sign in
+                    </Link>
+
+                </div>
+                
 
                  <div className='ad'>
-                    <h1>ọjà.com</h1>
+                    <Logo />
                     <p>shop now and get a speedy delivery at your doorstep</p> 
                     <Link to='/location' className='button'>send me!</Link>
 

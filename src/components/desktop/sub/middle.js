@@ -37,7 +37,15 @@ export default function Middle() {
               </div>
                 
                  <form onSubmit={enterMarket} style={{width:'100%',marginTop:'0',display:'flex',flexDirection:'column'}}>
-                    <input type='text' name='region' onChange={location} placeholder='Pick region' />
+                    <select className='selected' name='region' type='text' onChange={location}>
+                        <option disabled selected hidden>pick region</option>
+                        <option value='lekki phase 2'>Island(lekki phase 1)</option>
+                        <option value='ikeja/magodo'>Ikeja/Magodo</option>
+                        <option value='Unilag'>Unilag</option>
+                        <option value='lekki phase 2'>Island (lekki phase 2)</option>
+
+                    </select>
+
                     <input type='text' name='address' onChange={location}  placeholder='Enter delivery address'/>
                     <button  className='reset' style={{marginTop:'3%',width:'20%', marginLeft:'5%',padding:'1%'}}>
                           Send me!
