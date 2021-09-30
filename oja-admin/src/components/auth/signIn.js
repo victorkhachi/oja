@@ -30,7 +30,7 @@ export default function SignIn() {
   
     return (
         <div className='sign-in'>
-        <Link to='/dashboard' ref={refLink}></Link>
+        <div className='a'><Link to='/dashboard' ref={refLink}></Link></div>
 
             <img src={back} alt=''  />
             <div className='sign-in-container'>
