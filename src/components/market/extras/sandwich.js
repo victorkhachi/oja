@@ -17,7 +17,7 @@ export default function SandwichCon() {
         },
         {
             icon: <Support />,
-            link: 'mailto:victorKhachi@gmail.com',
+            link: 'mailto:info@horjah.com',
             name: 'feedbacks'
         }
     ]

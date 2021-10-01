@@ -1,6 +1,8 @@
 import React, { useContext } from 'react'
 import {Link} from 'react-router-dom'
+import RedLogo from '../../../images/svg/RedLogo'
 import { Searcher } from '../../../market/extras/userContext'
+
 
 
 
@@ -16,7 +18,7 @@ export default function Top(props) {
     return (
         <div style={{width:'100%',height:'10%', display:'flex',alignItems:'center', justifyContent:'space-between'}}>
             <h1 className='desktop-name'>
-                ọjà.com
+                <RedLogo />
             </h1>
             <div style={{width:'fit-content',display:'flex'}}>
                <input type='text' placeholder='search items' style={{padding:'10px',borderRadius:'1em 0 0 1em'}} onChange={searching} />
