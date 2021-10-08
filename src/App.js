@@ -18,7 +18,6 @@ import Otp from './components/register/extra/otp';
 import Note from './components/market/cart/note'
 import NewPassword from './components/register/newPassword';
 import DesktopNote from './components/desktop/Market/sub/desktopNote';
-import SearchCategories from './components/market/pages/market/searchCategories';
 
 function App() {
 
@@ -28,7 +27,7 @@ function App() {
   const cards=<Cards />
   const [otp,setOtp]=useState()
   const [value,setValue]=useState([])
-  const [searcher, setSearcher] = useState()
+  const [key, setKey] = useState()
   const [total,setTotal]=useState(Number('0'))
   const [order , setOrder]=useState({
     name:'',tel:'',zone:'',address:'',list:'',notes:'',total_price:''})
@@ -39,7 +38,7 @@ function App() {
   return(
     <Products.Provider value={{cat,setCat}}>
     <Total.Provider value={{ total, setTotal }}>
-    <Searcher.Provider value={{searcher,setSearcher}}>
+    <Searcher.Provider value={{key,setKey}}>
     <StoreOtp.Provider value={{otp,setOtp}}>
     <UserContext.Provider value ={{value , setValue}}>
     <Order.Provider value={{order,setOrder}}>
@@ -67,13 +66,9 @@ function App() {
               <Market content={categories} />
               <DesktopMarket content={categories} content2={<Cart2 />} />
             </Route>
-            <Route path='/searchCategory'>
-              <Market content={<SearchCategories />} />
-              <DesktopMarket content={<SearchCategories />} content2={<Cart2 />} />
-            </Route>
             <Route path='/location'>
               <Location />
-              <Landing show='none'/>
+              <Landing display='1' show='none'/>
             </Route>
              <Route path='/items'>
                <Market content={cards} />

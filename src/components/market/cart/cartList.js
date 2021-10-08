@@ -1,4 +1,4 @@
-import {Fragment,useState,useContext} from 'react'
+import {Fragment,useState,useContext, useEffect} from 'react'
 import Basket from '../../images/svg/Basket'
 import Increase from '../../images/svg/Increase'
 import Reduce from '../../images/svg/Reduce'
@@ -8,14 +8,16 @@ const CartList =({data})=>{
     const {value ,setValue}=useContext(UserContext)
     const [number,setNumber]=useState(data.quantity)
     const {total, setTotal}=useContext(Total)
+    
     const plus = () => {
          
             setNumber(number+1)
-        
+            
+            
     }
+    
+
     const remove =()=>{
-
-
     const newCart = value.map(item => item.id !== data.id && item ).filter(item => item && item);
     setValue(newCart);
         if (value.length === 0) {
@@ -25,12 +27,14 @@ const CartList =({data})=>{
     }
     const minus =()=>{
         if(number>0){
+            
             setNumber(number-1)
         }
         
     }
     const cost = data.price * number
-
+    
+    
     data.cost= cost
     
     
@@ -41,7 +45,7 @@ const CartList =({data})=>{
         sum+=costs[index]
     }
     
-    setTotal(sum)
+    useEffect(()=>setTotal(sum),[sum])
     
     return(
         <Fragment>

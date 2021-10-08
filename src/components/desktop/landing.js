@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useEffect } from 'react'
 import Top from './sub/top'
 import Middle from './sub/middle' 
 import Login from './sub/login'
@@ -24,6 +24,10 @@ export default function Landing(props) {
       setBlurDisplay('inline-block')}
     }
   }
+  useEffect(()=>{if (props.display==='1'){
+    setBlurDisplay('none')
+    setDisplay('none')
+  }},[props.display])
   const click =()=>{
     setHelp('inline-block')
     setBlurDisplay('inline-block')

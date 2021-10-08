@@ -37,12 +37,7 @@ export default function SignInForm() {
                 <div style={{ fontSize: '0.8rem', textAlign: 'center', color:'#A5060A'}}>{error}</div>
 
                <input type='password' name='password' placeholder='password' className='padding' onChange={handleFormChange} />
-               <div>
-                  <input id='checkbox' type='checkbox' name='checkbox' className='checkbox' />
-                  <label for='checkbox' style={{ marginLeft: '10px', fontWeight: 'bold' }}>Remember me</label>
-
-            </div>
-            {/* <input type='submit' name='submit' onClick={nav} className='reset' /> */}
+                
 
             <button className='reset'>
                 Sign in

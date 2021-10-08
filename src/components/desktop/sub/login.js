@@ -36,7 +36,7 @@ export default function Login(props) {
 
             </div>
             <div>
-                <div style={{display:`${inDisplay}`}}><SignInForm /></div>
+                <div style={{display:`${inDisplay}`,width:'100%'}}><SignInForm /></div>
                 
                 <div style={{display:`${upDisplay}`}}> <SignUpForm /></div>
             </div>

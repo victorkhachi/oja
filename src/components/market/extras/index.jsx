@@ -41,8 +41,8 @@ const Component = ({data})=> {
     return(
         <Fragment>
             <div className='cards'>
-                <div  className='card-img' style={{background:`url(${data.image})`, color:'black'}}>
-                   <img style={{width:'100%'}} src={image} alt='' ></img>
+                <div  className='card-img' style={{ color:'black',padding:'4px'}}>
+                   <img style={{width:'100%',height:'100%'}} src={image} alt='' ></img>
                 </div>
                 <div style={{ fontWeight: 'bolder', height: '8%', marginTop: '10px', textAlign: 'center' }}>
                 {data.name}

@@ -12,7 +12,7 @@ export default function Cart2() {
     return (
         <div style={{  height: '700px',boxshadow:'0px 4px 4px 0px #00000040',padding:'2%',background:'white'}}>
             <div style={{fontSize: '15px', textTransform: 'uppercase', color:' #A5060A',fontWeight:'bold',marginLeft:'2%',display:'flex', alignItems:'center'}}>my cart</div>
-            <div style={{ display: 'flex', width: '99%',height:'60%',overflow:'scroll', justifyContent: 'space-between', flexBasis: '45%', flexWrap: 'wrap', margin: 'auto', position: 'relative', marginTop: '2%' }}>
+            <div style={{ width: '99%',height:'60%',overflow:'scroll',margin: 'auto', position: 'relative', marginTop: '2%' }}>
                 {
                     value.map((pickedItems, idx) => (
                         <CartList key={idx} data={pickedItems} />

@@ -11,6 +11,8 @@ height: fit-content;
 .top{
   display: flex;
   padding: 2%;
+  justify-content: space-between;
+  align-items: center;
 }
 .top-name{
   width:20%;
@@ -127,7 +129,7 @@ text-align: center;
 
 }
 .height{
-  height: 1000px;
+  height: 100vh;
   overflow: scroll;
 }
 .padding{
@@ -206,7 +208,7 @@ svg{
   background:#A5060A;
   border-radius:10px;
   width:100%;
-  margin-top:15%;
+  margin-top:10%;
 }
 
 .option{
@@ -239,7 +241,7 @@ svg{
   height:fit-content;
   margin: 0 0 5% 0;
   justify-content:space-between;
-  padding-bottom: 2%;
+  padding: 2%;
   align-items: center;
   
 }
@@ -249,7 +251,9 @@ svg{
   width: 90%;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 0%;
+  height: 80%;
+  overflow-y:scroll ;
+  // margin: 0%;
 
 
 }
@@ -286,7 +290,7 @@ text-transform: capitalize;
 .card-img{
    font-weight:bolder;
     margin:auto;
-     width:60%;
+     width:80%;
       height:87px;
       /* margin-top:5%  */
 }
@@ -434,11 +438,31 @@ text-align: center;
 }
 }
 @media (max-width:500px){
+
+  .sign_in_head{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top:10%;
+
+    .top{
+      display: flex;
+      align-items: center;
+      width: 70%;
+      padding-top: 12px;
+      justify-content: space-between;
+
+    }
+    .instruction{
+      margin-top: 0;
+    }
+  }
   .desktop-market{
     display: none;
   }
-  .height{
-    height:770px}
+ 
   .landing{
     display: none;
   }
@@ -492,6 +516,10 @@ a{
 }
 .ad{
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width:100%;
   top: 45%;  
   text-align: center;
@@ -611,18 +639,18 @@ padding:3% 0%;
 border:2px solid #55DB52;
 border-radius:10px
 }
-.location-input div{
+.location-input .icon{
   position: absolute;
   width:70px;
   height: 70px;
-  border: 3px solid #A5060A;
-   border-radius: 100%;
-  display:flex;
-  justify-content:center;
-  align-items:center; 
+  
+  
+  
+
+
   bottom:47%;
   right: 7%;
-  background:#E5E5E5
+
 }
 .location-back{
   align-self:center;
@@ -654,20 +682,23 @@ letter-spacing: 1px;
   top: 50%;
   width: 100%;
   height: 50%;
-  background-image: url(./components/images/Vector\ 2.png);
+  background-image: url(./components/images/cover2.png);
+  background-size: cover;
 }
 .market-cover{
   position: absolute;
   top: 50%;
   width: 100%;
   height: 50%;
-  background-image: url(./components/images/Vector\ 4.png);
+  background-image: url(./components/images/cover1.png);
 }
 .back{
   text-decoration: none;
   font-weight: bolder;
   color : black;
   letter-spacing: 1px;
+  width: 15%;
+
 
 }
 form{
@@ -677,9 +708,7 @@ form{
   margin: auto;
 
 }
-input{
-  /* margin-top: 20px; */
-}
+
 
 ::placeholder{
   margin-left: 10px;
@@ -701,8 +730,8 @@ input{
 header{
   background: #E5E5E5;
   
-  margin-top: 50px;
-  /* position: fixed; */
+  margin-top: 5px;
+   position: fixed; 
   width: 100%;
   height: 80px;
   z-index: 500;
@@ -721,6 +750,8 @@ header{
   width:100%;
   height:100%;
   /* margin-top: 30%; */
+  position: fixed;
+  top: 10%;
   
 }
 .background{
@@ -746,11 +777,11 @@ header{
   text-align: center;
 }
 .reg-link{
-  position:relative;
+  // position:relative;
   top:80px; 
   width:15%;
    height:50px;
-   margin: 15% 0px 0px 5%
+  //  margin: 15% 0px 0px 5%
 }
 .cat-img{
   width:120px;
@@ -856,7 +887,7 @@ width: 166px;
 .search-bar{
 border:1px solid #D4AF37;
 box-sizing:border-box;
-border-radius:10px;
+border-radius:10px 0 0 10px;
 padding:4% 0 4% 0;
 }
 .cart{
@@ -868,6 +899,16 @@ padding:4% 0 4% 0;
   display:flex;
   flex-direction:column;
   align-items:center;
+
+  .head{
+    padding:2%;
+    width:100%;
+    height:5%;
+    position:fixed;
+    background: white; z-index:60;
+    display:flex;
+    align-items:center;
+  }
 }
 .cart-list{
    width:100%;
@@ -894,3 +935,9 @@ padding:4% 0 4% 0;
   margin-top:15%
 }
 }
+.search-button{
+  background:orange; padding: 10px; border:none;height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0px 2em 2em 0px; }

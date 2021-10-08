@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import {Link, Redirect} from 'react-router-dom'
 import Back from '../../images/svg/Back';
+import LocationSvg from '../../images/svg/Location';
+
 import { Order } from '../extras/userContext'
 
 export default function Location() {
@@ -48,6 +50,7 @@ export default function Location() {
                    Select Location
                </h2>
                <select className='selection' name='region' type='text'  onChange={location}>
+                   <option  disabled selected hidden >select region </option>
                    <option value='lekki phase 2'>Island(lekki phase 1)</option>
                     <option value='ikeja/magodo'>Ikeja/Magodo</option>
                     <option value='Unilag'>Unilag</option>
@@ -57,8 +60,8 @@ export default function Location() {
                 <p style={{ width: '100%', textAlign: 'center', color: '#A5060A'}}>{message}</p>
                
                 <input name='address' type='text' placeholder='Enter address' onChange={location}/>
-                <div onClick={enterMarket} >
-                    <i class="fa-2x fas fa-location-arrow" style={{ color:'#A5060A'}}></i>
+                <div className='icon' onClick={enterMarket} >
+                    <LocationSvg />
                 </div>
         
             </div>

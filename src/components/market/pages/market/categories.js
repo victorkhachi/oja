@@ -16,10 +16,10 @@ export default function Categories() {
 
     return (
         <div className='category' >
-            <div style={{display:'flex',width:'50%',justifyContent:'space-between',alignItems:'baseline'}}>
+            <div style={{display:'flex',width:'100%',alignItems:'flex-end',display:'flex'}}>
                 <Link to='/' style={{
-                    width: '15%', height: '50px', margin: '15 % 0px 0px 5%' }} className='back'><Back /></Link>
-                <p style={{fontSize:'1.5em',fontWeight:'bold',marginLeft:'5px'}}>Categories</p>
+                    width: '15%', height: '50px',marginRight:'15px'}} className='back'><Back /></Link>
+                <p style={{fontSize:'1.5em',fontWeight:'bold'}}>Categories</p>
             </div>
             <div className='cat-content'>
                 {content}

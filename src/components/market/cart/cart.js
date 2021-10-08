@@ -9,7 +9,7 @@ export default function Cart(props) {
     
     return (
         <div className='cart' >
-            <div style={{ padding:'2%',width:'100%', height: '5%', position: 'fixed', background: 'white', zIndex: '60', }}>
+            <div className='head'>
                 <Link  to='/market' >
                     <Back />
                 </Link>

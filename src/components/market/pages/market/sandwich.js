@@ -8,7 +8,7 @@ export default function Sandwich(prop) {
    
     console.log(content);
     return (
-        <div style={{ position: 'absolute', width: '100%', height: '100%', zIndex: '500',left:`${prop.left}`,transition:'0.2s linear'}}>
+        <div style={{ position: 'absolute', width: '100%', height: '100%', zIndex: '500',left:`${prop.left}`,transition:'0.2s linear',zIndex:'600'}}>
             <div style={{ width: '100%', height: '100%', background: 'rgba(0,0,0,0.5)',position:'absolute'}}onClick={prop.close}>
             </div>
             <div style={{ width: '70%', height: '100%', background:' #EDF5E4',position:'relative'}}>

@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import Back from '../images/svg/Back'
+import Logo from '../market/pages/logo'
 import SignInform from './extra/signInform'
 
 export default function SignIn() {
@@ -13,16 +14,18 @@ export default function SignIn() {
             
            
             <div className='reg-body'>
+             <div className='sign_in_head'>
+                    <div className='top'>
+                       <Link to='/' className='back reg-link'>
+                            <Back />
+                       </Link>
+                       <Logo />
+                    </div>
 
-                <Link to='/' className='back reg-link'><Back /></Link>
-                <div className='intro'>
-                      <h1 className='name'>
-                          ọjà.com
-                       </h1>
                        <p className='instruction'>
                             Sign in and shop now!
                        </p>
-                </div>
+            </div>
                  <SignInform />
                  
                  <div className='alt' style={{textAlign:'center', marginTop:'20%'}}>

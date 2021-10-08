@@ -23,7 +23,7 @@ export default function Bill(props) {
     const done= async()=>{
       console.log(JSON.stringify(addList))
       console.log(order);
-      console.log(total);
+      
      setOrder({...order,list:JSON.stringify(addList),total_price:total,})
        TakeOrder()
     }

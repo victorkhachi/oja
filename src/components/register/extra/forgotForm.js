@@ -26,7 +26,7 @@ export default function ForgotForm(){
     return(
               <form  onSubmit={(e)=>{
                       e.preventDefault()
-                       reset()}} style={{marginTop:'20%'}}>
+                       reset()}} style={{marginTop:'10%'}}>
                     <div style={{ fontSize: '0.8rem', textAlign: 'center', color: '#A5060A' }}>{message}</div>
                     <input type='email' name='email' placeholder='E-mail' className='padding' onChange={enterMail} />
                 

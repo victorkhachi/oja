@@ -6,12 +6,10 @@ import { Searcher } from '../../../market/extras/userContext'
 
 
 
+
 export default function Top(props) {
-    const {searcher,setSearcher}=useContext(Searcher)
-    const searching = (e) => {
-        setSearcher(e.target.value)
-        console.log(searcher);
-    }
+    const {key,setKey}=useContext(Searcher)
+    
 
 
 
@@ -21,8 +19,8 @@ export default function Top(props) {
                 <RedLogo />
             </h1>
             <div style={{width:'fit-content',display:'flex'}}>
-               <input type='text' placeholder='search items' style={{padding:'10px',borderRadius:'1em 0 0 1em'}} onChange={searching} />
-                <Link to='/searchCategory' style={{ borderRadius:'0 2em 2em 0', background: '#A5060A',color:'white',fontWeight:'bold',fontSize:'10px',padding:'5%'}}>Search</Link>
+               <input type='text' placeholder='search items' style={{padding:'10px',borderRadius:'1em 0 0 1em'}} onChange={(e)=>setKey(e.target.value)} />
+                <div style={{ borderRadius:'0 2em 2em 0', background: '#A5060A',color:'white',fontWeight:'bold',fontSize:'10px',padding:'5%'}} onClick={props.search}>Search</div>
             </div>
             
             <div style={{width:'15%'}}>

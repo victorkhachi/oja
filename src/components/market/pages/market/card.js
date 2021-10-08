@@ -39,10 +39,7 @@ function Cards() {
         }
         console.log(cat);
     }
-    // {
-    //     axios.get(`${url}products/`).then(response => {
-
-    //         setArray(response.data.product)
+    
     useEffect(()=>items(),[url])
     
     
@@ -56,23 +53,26 @@ function Cards() {
     } 
      
     return(
-        <div>
-           <div style={{ display: 'flex', width: '50%', justifyContent: 'space-between', alignItems: 'baseline' }}>
-
-              <Link to='/market' style={{
-                    width: '15%', height: '50px', margin: '15 % 0px 0px 5%' }} className='back'>
-                        <Back />
-             </Link>
-                <p style={{fontSize:'1.5em',fontWeight:'bold',marginLeft:'5px'}}>{cat}</p>
+        <div className='category' >
+            <div style={{display:'flex',width:'100%',alignItems:'flex-end',display:'flex'}}>
+                <Link to='/market' style={{
+                    width: '15%', height: '50px',marginRight:'15px'}} className='back'><Back /></Link>
+                <p style={{fontSize:'1.5em',fontWeight:'bold'}}>{cat}</p>
             </div>
-           <div style={{display:'flex',width:'85%',justifyContent:'space-between',flexBasis:'30%',flexWrap:'wrap',margin:'auto'}}>
-            { 
+            <div className='cat-content'>
+                 { 
                 cards.map((card, idx)=>(
                     <Component key={idx} data={card} />
                 ))
             }
-           </div>
+            </div>
         </div>
+        // <div>
+          
+        //    <div style={{display:'flex',width:'85%',justifyContent:'space-between',flexBasis:'30%',flexWrap:'wrap',margin:'auto'}}>
+           
+        //    </div>
+        // </div>
     )
 }
 
