@@ -12,7 +12,7 @@ export default function Categories() {
     
     console.log(key);
     return (
-        <div style={{width:'100%',display:'flex',flexDirection:'column'}}>
+        <div style={{width:'80%',display:'flex',flexDirection:'column'}}>
              <div className='cat-head'>
                 <div style={{padding:'3% 10%',fontWeight:'bold',boxShadow:'0px 4px 4px 0px #00000040'}}>Categories</div>
                 <Link to='addCategories' style={{ padding: '3% 7%',borderRadius:'100%', boxShadow: '0px 4px 4px 0px #00000040', marginLeft:'5%' }}><i class="fas fa-plus"></i></Link>

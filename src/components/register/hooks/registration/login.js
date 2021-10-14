@@ -23,7 +23,8 @@ export default function Login(){
             });
                 console.log(data.token)
                 localStorage.setItem('token',data.token)
-                setOrder({...order, name: `${data.first_name} ${data.last_name}`, tel: data.tel, status: status })
+            localStorage.setItem('name', `${data.first_name} ${data.last_name}`)
+            localStorage.setItem('tel', data.tel)
                 setRedirect(true)
         } catch (error) {
             

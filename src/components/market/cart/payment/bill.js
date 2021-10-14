@@ -8,9 +8,11 @@ export default function Bill(props) {
     const {order ,setOrder}=useContext(Order)
     const {value, setValue}=useContext(UserContext)
     const {TakeOrder}=GetOrder()
-
+    const name=localStorage.getItem('name')
+    const tel=localStorage.getItem('tel')
       console.log(value)
-     
+     const zone = localStorage.getItem('zone')
+     const address = localStorage.getItem('address')
    
     const addList = value.map(item =>{
         return {name:item.name ,quantity:`${item.quantity}${item.unit}`,cost:item.cost}
@@ -24,10 +26,10 @@ export default function Bill(props) {
       console.log(JSON.stringify(addList))
       console.log(order);
       
-     setOrder({...order,list:JSON.stringify(addList),total_price:total,})
+     setOrder({...order,list:JSON.stringify(addList),total_price:total,name:name,tel:tel,zone:zone,address:address})
        TakeOrder()
     }
-    
+    console.log(localStorage)
     
     return (
         <div className='bill'>

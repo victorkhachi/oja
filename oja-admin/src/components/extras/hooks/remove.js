@@ -10,7 +10,7 @@ export default function Remove() {
         console.log(catID);
         try {
             const { status, data } = await axios({
-                method:'post',
+                method:'delete',
                 url: `${url}products/removeCategory`,
                 headers: {
                     "content-type": "application/json"
@@ -33,7 +33,7 @@ export default function Remove() {
         console.log(ID);
         try {
             const { status, data } = await axios({
-                method: 'post',
+                method: 'delete',
                 url: `${url}products/deleteProduct`,
                 headers: {
                     "content-type": "application/json"

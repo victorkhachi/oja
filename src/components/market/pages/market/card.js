@@ -10,7 +10,7 @@ function Cards() {
     
     const {url}=config
     const [array, setArray] = useState([])
-    const {cat,setCat}=useContext(Products)
+    const cat=localStorage.getItem('category')
     
     const token= localStorage.getItem('token')
     console.log(token);
@@ -37,7 +37,7 @@ function Cards() {
             console.log(error.response)
 
         }
-        console.log(cat);
+        
     }
     
     useEffect(()=>items(),[url])
@@ -48,9 +48,7 @@ function Cards() {
     })
     
     
-    if(!cat){
-        return <Redirect to='/market'/>
-    } 
+    
      
     return(
         <div className='category' >
@@ -59,7 +57,7 @@ function Cards() {
                     width: '15%', height: '50px',marginRight:'15px'}} className='back'><Back /></Link>
                 <p style={{fontSize:'1.5em',fontWeight:'bold'}}>{cat}</p>
             </div>
-            <div className='cat-content'>
+            <div className='item-content'>
                  { 
                 cards.map((card, idx)=>(
                     <Component key={idx} data={card} />
@@ -67,12 +65,7 @@ function Cards() {
             }
             </div>
         </div>
-        // <div>
-          
-        //    <div style={{display:'flex',width:'85%',justifyContent:'space-between',flexBasis:'30%',flexWrap:'wrap',margin:'auto'}}>
-           
-        //    </div>
-        // </div>
+       
     )
 }
 

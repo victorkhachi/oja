@@ -19,7 +19,7 @@ export default function AddProduct() {
     
    const enterImg=  (e)=>{
        
-       return formData.append('image', e.target.files[0])
+
 
    }
    
@@ -30,6 +30,8 @@ export default function AddProduct() {
        formData.append('name', product.name)
        formData.append('price', product.price)
        formData.append('unit', product.unit)
+       formData.append('weight', product.weight)
+
        for (var key of formData.values()) {
            console.log(key)}
        addProd(formData)
@@ -40,11 +42,13 @@ export default function AddProduct() {
         <div style={{width:'100%',height:'50%'}}>
            <form onSubmit={add} className='prod-form'> 
                 <div style={{width:'70%',height:'70%',display:'flex',justifyContent:'space-between'}}>
-                  <input name='image' type='file' accept='image/*' onChange={enterImg}/>
+                  <input name='image' type='file' accept='image/*' onChange={(e)=>formData.append('image', e.target.files[0])}/>
                   <div className='input' >
                         <input type='text' name='name' placeholder='Product Name:' onChange={enterProduct}/>
                         <input type='text' name='price' placeholder='Price:' onChange={enterProduct}/>
                         <input type='text' name='unit' placeholder='unit' onChange={enterProduct} />
+                        <input type='text' name='weight' placeholder='unit Weight in Kg' onChange={enterProduct} />
+
                   </div>
                 </div>
                <button style={{width:'30%'}}>Add product</button>

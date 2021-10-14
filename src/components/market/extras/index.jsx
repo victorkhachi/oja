@@ -27,11 +27,6 @@ const Component = ({data})=> {
         data.quantity = number;
         data.cost = data.Price*data.quantity
         !isExisting(data) && setValue([...value, data]);
-        
-         
-        
-        
-
         }
         
     }

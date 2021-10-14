@@ -1,13 +1,49 @@
-import { Fragment, useContext, useEffect } from "react"
+import axios from "axios";
+import { Fragment, useContext, useEffect, useState } from "react"
 import { Link } from "react-router-dom";
+import config from "../../config";
 import { Products } from "../contexts";
 import Remove from "./remove";
 
 const Component = ({data})=> {
-    const {  removeCat } = Remove()
-    const {cat, setCat}=useContext(Products)
+    const { url } = config
+    const [array, setArray] = useState([])
+    const { cat, setCat } = useContext(Products)
+    const category=data.category
+    const token = localStorage.getItem('token')
+    const items = async () => {
+        try {
+            const { status, data } = await axios({
+                method: 'get',
+                url: `${url}products/`,
+                headers: {
+                    "Authorization": `Bearer ${token}`,
+                    "content-type": "application/json"
+                },
+                data:category
+
+            })
+            console.log(status, data);
+          setArray(data.product)    
+
+        }
+        catch (error) {
+            console.log(token)
+
+            console.log(error.response)
+
+        }
+        console.log();
+    }
+    useEffect(()=>items(),[url])
+
+    
+    const {  removeCat,removeProd } = Remove()
+    
     const remove=async()=>{
        await removeCat(data.id)
+    //  array.map(items => removeProd(items.id))
+
        document.location.reload()
     }
     const click=()=>{

@@ -1,11 +1,10 @@
-import { Fragment, useContext } from "react"
+import { Fragment, } from "react"
 import { Link } from "react-router-dom"
-import { Products } from "./userContext"
 
 const Category =({data})=>{
-    const { cat, setCat } = useContext(Products)
+
     const set=()=>{
-        setCat(data.category)
+        localStorage.setItem('category',data.category)
         
     }
     return(

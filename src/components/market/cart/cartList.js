@@ -33,7 +33,12 @@ const CartList =({data})=>{
         
     }
     const cost = data.price * number
-    
+    const [changedItem,setChangedItem]=useState({name:data.name,id:data.id,quantity:'',category:data.category,cost:data.cost,price:data.price,unit:data.unit})
+    const change= async()=>{
+        const newCart =value.filter(items=>items.id!==data.id)
+        setChangedItem({ ...changedItem, quantity: number })
+    }
+
     
     data.cost= cost
     
@@ -61,7 +66,7 @@ const CartList =({data})=>{
                         <Reduce />
                     </div>
                     <input type='number' value={number} className='quant-input' />
-                    <div className='cart-button' onClick={plus}>
+                    <div className='cart-button' onClick={()=>{plus(); change()}}>
                         <Increase />
                     </div>
 

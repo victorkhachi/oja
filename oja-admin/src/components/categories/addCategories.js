@@ -2,20 +2,17 @@ import React, { useEffect } from 'react'
 import useCategory from '../extras/hooks/createCategory'
 import {Link} from 'react-router-dom'
 export default function AddCategories() {
-    const [cat , setCat]=React.useState({name:''})
-    const {addCat,setAddCategory,message}=useCategory()
-    const change=(e)=>{
-        setCat({name:e.target.value})
-        
-    }
+    
+    const {addCategory,addCat,setAddCategory,message}=useCategory()
+    
 
 
     const create=(e)=> {
         e.preventDefault()
-        if (cat.name.trim()!=='') {
-            setAddCategory({name:cat.name})
+        if (addCategory.name.trim()!=='') {
+            
             addCat()
-            console.log(cat);
+            console.log(addCategory);
         }
         else{
             alert("fields can't be empty")
@@ -27,9 +24,9 @@ export default function AddCategories() {
          
     
     return (
-        <div style={{width:'100%',height:'80%',display:'flex',flexDirection:'column',justifyContent:'space-between'}} >
+        <div className='box-shadow' style={{width:'80%',height:'50%',display:'flex',flexDirection:'column',justifyContent:'space-around',alignItems:'center'}} >
             <form onSubmit={create} >
-              <input type='text' name='name' onChange={change} placeholder='Input Category' required style={{padding:'2%'}}/>
+                <input type='text' name='name' onChange={(e) => setAddCategory({ name:e.target.value })} placeholder='Input Category' required style={{padding:'2%'}}/>
                 <button style={{
                     background:'#A5060A',
                     marginLeft:'10px',

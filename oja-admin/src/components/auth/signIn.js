@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, {  useRef, useState } from 'react'
 import back from '../img/back.png'
-import './signIn.css'
+import './signIn.scss'
 import config from '../config';
 import { Link } from 'react-router-dom';
 
@@ -40,7 +40,6 @@ export default function SignIn() {
                   <form onSubmit={(e)=>{
                     e.preventDefault()
                     if(getLoginValues.email !== ''&& getLoginValues.password!=='' ){
-                    console.log(getLoginValues);
                     login()}
                     else alert('fields cant be empty')}} >
                     <input type='email' name='email' placeholder='Enter Email' onChange={(e)=>SetGetLoginValues({...getLoginValues,email:e.target.value})} />

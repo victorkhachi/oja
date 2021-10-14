@@ -38,7 +38,7 @@ export default function useCategory() {
           }
           else{
               const found=categories.filter(category=>{
-                  return category.category==key 
+                  return category.category===key 
               })
 
               setSearcher(found)
@@ -48,6 +48,6 @@ export default function useCategory() {
         console.log(searcher);
     return {
 
-       setAddCategory, addCat,message,categories
+      addCategory, setAddCategory, addCat,message,categories
     }
 } 

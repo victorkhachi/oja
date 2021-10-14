@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './App.css';
+import './App.scss';
 import Body from './components/body'
 import {BrowserRouter as Router,
  Switch, Route} from 'react-router-dom'

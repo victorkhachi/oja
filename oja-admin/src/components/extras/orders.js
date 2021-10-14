@@ -59,7 +59,7 @@ export default function Orders({data}) {
     return (
         <Fragment>
             <div  key={data.id} className='orders'>
-                <div onClick={open} style={{ marginLeft: '1%' }}>  {data.name}  from   {data.address} {data.zone}</div>
+                <div onClick={open} style={{ marginLeft: '1%',textTransform:'capitalize' }}>  {data.name}  from   {data.address} {data.zone}</div>
 
                 <div>{data.updatedAt}</div>
                 <button style={{display:`${display}`}} onClick={()=>{

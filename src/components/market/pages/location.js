@@ -1,13 +1,13 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {Link, Redirect} from 'react-router-dom'
 import Back from '../../images/svg/Back';
 import LocationSvg from '../../images/svg/Location';
+import Logo from './logo';
 
-import { Order } from '../extras/userContext'
 
 export default function Location() {
-    const {order,setOrder}=useContext(Order)
-    console.log(order);
+    
+    
     const [address,setAddress]=useState({region:'',address:''})
     const [message,setMessage]=useState('')
     const [redirect, setRedirect]=useState(false)
@@ -18,30 +18,35 @@ export default function Location() {
     const enterMarket= async ()=>{
          
         if (address.region.trim()!=='' && address.address.trim()!==''){
-            setOrder({ ...order, zone: address.region, address: address.address })
+            
+            localStorage.setItem('zone',address.region)
+            localStorage.setItem('address', address.address)
+
+
             setRedirect(true)
-            console.log(order);
+    
             
         }
         else{
            setMessage('please enter a valid location')
         }
     }
-    useEffect(()=>setRedirect(),[order])
+    useEffect(()=>setRedirect(),[])
     if(redirect){
         return <Redirect to='/market'/>
     }
-    if (order.name === '') {
-        return <Redirect to='/signIn' />
-    }
+    // if (order.name === '') {
+    //     return <Redirect to='/signIn' />
+    // }
     
     return (
         <div className="page">
             <div className='market-cover'></div>
             <div className='location-head' >
-                <Link to='/' className='back location-back'><Back /></Link>
-                <h1 className='name' style={{ marginTop:'10%' }}>
-                    ọjà.com
+                <Link to='/' className='back '><Back /></Link>
+                 <h1 style={{ margin:'auto',marginTop:'10%' }}>
+                <Logo />
+
                 </h1>
                 
             </div>
@@ -55,7 +60,6 @@ export default function Location() {
                     <option value='ikeja/magodo'>Ikeja/Magodo</option>
                     <option value='Unilag'>Unilag</option>
                     <option value='lekki phase 2'>Island (lekki phase 2)</option>
-
                </select>
                 <p style={{ width: '100%', textAlign: 'center', color: '#A5060A'}}>{message}</p>
                

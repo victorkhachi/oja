@@ -46,8 +46,14 @@ margin-left: 3%;
 .content{
   width: 70%;
   overflow-y: scroll;
-  height:500px
+  height:500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   
+  .box-shadow{
+    box-shadow: 0px 0px 2px grey;
+  }
 }
 .person-detail{
     width: 100%;
