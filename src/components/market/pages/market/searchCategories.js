@@ -12,36 +12,27 @@ export default function SearchCategories(props) {
     const [array, setArray] = useState([])
     const token = localStorage.getItem('token')
     const {key,setKey}=useContext(Searcher)
-    const items = async () => {
-        try {
-            const { status, data } = await axios({
-                method: 'get',
-                url: `${url}products/`,
-                headers: {
+    const headers= {
                     "Authorization": `Bearer ${token}`,
                     "content-type": "application/json"
-                },
-                data: ''
-
-            })
-            console.log(status, data);
-            setArray(data.product)
-
-
-        }
-        catch (error) {
+                }
+    const [page,setPage]=useState(2)
+    const [display, setDisplay] = useState('flex')
+    const [totalPages, setTotalPages] = useState()
+    useEffect(() => {
+        if (page === totalPages) setDisplay('none')
+        else setDisplay('flex')
+    }, [page])
 
 
-            console.log(error.response)
 
-        }
+    
+    useEffect(()=>axios.get(`${url}products/?name=${key}&page=${page}`,headers).then(response=>{
+        setTotalPages(response.data.totalPages);
+        return response.data.product}).then(response=>setArray(response)),[page])
+    
 
-    }
-    useEffect(() => items(), [url]);
-
-    const [content,setContent]=useState([])
-    useEffect(()=>setContent(array.filter(item=>item.name===key)),[key])
-    console.log(content,key);
+    
     
     
     return (
@@ -52,13 +43,15 @@ export default function SearchCategories(props) {
                 }} className='back'><Back /></Link>
                 <p style={{ fontSize: '1.5em', fontWeight: 'bold',textTransform:'capitalize' }}>{key}</p>
             </div>
-            <div className='cat-content'>
+            <div className='item-content' >
                 {
-                    content.map(items=>(
+                    array.map(items=>(
                         <Component data={items} />
                     ))
-                }
+                } 
             </div>
+            <div style={{ justifyContent: 'space-between', width: '200px', height: '40px', color: '#A5060A', textTransform: 'capitalize', margin: 'auto', display: display  }}><div onClick={()=>{if(page>1)setPage(page-1)}}> prev</div><div  onClick={() => setPage(page + 1)}>Next</div></div>
+            
         </div>
     )
 }

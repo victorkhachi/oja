@@ -18,14 +18,20 @@ export default function Product() {
                     "Authorization": `Bearer ${token}`,
                     "content-type": "application/json"
                 }
-   useEffect(()=>axios.get(`${url}products/`,headers).then(response=> {
-       return response.data.product
-       }).then(response=> {
-           return response.filter(item=>item.category===cat)
-           }).then(response=>setArray(response)),[url])
+    const [display, setDisplay] = useState('flex')
+    const [totalPages, setTotalPages] = useState()
+    const [page,setPage]=useState(1)
 
-    
 
+    useEffect(() => axios.get(`${url}products/?category=${cat}&page=${page}`, headers).then(response => {
+        setTotalPages(response.data.totalPages);
+        return response.data.product
+    }).then(response => setArray(response)), [page])
+
+    useEffect(() => {
+        if (page === totalPages) setDisplay('none')
+        else setDisplay('flex')
+    }, [page])
     
     return (
         
@@ -36,6 +42,8 @@ export default function Product() {
             <Prod data={product} />
     ))}
        </div>
+            <div style={{ justifyContent: 'space-between', width: '200px', height: '40px', color: '#A5060A', textTransform: 'capitalize', margin: 'auto', display: display }}><div onClick={() => { if (page > 1) setPage(page - 1) }}> prev</div><div onClick={() => { if (totalPages > page) setPage(page + 1) }}>Next</div></div>
+
        <Link to ='/addProducts' style={{position:'absolute',boxShadow:'0px 0px 2px 2px black', padding:'2%',top:'50%'}}>Add products</Link>
 
         </div>

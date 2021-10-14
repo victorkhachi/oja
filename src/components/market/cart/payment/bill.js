@@ -22,15 +22,31 @@ export default function Bill(props) {
        )
    
 
-    const done= async()=>{
-      console.log(JSON.stringify(addList))
-      console.log(order);
-      
-     setOrder({...order,list:JSON.stringify(addList),total_price:total,name:name,tel:tel,zone:zone,address:address})
-       TakeOrder()
+    const Weight = value.map(items=>{
+        return items.quantity * items.weight
+    })
+    let totalWeight=0;
+    for (let i = 0; i < Weight.length; i++) {
+            totalWeight=totalWeight +Weight[i]
     }
-    console.log(localStorage)
-    
+    const [fee,setFee]=useState(0)
+     useEffect(()=>{
+         if (totalWeight>0 && totalWeight<11) {
+             setFee(500)
+         }
+         if (totalWeight>10 && totalWeight<21) {
+             setFee(1000)
+         }
+         if (totalWeight > 20) {
+             setFee(1500)
+         }
+     },[totalWeight])
+     let transaction =fee + total;
+    const done = async () => {
+        setOrder({ ...order, list: JSON.stringify(addList), total_price: transaction, name: name, tel: tel, zone: zone, address: address })
+        TakeOrder()
+    }
+
     return (
         <div className='bill'>
         <div className='order'>
@@ -38,8 +54,8 @@ export default function Bill(props) {
                     <div style={{ marginLeft: '10%' }}>Order Summary:</div>
                     <div style={{marginRight:'10%'}}>{`N${total}`}</div>
                 </div>
-                <div className='bill-row'>Service fee and shipping:</div>
-                <div className='bill-row'>total:</div>
+                <div className='bill-row'>Service fee and shipping:  N{fee}</div>
+                <div className='bill-row'>total:{transaction}</div>
 
             </div>
             <div style={{ width: '100%', display: 'flex', justifyContent: 'space-around',height:'15%',alignItems:'center',marginTop:'5%' }}>

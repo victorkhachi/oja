@@ -11,7 +11,9 @@ export default function Search() {
     const [categories, setCategories] = useState([{}])
     
     
-    useEffect(() => { axios.get(`${url}products/categories`).then(response => setCategories(response.data.categories)) }, [url])
+    useEffect(() => { axios.get(`${url}products/categories`).then(response => {
+        
+        setCategories(response.data.categories)}) }, [url])
     
     
     

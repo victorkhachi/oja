@@ -250,10 +250,11 @@ svg{
   margin: auto;
   display: flex;
   width: 90%;
-  flex-direction:column;
-  // justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-around;
   height: 80%;
   overflow-y:scroll ;
+  margin-top: 5%;
   // margin: 0%;
 
 
@@ -264,7 +265,7 @@ svg{
   width: 90%;
   flex-wrap: wrap;
   justify-content: space-around;
-  height: 80%;
+  height: 75%;
   overflow-y:scroll ;
   // margin: 0%;
 
@@ -483,6 +484,16 @@ text-align: center;
   }
 .page{
   display: inline-block;
+}
+.cat-content{
+  margin: auto;
+  display: flex;
+  width: 90%;
+  flex-direction:column;
+  justify-content: flex-start;
+  height: 80%;
+  overflow-y:scroll ;
+  margin-top: 0%;
 }
 .cat-name{
   font-family:Poppins;
@@ -904,7 +915,8 @@ width: 166px;
 border:1px solid #D4AF37;
 box-sizing:border-box;
 border-radius:10px 0 0 10px;
-padding:4% 0 4% 0;
+padding:4% 2px 4% 4px;
+font-weight: 800;
 }
 .cart{
   display:inline-block;

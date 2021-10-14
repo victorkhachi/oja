@@ -11,45 +11,20 @@ function Cards() {
     const {url}=config
     const [array, setArray] = useState([])
     const cat=localStorage.getItem('category')
-    
+    const [display,setDisplay]=useState('flex')
+    const [totalPages,setTotalPages]=useState()
     const token= localStorage.getItem('token')
-    console.log(token);
-    const items = async () => {
-        try {
-            const { status, data } = await axios({
-                method: 'get',
-                url: `${url}products/`,
-                headers: {
+    const headers={
                     "Authorization": `Bearer ${token}`,
                     "content-type": "application/json"
-                },
-                data: cat
-
-            })
-            console.log(status, data);
-            setArray(data.product)
-
-
-        }
-        catch (error) {
-            console.log(token)
-
-            console.log(error.response)
-
-        }
+                }
+        const [page,setPage]=useState(1)
+    useEffect(() => axios.get(`${url}products/?category=${cat}&page=${page}`, headers).then(response => {
+        setTotalPages(response.data.totalPages);
+        return response.data.product }).then(response => setArray(response)), [page]) 
         
-    }
-    
-    useEffect(()=>items(),[url])
-    
-    
-    const cards= array.filter(product=>{
-        return product.category===cat
-    })
-    
-    
-    
-     
+        useEffect(()=>{if(page===totalPages)setDisplay('none')
+                        else setDisplay('flex')},[page])
     return(
         <div className='category' >
             <div style={{display:'flex',width:'100%',alignItems:'flex-end',display:'flex'}}>
@@ -58,12 +33,14 @@ function Cards() {
                 <p style={{fontSize:'1.5em',fontWeight:'bold'}}>{cat}</p>
             </div>
             <div className='item-content'>
-                 { 
-                cards.map((card, idx)=>(
+                 {
+                array.map((card, idx)=>(
                     <Component key={idx} data={card} />
                 ))
-            }
+            } 
             </div>
+            <div style={{ justifyContent: 'space-between', width: '200px', height: '40px', color: '#A5060A', textTransform: 'capitalize', margin: 'auto', display: display }}><div onClick={() => { if (page > 1) setPage(page - 1) }}> prev</div><div onClick={() => { if (totalPages > page) setPage(page + 1)} }>Next</div></div>
+
         </div>
        
     )
