@@ -16,9 +16,9 @@ export default function Categories() {
 
     return (
         <div className='category' >
-            <div style={{display:'flex',width:'100%',alignItems:'flex-end',display:'flex'}}>
-                <Link to='/' style={{
-                    width: '15%', height: '50px',marginRight:'15px'}} className='back'><Back /></Link>
+            <div style={{display:'flex',width:'100%',alignItems:'center'}} className='pad'>
+                <Link to='/' className='none back' style={{
+                    width: '15%', height: '50px',marginRight:'15px'}} ><Back /></Link>
                 <p style={{fontSize:'1.5em',fontWeight:'bold'}}>Categories</p>
             </div>
             <div className='cat-content'>

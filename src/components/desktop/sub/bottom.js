@@ -1,7 +1,6 @@
 import React from 'react';
 // import Location from '../../images/setLocation.png'
 // import Shop from '../../images/addTocart.png'
-import Delivery from '../../images/SpeedDelivery.jpg'
 import AddToCart from '../../images/svg/AddToCart';
 import Rider from '../../images/svg/Rider';
 import SetLocation from '../../images/svg/SetLocation';

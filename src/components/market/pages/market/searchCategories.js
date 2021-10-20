@@ -16,7 +16,7 @@ export default function SearchCategories(props) {
                     "Authorization": `Bearer ${token}`,
                     "content-type": "application/json"
                 }
-    const [page,setPage]=useState(2)
+    const [page,setPage]=useState(1)
     const [display, setDisplay] = useState('flex')
     const [totalPages, setTotalPages] = useState()
     useEffect(() => {
@@ -29,15 +29,15 @@ export default function SearchCategories(props) {
     
     useEffect(()=>axios.get(`${url}products/?name=${key}&page=${page}`,headers).then(response=>{
         setTotalPages(response.data.totalPages);
-        return response.data.product}).then(response=>setArray(response)),[page])
+        return response.data.product}).then(response=>setArray(response)),[key])
     
 
-    
+    console.log(array,key,page);
     
     
     return (
         <div className='category' >
-            <div style={{ display: 'flex', width: '100%', alignItems: 'flex-end', display: 'flex' }}>
+            <div style={{ display: 'flex', width: '100%', alignItems: 'center' }}>
                 <Link onClick={props.close} style={{
                     width: '15%', height: '50px', marginRight: '15px'
                 }} className='back'><Back /></Link>

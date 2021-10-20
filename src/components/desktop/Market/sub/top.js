@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import {Link} from 'react-router-dom'
+import Help from '../../../images/svg/Help'
 import RedLogo from '../../../images/svg/RedLogo'
 import { Searcher } from '../../../market/extras/userContext'
 
@@ -14,7 +15,7 @@ export default function Top(props) {
 
 
     return (
-        <div style={{width:'100%',height:'10%', display:'flex',alignItems:'center', justifyContent:'space-between'}}>
+        <div style={{width:'100%',height:'10%', display:'flex',alignItems:'center', justifyContent:'space-around'}}>
             <h1 className='desktop-name'>
                 <RedLogo />
             </h1>
@@ -23,11 +24,8 @@ export default function Top(props) {
                 <div style={{ borderRadius:'0 2em 2em 0', background: '#A5060A',color:'white',fontWeight:'bold',fontSize:'10px',padding:'5%'}} onClick={props.search}>Search</div>
             </div>
             
-            <div style={{width:'15%'}}>
-                <select onClick={props.help} className='top-option'>
-
-                    <option selected disabled hidden>help</option>
-                </select>
+            <div onClick={props.help} >
+                <Help />
             </div>
 
         </div>

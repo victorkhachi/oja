@@ -18,7 +18,7 @@ import Otp from './components/register/extra/otp';
 import Note from './components/market/cart/note'
 import NewPassword from './components/register/newPassword';
 import DesktopNote from './components/desktop/Market/sub/desktopNote';
-
+import Payment from './components/market/cart/payment'
 function App() {
 
 
@@ -86,6 +86,9 @@ function App() {
               </Route>
              <Route path='/password'>
                 <NewPassword />
+              </Route>
+              <Route path='/payment'>
+                <Payment />
               </Route>
           </Switch>
         </div>

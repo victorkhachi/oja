@@ -27,10 +27,10 @@ function Cards() {
                         else setDisplay('flex')},[page])
     return(
         <div className='category' >
-            <div style={{display:'flex',width:'100%',alignItems:'flex-end',display:'flex'}}>
-                <Link to='/market' style={{
-                    width: '15%', height: '50px',marginRight:'15px'}} className='back'><Back /></Link>
-                <p style={{fontSize:'1.5em',fontWeight:'bold'}}>{cat}</p>
+            <div className='pad' style={{display:'flex',width:'100%',alignItems:'center'}}>
+                <Link to='/market' className='none back' style={{
+                    width: '15%', height: '50px',marginRight:'15px'}} ><Back /></Link>
+                <p style={{fontSize:'1.5em',fontWeight:'bold',textTransform:'uppercase'}}>{cat}</p>
             </div>
             <div className='item-content'>
                  {

@@ -44,7 +44,7 @@ export default function Bill(props) {
      let transaction =fee + total;
     const done = async () => {
         setOrder({ ...order, list: JSON.stringify(addList), total_price: transaction, name: name, tel: tel, zone: zone, address: address })
-        TakeOrder()
+        // TakeOrder()
     }
 
     return (
@@ -62,7 +62,7 @@ export default function Bill(props) {
                 <Link to='/items' style={{
                     background: '#D4AF37', marginLeft: '3%', display:`${props.display}` }} className='order-nav'>
                     Continue shopping</Link>
-                <Link  onClick={done} style={{ background: '#A5060A', marginRight: '3%' }} className='order-nav'>
+                <Link to="/payment" onClick={done} style={{ background: '#A5060A', marginRight: '3%' }} className='order-nav'>
                     Checkout
                         </Link>
 

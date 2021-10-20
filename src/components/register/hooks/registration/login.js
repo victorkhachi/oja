@@ -21,10 +21,11 @@ export default function Login(){
                     "content-type": "application/json"
                 }
             });
-                console.log(data.token)
+                console.log(data)
                 localStorage.setItem('token',data.token)
             localStorage.setItem('name', `${data.first_name} ${data.last_name}`)
             localStorage.setItem('tel', data.tel)
+            localStorage.setItem('email',data.email)
                 setRedirect(true)
         } catch (error) {
             

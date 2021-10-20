@@ -1,6 +1,9 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import RedLogo from '../../images/svg/RedLogo'
+import Help from '../../images/svg/Help'
+import Login from '../../images/svg/Login'
+
 
 
 
@@ -15,18 +18,11 @@ export default function Top( props) {
                 ọjà.com
             </h1> */}
             <div style={{width:'40%',display:'flex',justifyContent:'space-between',marginLeft:'15%',alignItems:'center'}}>
-               <div >
-                  <select style={{display:`${props.show}`}} className='top-option'onClick={props.login}>
-                       <option selected disabled hidden>Sign in</option>
-                        
-
-                  </select>
+                <div style={{ display: `${props.show}` }} onClick={props.login} >
+                   <Login />
                </div>
-               <div>
-                   <select onClick={props.help} className='top-option'>
-                       
-                        <option selected disabled hidden>help</option>
-                    </select>
+               <div onClick={props.help}>
+                    <Help />
                 </div>
             </div>
         </div>

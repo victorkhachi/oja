@@ -41,11 +41,11 @@ export default function DesktopMarket(props) {
             </div>
 
             <div style={{ width: '100%', height: '90%',display:'flex'}}>
-                <div style={{width:'80%',height:'90%',marginLeft:'5%'}}>
+                <div style={{width:'80%',height:'90%'}}>
                     <div style={{ zIndex: 100, width: "69%", height: '70%', display: `${display}`, background: '#E5E5E5', position: 'absolute',left:'0',top:'10%' }}> <SearchCategories close={none} /></div>
                     {props.content}
                </div>
-                <div style={{ position:'relative',right:'0',width: '35%', height: 'fit-content',boxShadow:'0 0 3px grey',display:`${props.display}`}}>
+                <div style={{ position:'relative',right:'0',width: '35%', height: '100%',boxShadow:'0 0 3px grey',display:`${props.display}`}}>
                  {props.content2}
                 </div>
             </div>
