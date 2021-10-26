@@ -1,18 +1,18 @@
 import React from 'react'
 import Step1 from './step1';
 
-import {Link} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 import Back from '../../images/svg/Back';
 
 //get to this page on ur app
 export default function Cart(props) {
-    
+    const history = useHistory()
     return (
         <div className='cart' >
             <div className='head'>
-                <Link  to='/market' >
+                <div  onClick={()=>history.goBack()}>
                     <Back />
-                </Link>
+                </div>
             </div>
            
             <div style={{ display: 'flex', width: '100%', height: '86px', background:'#55DB52',justifyContent:'center',alignItems:'center',marginBottom:'5%',flexDirection:'column',position:'relative',marginTop:'15%'}}>

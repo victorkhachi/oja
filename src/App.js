@@ -19,6 +19,7 @@ import Note from './components/market/cart/note'
 import NewPassword from './components/register/newPassword';
 import DesktopNote from './components/desktop/Market/sub/desktopNote';
 import Payment from './components/market/cart/payment'
+import SearchCategories from './components/market/pages/market/searchCategories';
 function App() {
 
 
@@ -82,7 +83,9 @@ function App() {
               <Route path='/note'>
                 <Note />
                 <DesktopMarket content={cards} content2={<DesktopNote />} />
-
+              </Route>
+              <Route path='/search'>
+                <Market content={<SearchCategories />} />
               </Route>
              <Route path='/password'>
                 <NewPassword />

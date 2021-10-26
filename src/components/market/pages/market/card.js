@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import {Link, Redirect} from 'react-router-dom';
+import {useHistory, Redirect} from 'react-router-dom';
 import Component from '../../extras';
 import  config from '../../../../config'
 import axios from 'axios';
@@ -7,7 +7,7 @@ import { Products } from '../../extras/userContext';
 import Back from '../../../images/svg/Back';
 
 function Cards() {
-    
+    const history = useHistory()
     const {url}=config
     const [array, setArray] = useState([])
     const cat=localStorage.getItem('category')
@@ -25,11 +25,14 @@ function Cards() {
         
         useEffect(()=>{if(page===totalPages)setDisplay('none')
                         else setDisplay('flex')},[page])
+
+    
     return(
         <div className='category' >
             <div className='pad' style={{display:'flex',width:'100%',alignItems:'center'}}>
-                <Link to='/market' className='none back' style={{
-                    width: '15%', height: '50px',marginRight:'15px'}} ><Back /></Link>
+                <div onClick={()=>history.goBack()}  className='none back' style={{
+                    width: '15%', height: '50px',marginRight:'15px'}} ><Back />
+                    </div>
                 <p style={{fontSize:'1.5em',fontWeight:'bold',textTransform:'uppercase'}}>{cat}</p>
             </div>
             <div className='item-content'>
