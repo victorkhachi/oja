@@ -90,8 +90,15 @@ margin-left: 3%;
 .cat-head{
   display: flex;
   justify-content: space-between;
-  width: 40%;
+  width: 100%;
   margin-bottom: 2%;
+  align-items: center;
+
+  div{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 .option{
   display: flex;

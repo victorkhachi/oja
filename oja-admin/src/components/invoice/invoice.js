@@ -121,6 +121,8 @@ const [deliveredColor, setDeliveredColor] = useState('')
      ))
     return (
         <div className='invoice'>
+            <input type='text' placeholder='Search by ID' />  {//coming soon
+}
             <div className='invoice-head'><h2>Invoice</h2> <div className='status'><h3 className={allColor} onClick={getOrders}>All</h3> <h3 className={pendingColor} onClick={pending}>Pending</h3> <h3 className={deliveredColor} onClick={delivered}>Delivered</h3></div></div>
             {orders}
         </div>
