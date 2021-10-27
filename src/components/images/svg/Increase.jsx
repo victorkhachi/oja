@@ -3,9 +3,10 @@ import React from 'react';
 const Increase = () => {
     return (
         <div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="7" height="8" viewBox="0 0 7 8" fill="none">
-                <path d="M6.2814 4.03314L0.0379664 7.88565L0.0697313 0.0915391L6.2814 4.03314Z" fill="black" />
-            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+<circle cx="10" cy="10" r="10" fill="#D5EDBB"/>
+<path d="M15.4034 10.0331L7.13252 13.8857L7.1746 6.09154L15.4034 10.0331Z" fill="black"/>
+</svg>
         </div>
     );
 }

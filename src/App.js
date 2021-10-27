@@ -86,6 +86,8 @@ function App() {
               </Route>
               <Route path='/search'>
                 <Market content={<SearchCategories />} />
+                        <DesktopMarket content={<SearchCategories />} content2={<Cart2 />} />
+
               </Route>
              <Route path='/password'>
                 <NewPassword />
