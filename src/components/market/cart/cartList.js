@@ -61,12 +61,12 @@ const CartList =({data})=>{
                   <div className='cart-price'>
                             N{data.price}
                   </div>
-                 <div style={{ fontWeight: 'bolder', display: 'flex', height: '50%', marginTop: '1%',width:'23%',alignContent:'center' }}>
-                    <div onClick={minus} className='cart-button' >
+                 <div className='input-div'>
+                    <div onClick={minus}  >
                         <Reduce />
                     </div>
                     <input type='number' value={number} className='quant-input' />
-                    <div className='cart-button' onClick={()=>{plus(); change()}}>
+                    <div  onClick={()=>{plus(); change()}}>
                         <Increase />
                     </div>
 

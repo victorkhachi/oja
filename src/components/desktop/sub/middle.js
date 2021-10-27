@@ -32,7 +32,7 @@ export default function Middle() {
     return (
         <div className='middle'>
             <div className='middle-grad'>
-              <div style={{width:'60%',marginLeft:'5%'}}>
+              <div style={{width:'80%',marginLeft:'5%'}}>
                     Shop now and get a speedy delivery at your doorstep
               </div>
                 

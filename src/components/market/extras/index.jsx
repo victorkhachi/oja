@@ -39,11 +39,11 @@ const Component = ({data})=> {
                 <div  className='card-img' style={{ color:'black',padding:'1px'}}>
                    <img style={{width:'100%',height:'100%'}} src={image} alt='' ></img>
                 </div>
-                <div style={{ fontWeight: 'bolder', height: '8%', marginTop: '10px', textAlign: 'center' }}>
+                <div style={{ fontWeight: 'bolder', height: '8%', textAlign:'center' }}>
                 {data.name}
                 </div>
                 <div style={{ fontWeight: 'bolder', height: '8%', marginTop: '1px', textAlign: 'center',fontSize:'0.8em' }}>
-                N{data.price}
+                N{data.price}/{data.unit}
                 </div>
                 <div className='card-input'>
                     <div className='quant-changer' onClick={minus} ><Reduce /></div>

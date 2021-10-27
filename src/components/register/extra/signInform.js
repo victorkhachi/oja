@@ -27,7 +27,6 @@ export default function SignInForm() {
     }
 
     if(redirect){
-        console.log(order);
         return <Redirect to='/location' />
     }
     return (

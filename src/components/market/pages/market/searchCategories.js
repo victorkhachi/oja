@@ -24,7 +24,7 @@ export default function SearchCategories(props) {
         else setDisplay('flex')
     }, [page])
      
-    const close =useRef(null)
+    
     const history=useHistory()
 
     
@@ -37,9 +37,7 @@ export default function SearchCategories(props) {
     const [content,setContent]=useState()
 
     useEffect(()=>{
-        if (key===''){
-            close.current.click()
-        }
+        
         if (array.length<1) {
            setContent(`No items match ${key} in our inventory`) 
         }
@@ -49,7 +47,7 @@ export default function SearchCategories(props) {
     return (
         <div className='category' >
             <div style={{ display: 'flex', width: '100%', alignItems: 'center' }}>
-                <Link ref={close} onClick={()=>history.goBack()}  style={{
+                <Link onClick={()=>history.goBack()}  style={{
                     width: '15%', height: '50px', marginRight: '15px'
                 }} className='back'><Back /></Link>
                 <p style={{ fontSize: '1.5em', fontWeight: 'bold',textTransform:'capitalize' }}>{key}</p>
