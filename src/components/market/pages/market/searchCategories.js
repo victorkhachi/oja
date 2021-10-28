@@ -21,7 +21,7 @@ export default function SearchCategories(props) {
     const [totalPages, setTotalPages] = useState()
     useEffect(() => {
         if (page === totalPages) setDisplay('none')
-        else setDisplay('flex')
+        else setDisplay('inline-block')
     }, [page])
      
     
@@ -46,10 +46,10 @@ export default function SearchCategories(props) {
     
     return (
         <div className='category' >
-            <div style={{ display: 'flex', width: '100%', alignItems: 'center' }}>
+            <div className='pad' style={{ display: 'flex', width: '100%', alignItems: 'center',height:'50px' }}>
                 <Link onClick={()=>history.goBack()}  style={{
-                    width: '15%', height: '50px', marginRight: '15px'
-                }} className='back'><Back /></Link>
+                    width: '15%', marginRight: '15px'
+                }} className='back none'><Back /></Link>
                 <p style={{ fontSize: '1.5em', fontWeight: 'bold',textTransform:'capitalize' }}>{key}</p>
             </div>
             <div className='item-content' >
@@ -60,7 +60,7 @@ export default function SearchCategories(props) {
                 } 
                 {content}
             </div>
-            <div style={{ justifyContent: 'space-between', width: '200px', height: '40px', color: '#A5060A', textTransform: 'capitalize', margin: 'auto', display: display  }}><div onClick={()=>{if(page>1)setPage(page-1)}}> prev</div><div  onClick={()=> setPage(page + 1)}>Next</div></div>
+            <div style={{display:'flex', justifyContent: 'space-between', width: '200px', height: '40px', color: '#A5060A', textTransform: 'capitalize', margin: '0 auto' }}><div onClick={() => { if (page > 1) setPage(page - 1) }}> prev</div><div onClick={() => setPage(page + 1)} style={{ display: display}}>Next</div></div>
             
         </div>
     )

@@ -27,6 +27,7 @@ import NewPassword from "./components/register/newPassword";
 import DesktopNote from "./components/desktop/Market/sub/desktopNote";
 import Payment from "./components/market/cart/payment";
 import SearchCategories from "./components/market/pages/market/searchCategories";
+import MergedPage from "./components/market/pages/market/mergedPage";
 function App() {
   const categories = <Categories />;
   const cards = <Cards />;
@@ -45,6 +46,7 @@ function App() {
   });
 
   const [cat, setCat] = useState();
+  const categoriess = <MergedPage />;
 
 
  
@@ -78,7 +80,7 @@ function App() {
             </Route>
             <Route path='/market'>
               <Market content={categories} />
-              <DesktopMarket content={categories} content2={<Cart2 />} />
+              <DesktopMarket content={categoriess} content2={<Cart2 />} />
             </Route>
             <Route path='/location'>
               <Location />
@@ -86,6 +88,8 @@ function App() {
             </Route>
              <Route path='/items'>
                <Market content={cards} />
+                        {/* <DesktopMarket content={categoriess} content2={<Cart2 />} /> */}
+
                <DesktopMarket content={cards} content2={<Cart2 />} />
              </Route>
              <Route path='/cart'>

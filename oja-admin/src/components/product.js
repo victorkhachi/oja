@@ -11,7 +11,7 @@ import {Products} from './extras/contexts'
 export default function Product() {
     const {url}=config
     const [array, setArray] = useState([])
-    const {cat,setCat}=useContext(Products)
+    const [cat,setCat]=useState(localStorage.getItem('cat'))
 
     const token= localStorage.getItem('token')
     const headers= {
@@ -35,7 +35,7 @@ export default function Product() {
     
     return (
         
-    <div style={{width:'100%',height:'100%',textTransform:'capitalize',fontWeight:'bold'}}>
+    <div style={{width:'100%',height:'100%',textTransform:'capitalize',fontWeight:'bold',padding:'10px'}}>
         <h1>Products</h1>
         <div style={{width:'100%',height:'40%',overflowY:'scroll'}}>
          {array.map(product=>(
@@ -44,7 +44,7 @@ export default function Product() {
        </div>
             <div style={{ justifyContent: 'space-between', width: '200px', height: '40px', color: '#A5060A', textTransform: 'capitalize', margin: 'auto', display: display }}><div onClick={() => { if (page > 1) setPage(page - 1) }}> prev</div><div onClick={() => { if (totalPages > page) setPage(page + 1) }}>Next</div></div>
 
-       <Link to ='/addProducts' style={{position:'absolute',boxShadow:'0px 0px 2px 2px black', padding:'2%',top:'50%'}}>Add products</Link>
+       <Link to ='/addProducts' style={{boxShadow:'0px 0px 2px 2px black', padding:'2%'}}>Add products</Link>
 
         </div>
     )

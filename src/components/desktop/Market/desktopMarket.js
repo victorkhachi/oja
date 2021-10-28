@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Searcher } from "../../market/extras/userContext";
-import SearchCategories from "../../market/pages/market/searchCategories";
+
 import Help from "../sub/help";
 import Top from "./sub/top";
 
@@ -17,16 +17,13 @@ export default function DesktopMarket(props) {
       setHelp("none");
     }
   };
-  const { key, setKey } = useContext(Searcher);
-  const search = () => {
-    if (key) setDisplay("inline-block");
-  };
-  const [display, setDisplay] = useState("none");
-  const none = () => setDisplay("none");
+  
+ 
+
 
   return (
     <div className="desktop-market">
-      <Top search={search} help={click} />
+      <Top  help={click} />
       <div
         className="blur"
         onClick={close}
@@ -49,21 +46,8 @@ export default function DesktopMarket(props) {
       </div>
 
       <div style={{ width: "100%", height: "90%", display: "flex" }}>
-        <div style={{ width: "80%", height: "90%" }}>
-          <div
-            style={{
-              zIndex: 100,
-              width: "69%",
-              height: "70%",
-              display: `${display}`,
-              background: "#E5E5E5",
-              position: "absolute",
-              left: "0",
-              top: "10%",
-            }}>
-            {" "}
-            <SearchCategories close={none} />
-          </div>
+        <div style={{ width: "80%", height: "100%" }}>
+          
           {props.content}
         </div>
         <div

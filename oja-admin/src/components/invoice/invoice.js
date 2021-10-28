@@ -107,15 +107,7 @@ const [deliveredColor, setDeliveredColor] = useState('')
 
 
 
-    // const array=[
-    //     {name:'vgfg',address:'ctftfyu'},
-    //     {id:1, name: 'kachi', address: 'ctftfyu' },
-    //     { id:2,name: 'uche', address: 'ctftfyu' },
-    //     { id:3,name: 'radiance', address: 'ctftfyu' },
-    //     { id:4, name: 'nma', address: 'ctftfyu' },
-    //     {id:5, name: 'eze', address: 'ctftfyu' }
-
-    // ]
+    
      const orders=array.map((order)=>(
           <Orders data={order}  />
      ))

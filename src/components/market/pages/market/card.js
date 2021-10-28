@@ -6,7 +6,7 @@ import axios from 'axios';
 import { Products } from '../../extras/userContext';
 import Back from '../../../images/svg/Back';
 
-function Cards() {
+function Cards(props) {
     const history = useHistory()
     const {url}=config
     const [array, setArray] = useState([])
@@ -23,8 +23,9 @@ function Cards() {
         setTotalPages(response.data.totalPages);
         return response.data.product }).then(response => setArray(response)), [page]) 
         
+        
         useEffect(()=>{if(page===totalPages)setDisplay('none')
-                        else setDisplay('flex')},[page])
+                        else setDisplay('inline-block')},[page])
 
     
     return(
@@ -33,7 +34,7 @@ function Cards() {
                 <div onClick={()=>history.goBack()}  className='none back' style={{
                     width: '15%', height: '50px',marginRight:'15px'}} ><Back />
                     </div>
-                <p style={{fontSize:'1.5em',fontWeight:'bold',textTransform:'uppercase'}}>{cat}</p>
+                <p style={{fontSize:'1.5em',fontWeight:'bold',textTransform:'uppercase',display:props.display}}>{cat}</p>
             </div>
             <div className='item-content'>
                  {
@@ -42,8 +43,7 @@ function Cards() {
                 ))
             } 
             </div>
-            <div style={{ justifyContent: 'space-between', width: '200px', height: '40px', color: '#A5060A', textTransform: 'capitalize', margin: 'auto', display: display }}><div onClick={() => { if (page > 1) setPage(page - 1) }}> prev</div><div onClick={() => { if (totalPages > page) setPage(page + 1)} }>Next</div></div>
-
+            <div style={{display:'flex', justifyContent: 'space-between', width: '200px', height: '40px', color: '#A5060A', textTransform: 'capitalize', margin: '0 auto' }}><div onClick={() => { if (page > 1) setPage(page - 1) }}> prev</div><div onClick={() => setPage(page + 1)} style={{ display: display }}>Next</div></div>
         </div>
        
     )

@@ -2,13 +2,13 @@ import axios from "axios";
 import { Fragment, useContext, useEffect, useState } from "react"
 import { Link } from "react-router-dom";
 import config from "../../config";
-import { Products } from "../contexts";
+
 import Remove from "./remove";
 
 const Component = ({data})=> {
     const { url } = config
     const [array, setArray] = useState([])
-    const { cat, setCat } = useContext(Products)
+    
     const category=data.category
     const token = localStorage.getItem('token')
     const items = async () => {
@@ -47,7 +47,7 @@ const Component = ({data})=> {
        document.location.reload()
     }
     const click=()=>{
-        setCat(data.category)
+        localStorage.setItem('cat',data.category)
     }
       
   

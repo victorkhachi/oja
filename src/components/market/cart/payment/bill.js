@@ -7,7 +7,7 @@ export default function Bill(props) {
     const {total, setTotal}= useContext(Total)
     const {order ,setOrder}=useContext(Order)
     const {value, setValue}=useContext(UserContext)
-    const {TakeOrder}=GetOrder()
+    // const {TakeOrder}=GetOrder()
     const name=localStorage.getItem('name')
     const tel=localStorage.getItem('tel')
       console.log(value)
@@ -44,7 +44,7 @@ export default function Bill(props) {
      let transaction =fee + total;
     const done = async () => {
         setOrder({ ...order, list: JSON.stringify(addList), total_price: transaction, name: name, tel: tel, zone: zone, address: address })
-        // TakeOrder()
+        
     }
 
     return (
