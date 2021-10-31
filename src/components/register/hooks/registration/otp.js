@@ -2,26 +2,18 @@ import { StoreOtp } from "../../../market/extras/userContext";
 import {useState,useContext, useEffect} from 'react'
 import axios from 'axios'
 import config from "../../../../config"; 
+import { Redirect } from "react-router";
 
 export default function OtpEnter(){
     const { otp, setOtp } = useContext(StoreOtp)
-    const [otpMessage, setOtpMessage] = useState('')
     const [redirect,setRedirect]=useState(false)
 
     const {url}=config
     const [user,setUser]=useState({email:'',password:''})
 
 
-    const otpInput = (input) => {
 
-        if (otp === input) {
-
-            window.location.replace('/password')
-        }
-        else {
-            setOtpMessage('wrong token entered')
-        }
-    }
+       
 
    const newPassword= async ()=>{
        try{
@@ -42,6 +34,6 @@ export default function OtpEnter(){
       
 
     return{
-        otpMessage, otpInput,newPassword,setUser,user,redirect
+        newPassword,setUser,user,redirect
     }
 }

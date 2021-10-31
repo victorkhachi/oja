@@ -13,7 +13,7 @@ export default function SandwichCon() {
         {
             icon: <Contact />,
             name: 'contact-us',
-            link:'Tel:victorKhachi@gmail.com'
+            link:'Tel:08179049908'
         },
         {
             icon: <Support />,

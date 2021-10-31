@@ -12,7 +12,7 @@ export default function GetOrder() {
 
     // const [categories, setCategories] = useState([{}])
     // const [item, setItem] = useState([])
-    const TakeOrder = async () => {
+    const TakeOrder = async (ref) => {
         try {
             const { status, data } = await axios({
                 method: 'post',

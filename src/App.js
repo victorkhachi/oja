@@ -71,12 +71,18 @@ function App() {
             </Route>
             <Route path='/signUp'>
                 <SignUp  />
+                <Landing  show='inline-block' />
+
             </Route>
             <Route path='/forgotPassword'>
               <Forgot />
+               <Landing number='3' show='inline-block' />
+
             </Route>
             <Route path='/OTP'>
                <Otp />
+               <Landing number='4' show='inline-block' />
+
             </Route>
             <Route path='/market'>
               <Market content={categories} />
@@ -108,6 +114,8 @@ function App() {
               </Route>
              <Route path='/password'>
                 <NewPassword />
+                <Landing number='5' show='inline-block' />
+
               </Route>
               <Route path='/payment'>
                 <Payment />

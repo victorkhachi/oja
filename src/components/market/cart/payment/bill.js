@@ -1,13 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import GetOrder from '../../extras/Order'
+
 import { Order, Total, UserContext } from '../../extras/userContext'
 
 export default function Bill(props) {
     const {total, setTotal}= useContext(Total)
     const {order ,setOrder}=useContext(Order)
     const {value, setValue}=useContext(UserContext)
-    // const {TakeOrder}=GetOrder()
+    
     const name=localStorage.getItem('name')
     const tel=localStorage.getItem('tel')
       console.log(value)

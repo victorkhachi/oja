@@ -24,10 +24,12 @@ export default function Payment() {
       name: "radiance obi",
       onCancel: () => window.alert("oh, dear u canceled"),
       onSuccess: (e) => {
-        window.alert(
-          "thank you for ur purchase! your ref ID is " + e.reference
-        );
-        console.log(e);
+        // window.alert(
+        //   "thank you for ur purchase! your ref ID is " + e.reference
+        // );
+        // console.log(e);
+        TakeOrder(e.reference)
+        
       },
     });
 }

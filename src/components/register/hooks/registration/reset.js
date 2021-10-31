@@ -6,16 +6,16 @@ import { StoreOtp } from "../../../market/extras/userContext";
 
 export default function Reset(){
      const {url}=config
-     const [getEmail, setGetEmail]=useState({email:''})
+    //  const [getEmail, setGetEmail]=useState({email:''})
      const [message,setMessage]=useState('')
      const {otp, setOtp} =useContext(StoreOtp)
     const [display,setDisplay]=useState('none')
     const [redirect, setRedirect] = useState(false)
 
-    const PassReset= async ()=>{
+    const PassReset= async (email)=>{
 
         try {
-            const { status, data } = await axios.post(`${url}user/requestPasswordReset`, JSON.stringify(getEmail), {
+            const { status, data } = await axios.post(`${url}user/requestPasswordReset`, JSON.stringify(email), {
                 headers: {
                     "content-type": "application/json"
                 }
@@ -42,7 +42,7 @@ export default function Reset(){
       
 
       return{
-         PassReset, setGetEmail, message,display,redirect
+         PassReset,  message,display,redirect
      }
 
 

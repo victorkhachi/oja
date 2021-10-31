@@ -33,7 +33,6 @@ export default function SignIn() {
                       color: ' #A5060A',
                       textDecoration:'none',
                     zIndex: '500'}}>Sign Up</Link></p>
-                  <p>Forgot password? <Link to='/forgotPassword' style={{ zIndex:'500',color: '#A5060A', textDecoration: 'none'}}> Reset</Link></p>
             </div>
             </div>
            <div className='cover'>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Redirect } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import Login from '../hooks/registration/login'
 
 export default function SignInForm() {
@@ -43,6 +43,8 @@ export default function SignInForm() {
                     </button>
 
         </form>
+            <p className='forgot-p'>Forgot password? <Link to='/forgotPassword' style={{ zIndex: '500', color: '#A5060A', textDecoration: 'none' }}> Reset</Link></p>
+
         </div>
 
             

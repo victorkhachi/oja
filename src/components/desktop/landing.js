@@ -38,7 +38,7 @@ export default function Landing(props) {
           <Top help={click} login={close} show={props.show}/>
           <Middle />
           <div className='blur' onClick={close} style={{display:`${blurDisplay}`}}></div>
-          <Login display={display} />
+          <Login number={props.number} display={display} />
           <div style={{width:'20%',height:'fit-content',zIndex:'500', position:'absolute',right:'8%',top:'15%',background:'white',padding:'2%',boxShadow:'0px 0px 2px grey',display:`${help}`}}>
             <Help />
           </div>
