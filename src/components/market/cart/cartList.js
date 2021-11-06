@@ -32,12 +32,21 @@ const CartList =({data})=>{
         }
         
     }
+    useEffect(()=>{
+         const newCart =value.map(item=>{
+             if(item.id===data.id){
+                 return {
+                     ...data,quantity:number
+                 }
+             }
+             else return item
+         })
+        setValue(newCart)
+        console.log(value);
+
+    },[number])
     const cost = data.price * number
-    const [changedItem,setChangedItem]=useState({name:data.name,id:data.id,quantity:'',category:data.category,cost:data.cost,price:data.price,unit:data.unit})
-    const change= async()=>{
-        const newCart =value.filter(items=>items.id!==data.id)
-        setChangedItem({ ...changedItem, quantity: number })
-    }
+    
 
     
     data.cost= cost
@@ -66,7 +75,7 @@ const CartList =({data})=>{
                         <Reduce />
                     </div>
                     <input type='number' value={number} className='quant-input' />
-                    <div  onClick={()=>{plus(); change()}}>
+                    <div  onClick={()=>{plus();}}>
                         <Increase />
                     </div>
 
@@ -74,7 +83,7 @@ const CartList =({data})=>{
                   <div style={{width:'15%'}}>
                      N{cost}
                   </div>
-                  <div style={{ marginRight: '4%' }}onClick={remove}>
+                  <div  onClick={remove}>
                          <Basket />
                   </div>
         

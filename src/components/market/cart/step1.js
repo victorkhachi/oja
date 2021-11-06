@@ -7,7 +7,7 @@ import Note from '../../images/svg/Note'
 
 export default function Step1() {
     const {value, setValue}=useContext(UserContext)
-    
+    console.log(value)
     const items =value.length
     return (
         <div style={{width:'100%',height:'100%'}}>
@@ -18,7 +18,7 @@ export default function Step1() {
                         {items} items
                     </div>
                 </div>
-                <div style={{ display: 'flex', width: '99%', justifyContent: 'space-between', flexBasis: '45%',flexWrap:'wrap', margin: 'auto', position: 'relative', marginTop: '2%' }}>
+                <div className='cart-container'>
                     {
                         value.map((pickedItems, idx) => (
                             <CartList key={idx} data={pickedItems} />

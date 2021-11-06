@@ -332,6 +332,10 @@ svg{
 input{
   padding: 8px;
 }
+.cart-container{
+  display:flex; width:99%; justify-content:space-between; flex-basis: 45%;
+    flex-wrap:wrap; margin: auto; position:relative; margin-top:2%;padding: 4pxf;
+}
 a{
   color: black;
   text-decoration: none;
@@ -455,6 +459,7 @@ text-align: center;
    line-height: 20px;
    letter-spacing: 0em;
    text-align: center;
+   padding: 4px;
 
 }
 .sandwich{
