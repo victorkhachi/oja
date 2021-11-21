@@ -2,7 +2,6 @@ import axios from "axios";
 import { Fragment, useContext, useEffect, useState } from "react"
 import { Link } from "react-router-dom";
 import config from "../../config";
-
 import Remove from "./remove";
 
 const Component = ({data})=> {
@@ -47,6 +46,7 @@ const Component = ({data})=> {
        document.location.reload()
     }
     const click=()=>{
+        
         localStorage.setItem('cat',data.category)
     }
       

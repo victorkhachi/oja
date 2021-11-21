@@ -2,12 +2,15 @@
 import React from 'react'
 import Component from './hooks';
 import useCategory from './hooks/createCategory';
-
+import {Key} from './contexts'
 
 
 export default function SelectCat() {
     const { categories } = useCategory()
-
+    const {key,setKey}=React.useContext(Key)
+    const [array,setArray]=React.useState()
+    console.log(categories);
+   
 
     
        

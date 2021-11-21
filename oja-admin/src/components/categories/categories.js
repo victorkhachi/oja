@@ -11,14 +11,14 @@ export default function Categories() {
         
     }
     
-    console.log(key);
+    
     return (
         <div style={{width:'374px',display:'flex',flexDirection:'column',alignItems:'center'}}>
              <div className='cat-head'>
-                <div style={{width:"75%",fontWeight:'bold',boxShadow:'0px 4px 4px 0px #00000040',height:'50px'}}>Categories</div>
+                <div class='div'>Categories</div>
                 <Link to='/addCategories'><Add /></Link>
              </div>
-            <input type='text' placeholder=' &#xf002; Search categories' style={{ padding:'2% 3%', background: '#FFFEF2', width: '80%'}} onChange={search} />
+            <input type='text' placeholder=' &#xf002; Search categories' class='search_input' onChange={search} />
 
             <div style={{ width: '100%',display:'flex',flexDirection:'column' }}>
 

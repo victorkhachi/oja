@@ -29,6 +29,7 @@ try {
 }
  catch (error) {
    console.log(error.response)
+   console.log(body);
     
 }  
 }

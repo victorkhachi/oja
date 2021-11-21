@@ -39,7 +39,7 @@ export default function Orders({data}) {
   }
     useEffect(() => {
         if (data.delivered_status === '2') {
-            console.log('hi');
+            // console.log('hi');
             setDisplay('none')
         }
     },[data.delivered_status])
@@ -47,7 +47,8 @@ export default function Orders({data}) {
 
 
     const open =()=>{
-        setValue({name:data.name,address:data.address,tel:data.tel,note:data.notes,list:JSON.parse(data.list),total_price:data.total_price})
+        // setValue({name:data.name,address:data.address,tel:data.tel,note:data.notes,list:JSON.parse(data.list),total_price:data.total_price})
+        localStorage.setItem('id',data.id)
         setRedirect(true)
     }
     if(redirect){

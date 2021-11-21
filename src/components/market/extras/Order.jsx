@@ -21,10 +21,10 @@ export default function GetOrder() {
                     "Authorization":`Bearer ${token}`,
                     "content-type": "application/json"
                 },
-                data:order
-
+                data:{name:order.name,address:order.address,tel:order.tel,total_price:order.total_price,list:order.list,notes:order.notes,zone:order.zone,reference:ref}
             })
             console.log(status, data);
+                // console.log(order);
             
         }
         catch (error) {
@@ -33,7 +33,7 @@ export default function GetOrder() {
             console.log(error.response)
 
         }
-        console.log(order);
+        // console.log(order);
     }
     
     

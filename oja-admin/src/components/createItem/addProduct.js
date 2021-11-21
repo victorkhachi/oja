@@ -5,10 +5,10 @@ import AddProd from '../extras/hooks/addProducts'
 export default function AddProduct() {
     const {addProd}=AddProd()
     const formData = new FormData()
-    const [product,setProduct]=useState({name:'',price:'',unit:''})
-    const {cat,setCat}=useContext(Products)
-   console.log(cat);
-   useEffect(()=>formData.append('category',cat))
+    const [product,setProduct]=useState({name:'',price:'',unit:'',weight:''})
+    // const {cat,setCat}=useContext(Products)
+//    console.log(cat,'hi');
+   useEffect(()=>formData.append('category',localStorage.getItem('cat')))
    const enterProduct=(e)=>{
         setProduct({...product,[e.target.name]:e.target.value})
    }
@@ -17,12 +17,7 @@ export default function AddProduct() {
         
 
     
-   const enterImg=  (e)=>{
-       
-
-
-   }
-   
+  
    
    
    const add= async (e)=>{

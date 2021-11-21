@@ -60,6 +60,10 @@ margin-left: 3%;
     font-weight: bold;
     height: 12%;
 
+    span{
+     margin-left:5%;
+    text-transform:uppercase;
+    }
 }
 .orderd-items{
   width:100%;
@@ -93,7 +97,12 @@ margin-left: 3%;
   width: 100%;
   margin-bottom: 2%;
   align-items: center;
-
+       .div{
+           width:75%;
+           font-weight:bold;
+           box-shadow:0px 4px 4px 0px #00000040;
+           height:50px;
+       }
   div{
     display:flex;
     justify-content: center;
@@ -121,6 +130,7 @@ a{
   height:100%;
   box-shadow: 0px 0px 5px black;
   padding:16px;
+  overflow-y:scroll;
 }
 .input{
   display:flex;
@@ -184,4 +194,10 @@ button{
 }
 .color{
   color: #A5060A;
+}
+.search_input{
+     padding:2% 3%;
+     background:#FFFEF2;
+     width:200px;
+     margin:20px 0;
 }

@@ -43,6 +43,7 @@ function App() {
     list: "",
     notes: "",
     total_price: "",
+    reference:''
   });
 
   const [cat, setCat] = useState();

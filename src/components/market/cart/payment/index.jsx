@@ -23,11 +23,7 @@ export default function Payment() {
       key: testkey,
       name: "radiance obi",
       onCancel: () => window.alert("oh, dear u canceled"),
-      onSuccess: (e) => {
-        // window.alert(
-        //   "thank you for ur purchase! your ref ID is " + e.reference
-        // );
-        // console.log(e);
+      onSuccess:  (e) => {
         TakeOrder(e.reference)
         
       },
