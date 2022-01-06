@@ -24,7 +24,7 @@ export default function Top(props) {
                 <Link to ='/search' style={{ borderRadius:'0 2em 2em 0', background: '#A5060A',color:'white',fontWeight:'bold',fontSize:'10px',padding:'5%'}} >Search</Link>
             </div>
             
-            <div onClick={props.help} >
+            <div style={{width:'100px'}} onClick={props.help} >
                 <Help />
             </div>
 

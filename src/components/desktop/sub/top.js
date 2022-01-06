@@ -14,14 +14,12 @@ export default function Top( props) {
     return (
         <div className='top'>
             <RedLogo />
-            {/* <h1 className='top-name'>
-                ọjà.com
-            </h1> */}
+         
             <div style={{width:'40%',display:'flex',justifyContent:'space-between',marginLeft:'15%',alignItems:'center'}}>
                 <div style={{ display: `${props.show}` }} onClick={props.login} >
                    <Login />
                </div>
-               <div onClick={props.help}>
+               <div  onClick={props.help}>
                     <Help />
                 </div>
             </div>

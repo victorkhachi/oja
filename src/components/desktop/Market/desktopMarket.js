@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Searcher } from "../../market/extras/userContext";
-
+import './sub/desktop.scss'
 import Help from "../sub/help";
 import Top from "./sub/top";
 
@@ -29,28 +29,17 @@ export default function DesktopMarket(props) {
         onClick={close}
         style={{ display: `${blurDisplay}` }}></div>
 
-      <div
-        style={{
-          width: "20%",
-          height: "fit-content",
-          zIndex: "500",
-          position: "absolute",
-          right: "8%",
-          top: "15%",
-          background: "white",
-          padding: "2%",
-          boxShadow: "0px 0px 2px grey",
-          display: `${help}`,
-        }}>
+      <div class='help-bar' style={{display: `${help}`}}>
         <Help />
       </div>
 
-      <div style={{ width: "100%", height: "90%", display: "flex" }}>
-        <div style={{ width: "80%", height: "100%" }}>
+      <div class='market-body'>
+        <div class='content1'>
+          <div></div>
+          <div></div>
           
-          {props.content}
         </div>
-        <div
+        {/* <div
           style={{
             position: "relative",
             right: "0",
@@ -60,7 +49,7 @@ export default function DesktopMarket(props) {
             display: `${props.display}`,
           }}>
           {props.content2}
-        </div>
+        </div> */}
       </div>
     </div>
   );
