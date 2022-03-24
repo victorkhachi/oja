@@ -8,12 +8,12 @@ export default function Sandwich(prop) {
    
     
     return (
-        <div style={{ position: 'absolute', width: '100%', height: '100%', zIndex: '500',left:`${prop.left}`,transition:'0.2s linear',zIndex:'600'}}>
+        <div style={{ position: 'absolute', width: '100%', height: '100%', zIndex: '500',left:`${prop.left}`,transition:'0.2s linear',zIndex:'600',top:'0'}}>
             <div style={{ width: '100%', height: '100%', background: 'rgba(0,0,0,0.5)',position:'absolute'}}onClick={prop.close}>
             </div>
-            <div style={{ width: '70%', height: '100%', background:' #EDF5E4',position:'relative'}}>
+            <div style={{ width: '70%', height: '100%',background: '#FFFEF2',position:'relative'}}>
                 <div style={{
-                    width: '80%', margin: 'auto', background: '#EDF5E4',paddingTop:'5%'}}>
+                    width: '80%', margin: 'auto', background: '#FFFEF2',paddingTop:'5%'}}>
                     <div style={{display:'flex',justifyContent:'space-between',margin:''}} onClick={prop.close}>
                         <Close /> 
                     </div>

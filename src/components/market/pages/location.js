@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import {Link, Redirect} from 'react-router-dom'
 import Back from '../../images/svg/Back';
+import BlackLogo from '../../images/svg/BlackLogo';
 import LocationSvg from '../../images/svg/Location';
-import Logo from './logo';
+
 
 
 export default function Location() {
@@ -43,18 +44,18 @@ export default function Location() {
         <div className="page">
             <div className='market-cover'></div>
             <div className='location-head' >
-                <Link to='/' className='back '><Back /></Link>
-                 <h1 style={{ margin:'auto',marginTop:'10%' }}>
-                <Logo />
-
-                </h1>
-                
+                <Link to='/'>
+                    <Back/>
+                </Link>
+                <span>
+                    <BlackLogo/>
+                </span>
             </div>
             <div className='location-input'>
                 <h2 >
                    Select Location
                </h2>
-               <select className='selection' name='region' type='text'  onChange={location}>
+               <select className='selection ' name='region' type='text'  onChange={location}>
                    <option  disabled selected hidden >select region </option>
                    <option value='lekki phase 2'>Island(lekki phase 1)</option>
                     <option value='ikeja/magodo'>Ikeja/Magodo</option>
@@ -63,7 +64,7 @@ export default function Location() {
                </select>
                 <p style={{ width: '100%', textAlign: 'center', color: '#A5060A'}}>{message}</p>
                
-                <input name='address' type='text' placeholder='Enter address' onChange={location}/>
+                <input  name='address' type='text' placeholder='Enter address' onChange={location}/>
                 <div className='icon' onClick={enterMarket} >
                     <LocationSvg />
                 </div>

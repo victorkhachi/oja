@@ -16,10 +16,10 @@ export default function Top( props) {
             <RedLogo />
          
             <div style={{width:'40%',display:'flex',justifyContent:'space-between',marginLeft:'15%',alignItems:'center'}}>
-                <div style={{ display: `${props.show}` }} onClick={props.login} >
+                <div style={{width:'100px', display: `${props.show}` }} onClick={props.login} >
                    <Login />
                </div>
-               <div  onClick={props.help}>
+               <div style={{width:'100px'}} onClick={props.help}>
                     <Help />
                 </div>
             </div>

@@ -33,24 +33,9 @@ export default function DesktopMarket(props) {
         <Help />
       </div>
 
-      <div class='market-body'>
-        <div class='content1'>
-          <div></div>
-          <div></div>
-          
-        </div>
-        {/* <div
-          style={{
-            position: "relative",
-            right: "0",
-            width: "35%",
-            height: "100%",
-            boxShadow: "0 0 3px grey",
-            display: `${props.display}`,
-          }}>
-          {props.content2}
-        </div> */}
-      </div>
+    
+        
+        
     </div>
   );
 }

@@ -36,7 +36,7 @@ export default function Middle() {
                     Shop now and get a speedy delivery at your doorstep
               </div>
                 
-                 <form onSubmit={enterMarket} style={{width:'100%',marginTop:'0',display:'flex',flexDirection:'column'}}>
+                 <form onSubmit={enterMarket} style={{width:'58%',marginTop:'0',display:'flex',flexDirection:'column',padding:'24px 50px'}}>
                     <select className='selected' name='region' type='text' onChange={location}>
                         <option disabled selected hidden>pick region</option>
                         <option value='lekki phase 2'>Island(lekki phase 1)</option>
@@ -47,7 +47,7 @@ export default function Middle() {
                     </select>
 
                     <input type='text' name='address' onChange={location}  placeholder='Enter delivery address'/>
-                    <button  className='reset' style={{marginTop:'3%',width:'20%', marginLeft:'5%',padding:'1%'}}>
+                    <button  className='reset' style={{marginTop:'3%',width:'20%', marginLeft:'5%',padding:'2%',width:'fit-content'}}>
                           Send me!
                     </button>
                 </form>

@@ -1,5 +1,5 @@
 const config =  {
-    url: "http://localhost:4020/"
+    url: "https://server.horjah.com/"
 }
 
 export default config
